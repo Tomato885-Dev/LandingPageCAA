@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ==========================================================================
+       DATOS DE LA PESTAÑA Y DEL BUSCADOR (edítalos aquí)
+       ========================================================================== -->
+  <title>CAA · Centro de Alumnos</title>
+  <meta name="description" content="Centro de Alumnos CAA: representación, proyectos y comunidad estudiantil." />
+  <meta property="og:title" content="CAA · Centro de Alumnos" />
+  <meta property="og:description" content="Centro de Alumnos CAA: representación, proyectos y comunidad estudiantil." />
+  <meta property="og:type" content="website" />
+  <!-- 👉 IMAGEN PARA COMPARTIR EN REDES: reemplaza por tu imagen en assets/img/ -->
+  <meta property="og:image" content="assets/img/og-caa.jpg" />
+  <!-- 👉 ICONO DE LA PESTAÑA: reemplaza por tu logo en assets/img/favicon.png -->
+  <link rel="icon" href="assets/img/favicon.png" />
+
+  <!-- ==========================================================================
+       TIPOGRAFÍAS
+       ========================================================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- ==========================================================================
+       ESTILOS PROPIOS (colores y efecto vidrio) → src/estilos/theme.css
+       ========================================================================== -->
+  <link rel="stylesheet" href="src/estilos/theme.css" />
+
+  <!-- ==========================================================================
+       LIBRERÍAS (no hace falta instalar nada: se cargan desde internet)
+       ========================================================================== -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Configuración de Tailwind: tipografías y colores del proyecto.
+    // Los colores apuntan a las variables definidas en src/estilos/theme.css
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['"Instrument Serif"', 'serif'],
+            body: ['"Barlow"', 'sans-serif'],
+          },
+          colors: {
+            fondo: 'var(--color-fondo)',
+            acento: 'var(--color-acento)',
+            'acento-texto': 'var(--color-acento-texto)',
+          },
+          borderRadius: {
+            DEFAULT: '9999px',
+            tarjeta: 'var(--radio-tarjeta)',
+          },
+        },
+      },
+    };
+  </script>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/framer-motion@11.11.17/dist/framer-motion.js"></script>
+  <script>
+    // Framer Motion se expone con distintos nombres según la versión.
+    window.Motion = window.FramerMotion || window.Motion || {};
+    // Silencia avisos benignos de Framer Motion sobre "keys" en listas animadas.
+    (function () {
+      var errorOriginal = console.error;
+      console.error = function () {
+        var primero = arguments[0];
+        if (typeof primero === 'string' && primero.indexOf('Each child in a list') !== -1) return;
+        errorOriginal.apply(console, arguments);
+      };
+    })();
+  </script>
+</head>
+
+<body class="bg-fondo font-body antialiased">
+  <div id="cargando">cargando…</div>
+  <div id="root"></div>
+
+  <noscript>
+    <p style="color:#fff;font-family:sans-serif;padding:2rem">
+      Esta página necesita JavaScript activado para mostrarse.
+    </p>
+  </noscript>
+
+  <!-- ==========================================================================
+       1) CONTENIDO DEL SITIO  (textos, imágenes, enlaces)
+          👉 Estos son los archivos que se editan el 95% de las veces.
+       ========================================================================== -->
+  <script src="src/contenido/sitio.js"></script>
+  <script src="src/contenido/hero.js"></script>
+  <script src="src/contenido/nosotros.js"></script>
+  <script src="src/contenido/vision-mision.js"></script>
+  <script src="src/contenido/proyectos.js"></script>
+  <script src="src/contenido/colaboradores.js"></script>
+  <script src="src/contenido/footer.js"></script>
+
+  <!-- ==========================================================================
+       2) PIEZAS REUTILIZABLES (botones, tarjetas, iconos, animaciones)
+       ========================================================================== -->
+  <script type="text/babel" data-presets="react" src="src/componentes/ui/Iconos.jsx"></script>
+  <script type="text/babel" data-presets="react" src="src/componentes/ui/FadingVideo.jsx"></script>
+  <script type="text/babel" data-presets="react" src="src/componentes/ui/BlurText.jsx"></script>
+  <script type="text/babel" data-presets="react" src="src/componentes/ui/Reveal.jsx"></script>
+  <script type="text/babel" data-presets="react" src="src/componentes/ui/Vidrio.jsx"></script>
+  <script type="text/babel" data-presets="react" src="src/componentes/ui/Media.jsx"></script>
+  <script type="text/babel" data-presets="react" src="src/componentes/ui/TituloSeccion.jsx"></script>
+  <script type="text/babel" data-presets="react" src="src/componentes/ui/SeccionBase.jsx"></script>
+  <script type="text/babel" data-presets="react" src="src/componentes/ui/TarjetaGlass.jsx"></script>
+
+  <!-- ==========================================================================
+       3) ESTRUCTURA (barra de navegación y pie de página)
+       ========================================================================== -->
+  <script type="text/babel" data-presets="react" src="src/componentes/layout/Navbar.jsx"></script>
+  <script type="text/babel" data-presets="react" src="src/componentes/layout/Footer.jsx"></script>
+
+  <!-- ==========================================================================
+       4) SECCIONES DE LA PÁGINA
+          👉 Para agregar una sección nueva: crea su archivo aquí y añádelo
+             también en src/app/secciones.js  (ver MANUAL.md, punto 8)
+       ========================================================================== -->
+  <script type="text/babel" data-presets="react" src="src/componentes/secciones/Hero.jsx"></script>
+  <script type="text/babel" data-presets="react" src="src/componentes/secciones/Nosotros.jsx"></script>
+  <script type="text/babel" data-presets="react" src="src/componentes/secciones/VisionMision.jsx"></script>
+  <script type="text/babel" data-presets="react" src="src/componentes/secciones/Proyectos.jsx"></script>
+  <script type="text/babel" data-presets="react" src="src/componentes/secciones/Colaboradores.jsx"></script>
+
+  <!-- ==========================================================================
+       5) ARMADO FINAL DE LA PÁGINA
+       ========================================================================== -->
+  <script src="src/app/secciones.js"></script>
+  <script type="text/babel" data-presets="react" src="src/app/App.jsx"></script>
+</body>
+</html>

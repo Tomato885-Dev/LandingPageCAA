@@ -1,0 +1,172 @@
+/* ============================================================================
+   THEME.CSS — Sistema de diseño de la landing del CAA
+   ----------------------------------------------------------------------------
+   Aquí viven los COLORES y los efectos visuales base ("liquid glass").
+   Si quieres cambiar la paleta del sitio, cambia SOLO las variables del
+   bloque :root de más abajo. No necesitas tocar nada más.
+   ============================================================================ */
+
+:root {
+  /* ---- COLORES PRINCIPALES (cámbialos aquí) ---------------------------- */
+  --color-fondo: #000000;              /* Fondo general de la página        */
+  --color-texto: #ffffff;              /* Color de todos los textos         */
+  --color-texto-suave: rgba(255, 255, 255, 0.85);
+
+  /* Color de los botones "sólidos" (ej. "Únete al CAA") y de las etiquetas
+     destacadas. Si pones un color oscuro, cambia también --color-acento-texto
+     a #ffffff para que el texto del botón se siga leyendo. */
+  --color-acento: #ffffff;
+  --color-acento-texto: #000000;
+
+  /* ---- FORMA DE LAS TARJETAS ------------------------------------------- */
+  --radio-tarjeta: 1.25rem;            /* Redondeo de las tarjetas          */
+
+  /* ---- EFECTO VIDRIO (avanzado) ---------------------------------------- */
+  --vidrio-tinte: 255, 255, 255;       /* Tinte del vidrio en RGB           */
+  --vidrio-opacidad: 0.01;             /* Qué tan "lechoso" es el vidrio    */
+  --vidrio-desenfoque: 4px;            /* Desenfoque del vidrio suave       */
+  --vidrio-desenfoque-fuerte: 50px;    /* Desenfoque del vidrio del CTA     */
+}
+
+/* ============================================================================
+   BASE
+   ============================================================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Deja espacio bajo la barra de navegación al saltar a una sección */
+section[id] {
+  scroll-margin-top: 6rem;
+}
+
+/* Bloquea el scroll del fondo cuando el menú móvil está abierto */
+body.menu-abierto {
+  overflow: hidden;
+}
+
+/* ============================================================================
+   LIQUID GLASS — el "vidrio líquido" que usan tarjetas, píldoras y la barra
+   ============================================================================ */
+.liquid-glass {
+  background: rgba(var(--vidrio-tinte), var(--vidrio-opacidad));
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(var(--vidrio-desenfoque));
+  -webkit-backdrop-filter: blur(var(--vidrio-desenfoque));
+  border: none;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.45) 0%,
+    rgba(255, 255, 255, 0.15) 20%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0.15) 80%,
+    rgba(255, 255, 255, 0.45) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.liquid-glass-strong {
+  background: rgba(var(--vidrio-tinte), var(--vidrio-opacidad));
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(var(--vidrio-desenfoque-fuerte));
+  -webkit-backdrop-filter: blur(var(--vidrio-desenfoque-fuerte));
+  border: none;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.05), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid-glass-strong::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.2) 20%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0.2) 80%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Micro-interacción compartida por tarjetas y botones */
+.hover-elevar {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+.hover-elevar:hover {
+  transform: translateY(-4px);
+}
+
+/* Contenedor de imágenes con recorte suave */
+.media-marco {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+}
+.media-marco img {
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.media-marco:hover img {
+  transform: scale(1.04);
+}
+
+/* Pantalla de carga inicial (se oculta cuando React monta la app) */
+#cargando {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: "Instrument Serif", serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+  z-index: 100;
+  transition: opacity 0.4s ease;
+}
+#cargando.oculto {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Accesibilidad: si el sistema pide menos movimiento, calmamos las animaciones */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hover-elevar, .media-marco img { transition: none; }
+}
