@@ -11,7 +11,7 @@ function TituloSeccion({ kicker, titulo = [], intro, className = '', centrado = 
   return (
     <div className={(centrado ? 'text-center mx-auto ' : '') + className}>
       <Reveal comoLista>
-        {kicker ? <p className="text-sm font-body text-white/80 mb-6">{kicker}</p> : null}
+        {kicker ? <p className="text-sm font-body text-marca mb-6">{kicker}</p> : null}
       </Reveal>
 
       <Reveal comoLista delay={0.1}>

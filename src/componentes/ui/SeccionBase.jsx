@@ -24,7 +24,10 @@ function SeccionBase({ id, fondo = {}, children, className = '', alturaMinima = 
           poster={fondo.imagen}
           className="absolute inset-0 w-full h-full object-cover z-0"
         />
-      ) : null}
+      ) : (
+        /* Sin video: un resplandor rojo muy tenue para que el negro no quede plano */
+        <div className="resplandor-marca" aria-hidden="true" />
+      )}
 
       <div className="relative z-10 px-6 sm:px-8 md:px-16 lg:px-20 py-20 md:py-24 flex flex-col">
         {children}

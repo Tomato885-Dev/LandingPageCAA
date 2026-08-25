@@ -24,7 +24,10 @@ function TarjetaProyecto({ proyecto }) {
           />
           {proyecto.estado ? (
             <span className="absolute top-3 left-3 liquid-glass rounded-full px-3 py-1 text-[11px] font-medium text-white">
-              <span className="relative z-10">{proyecto.estado}</span>
+              <span className="relative z-10 flex items-center gap-1.5">
+                <i className="punto-marca" />
+                {proyecto.estado}
+              </span>
             </span>
           ) : null}
         </div>

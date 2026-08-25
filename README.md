@@ -70,9 +70,21 @@ Todo por CDN, sin build ni dependencias instaladas:
 > como `window.CONTENIDO_SECCION`. Es la forma más simple de tener módulos
 > separados sin necesitar un empaquetador.
 
+### Paleta
+
+- **Rojo `#de0f01`** — color de marca, aplicado en dosis pequeñas: tinte del
+  vidrio, destello de los bordes, brillo al hacer hover, resplandor de fondo,
+  kickers de sección, vistos de Visión/Misión, botón principal y chip "Nuevo".
+- **Blanco `#ffffff`** — textos y bordes del vidrio.
+- Fondo negro.
+
+Todo se controla desde `src/estilos/theme.css`: `--color-marca` /
+`--color-marca-rgb` para el color, y `--vidrio-opacidad`,
+`--vidrio-borde-marca` y `--brillo-marca` para subir o bajar la intensidad.
+
 ### Sistema visual
 
-- Fondo negro, texto blanco, sin degradados de color.
+- Fondo negro, texto blanco, acentos rojos sutiles.
 - `.liquid-glass` y `.liquid-glass-strong`: superficies de vidrio con borde
   luminoso (definidas en `src/estilos/theme.css`).
 - `FadingVideo`: videos de fondo en bucle con fundido de entrada y salida hecho

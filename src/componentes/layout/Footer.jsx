@@ -11,10 +11,13 @@ function Footer() {
   const { marca } = window.CONTENIDO_SITIO;
 
   return (
-    <footer id="contacto" className="relative w-full bg-fondo px-6 sm:px-8 md:px-16 lg:px-20 pt-24 pb-10">
+    <footer id="contacto" className="relative w-full bg-fondo px-6 sm:px-8 md:px-16 lg:px-20 pt-24 pb-10 overflow-hidden">
+      {/* Resplandor rojo tenue del pie de página */}
+      <div className="resplandor-marca" aria-hidden="true" />
+
       {/* --- Bloque principal: título + botón --- */}
-      <Reveal comoLista>
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 border-b border-white/10 pb-14">
+      <Reveal comoLista className="relative z-10">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 border-b borde-marca pb-14">
           <div className="max-w-xl">
             <h2 className="font-heading italic text-white text-5xl md:text-7xl leading-[0.9] tracking-[-3px]">
               {c.titulo}
@@ -50,7 +53,7 @@ function Footer() {
       </Reveal>
 
       {/* --- Columnas de enlaces + datos de contacto --- */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-10 py-14">
+      <div className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-10 py-14">
         {c.columnas.map((columna, i) => (
           <Reveal comoLista key={i} delay={i * 0.05}>
             <div>
@@ -93,7 +96,7 @@ function Footer() {
       </div>
 
       {/* --- Línea final --- */}
-      <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div className="relative z-10 border-t borde-marca pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <span className="liquid-glass rounded-full h-10 w-10 flex items-center justify-center">
             {marca.logoImagen

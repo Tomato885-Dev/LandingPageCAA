@@ -69,8 +69,9 @@ function Navbar() {
 
       {/* --- Menú desplegado en móvil --- */}
       {abierto ? (
-        <div className="fixed inset-0 z-40 lg:hidden bg-black/70 backdrop-blur-xl flex flex-col justify-center px-8">
-          <div className="flex flex-col gap-1">
+        <div className="fixed inset-0 z-40 lg:hidden bg-black/70 backdrop-blur-xl flex flex-col justify-center px-8 overflow-hidden">
+          <div className="resplandor-marca" aria-hidden="true" />
+          <div className="relative z-10 flex flex-col gap-1">
             {navegacion.map((enlace, i) => (
               <a
                 key={i}
@@ -83,7 +84,7 @@ function Navbar() {
             ))}
           </div>
           {botonMenu && botonMenu.texto ? (
-            <div className="mt-10">
+            <div className="relative z-10 mt-10">
               <Boton texto={botonMenu.texto} url={botonMenu.url} variante="solido" onClick={cerrar} />
             </div>
           ) : null}

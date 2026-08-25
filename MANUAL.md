@@ -427,31 +427,92 @@ automáticamente.
 
 ## 10. Cambiar colores y otros elementos del diseño
 
-Abre `src/estilos/theme.css`. Arriba de todo verás:
+La paleta del sitio son **dos colores sobre fondo negro**:
+
+- **ROJO `#de0f01`** — color principal (marca)
+- **BLANCO `#ffffff`** — color secundario (textos y bordes del vidrio)
+
+El rojo está aplicado de forma **sutil**: no pinta bloques grandes, sino que
+tiñe el vidrio, los bordes, los brillos y unos pocos acentos puntuales.
+
+Todo eso se controla desde `src/estilos/theme.css`, en el bloque de arriba:
 
 ```css
 :root {
+  --color-marca: #de0f01;         /* ROJO principal              */
+  --color-marca-rgb: 222, 15, 1;  /* el mismo rojo, en RGB       */
   --color-fondo: #000000;
   --color-texto: #ffffff;
-  --color-acento: #ffffff;
-  --color-acento-texto: #000000;
+
+  --color-acento: var(--color-marca);
+  --color-acento-texto: #ffffff;
+
   --radio-tarjeta: 1.25rem;
+
+  --vidrio-opacidad: 0.035;       /* cuánto rojo tiñe el vidrio  */
+  --vidrio-borde-marca: 0.35;     /* rojo en los bordes          */
+  --brillo-marca: 0.38;           /* brillo rojo al pasar el mouse */
 }
 ```
 
 | Variable | Qué controla |
 |---|---|
+| `--color-marca` | **El rojo de la marca.** Cámbialo aquí y cambia en toda la página |
+| `--color-marca-rgb` | El mismo color en formato RGB. **Si cambias el de arriba, cambia también este** (ver nota) |
 | `--color-fondo` | El fondo de toda la página |
 | `--color-texto` | El color general de los textos |
-| `--color-acento` | El color del botón "Únete al CAA" y del chip "Nuevo" |
-| `--color-acento-texto` | El color de la letra **dentro** de ese botón |
+| `--color-acento` | Color del botón "Únete al CAA" y del chip "Nuevo" (por defecto, el rojo) |
+| `--color-acento-texto` | Color de la letra **dentro** de ese botón |
 | `--radio-tarjeta` | Qué tan redondeadas son las tarjetas |
+| `--vidrio-opacidad` | Cuánto rojo lleva el vidrio de las tarjetas |
+| `--vidrio-borde-marca` | Cuánto rojo tienen los bordes del vidrio |
+| `--brillo-marca` | Intensidad del brillo rojo al pasar el mouse |
 
-**Ejemplo: dejar el botón del menú en azul con letras blancas**
+> **Nota importante:** `--color-marca` y `--color-marca-rgb` son el mismo color
+> escrito de dos formas. Si pones `#1d4ed8`, el RGB es `29, 78, 216`. Puedes
+> convertirlo en [htmlcolorcodes.com](https://htmlcolorcodes.com/es/).
+
+### Dónde aparece el rojo (por si quieres quitarlo de algún lugar)
+
+| Dónde se ve | Cómo se controla |
+|---|---|
+| Botón "Únete al CAA" y chip "Nuevo" | `--color-acento` |
+| Los textos pequeños tipo `// Proyectos` | clase `text-marca` en `src/componentes/ui/TituloSeccion.jsx` |
+| Los ✓ de Visión y Misión | `text-marca` en `src/componentes/ui/TarjetaGlass.jsx` |
+| El puntito de "En curso" en los proyectos | clase `.punto-marca` |
+| El tinte del vidrio de las tarjetas | `--vidrio-opacidad` |
+| El destello rojo del borde de las tarjetas | `--vidrio-borde-marca` |
+| El brillo al pasar el mouse | `--brillo-marca` |
+| El resplandor de fondo de las secciones | clase `.resplandor-marca` en `theme.css` |
+| El cuadrado del icono de cada tarjeta | clase `.caja-icono` en `theme.css` |
+| La barra de scroll y el texto seleccionado | final de `theme.css` |
+
+### Subir o bajar la intensidad del rojo
+
+**Que se note menos:**
 
 ```css
---color-acento: #2563eb;
---color-acento-texto: #ffffff;
+--vidrio-opacidad: 0.02;
+--vidrio-borde-marca: 0.18;
+--brillo-marca: 0.2;
+```
+
+**Que se note más:**
+
+```css
+--vidrio-opacidad: 0.06;
+--vidrio-borde-marca: 0.55;
+--brillo-marca: 0.6;
+```
+
+**Quitar el resplandor de fondo de las secciones:** en `theme.css`, busca
+`.resplandor-marca` y baja los valores `0.16` y `0.11` a `0`.
+
+**Ejemplo: cambiar toda la marca a azul**
+
+```css
+--color-marca: #1d4ed8;
+--color-marca-rgb: 29, 78, 216;
 ```
 
 **Ejemplo: tarjetas con esquinas más rectas**

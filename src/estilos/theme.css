@@ -7,25 +7,38 @@
    ============================================================================ */
 
 :root {
-  /* ---- COLORES PRINCIPALES (cámbialos aquí) ---------------------------- */
+  /* ---- PALETA DE LA MARCA (cámbiala aquí) ------------------------------
+     El sitio usa dos colores sobre fondo negro:
+       ROJO   #de0f01 → color principal (acentos, botones, brillos)
+       BLANCO #ffffff → color secundario (textos y bordes del vidrio)
+     El rojo está aplicado de forma sutil: tiñe el vidrio, los bordes y los
+     brillos, y solo aparece "puro" en unos pocos elementos destacados.       */
+  --color-marca: #de0f01;              /* ROJO principal                    */
+  --color-marca-rgb: 222, 15, 1;       /* el mismo rojo, en formato RGB     */
   --color-fondo: #000000;              /* Fondo general de la página        */
   --color-texto: #ffffff;              /* Color de todos los textos         */
   --color-texto-suave: rgba(255, 255, 255, 0.85);
 
-  /* Color de los botones "sólidos" (ej. "Únete al CAA") y de las etiquetas
-     destacadas. Si pones un color oscuro, cambia también --color-acento-texto
-     a #ffffff para que el texto del botón se siga leyendo. */
-  --color-acento: #ffffff;
-  --color-acento-texto: #000000;
+  /* Color de los botones "sólidos" (ej. "Únete al CAA") y del chip "Nuevo".
+     Si lo cambias a un color claro, pon --color-acento-texto en #000000
+     para que el texto del botón se siga leyendo. */
+  --color-acento: var(--color-marca);
+  --color-acento-texto: #ffffff;
 
   /* ---- FORMA DE LAS TARJETAS ------------------------------------------- */
   --radio-tarjeta: 1.25rem;            /* Redondeo de las tarjetas          */
 
-  /* ---- EFECTO VIDRIO (avanzado) ---------------------------------------- */
-  --vidrio-tinte: 255, 255, 255;       /* Tinte del vidrio en RGB           */
-  --vidrio-opacidad: 0.01;             /* Qué tan "lechoso" es el vidrio    */
+  /* ---- EFECTO VIDRIO (avanzado) ----------------------------------------
+     El vidrio va teñido con el rojo de la marca en una cantidad mínima:
+     no se ve "rojo", solo se siente más cálido que un vidrio neutro.        */
+  --vidrio-tinte: var(--color-marca-rgb);  /* Tinte del vidrio              */
+  --vidrio-opacidad: 0.035;            /* Qué tan teñido está el vidrio     */
   --vidrio-desenfoque: 4px;            /* Desenfoque del vidrio suave       */
   --vidrio-desenfoque-fuerte: 50px;    /* Desenfoque del vidrio del CTA     */
+
+  /* Cuánto rojo llevan los bordes y los brillos del vidrio (0 = nada) */
+  --vidrio-borde-marca: 0.35;
+  --brillo-marca: 0.38;
 }
 
 /* ============================================================================
@@ -75,10 +88,12 @@ body.menu-abierto {
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.45) 0%,
-    rgba(255, 255, 255, 0.15) 20%,
+    rgba(var(--color-marca-rgb), var(--vidrio-borde-marca)) 12%,
+    rgba(255, 255, 255, 0.15) 22%,
     rgba(255, 255, 255, 0) 40%,
     rgba(255, 255, 255, 0) 60%,
-    rgba(255, 255, 255, 0.15) 80%,
+    rgba(255, 255, 255, 0.15) 78%,
+    rgba(var(--color-marca-rgb), var(--vidrio-borde-marca)) 88%,
     rgba(255, 255, 255, 0.45) 100%
   );
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -108,10 +123,12 @@ body.menu-abierto {
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.5) 0%,
-    rgba(255, 255, 255, 0.2) 20%,
+    rgba(var(--color-marca-rgb), 0.45) 12%,
+    rgba(255, 255, 255, 0.2) 22%,
     rgba(255, 255, 255, 0) 40%,
     rgba(255, 255, 255, 0) 60%,
-    rgba(255, 255, 255, 0.2) 80%,
+    rgba(255, 255, 255, 0.2) 78%,
+    rgba(var(--color-marca-rgb), 0.45) 88%,
     rgba(255, 255, 255, 0.5) 100%
   );
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -129,6 +146,8 @@ body.menu-abierto {
 }
 .hover-elevar:hover {
   transform: translateY(-4px);
+  box-shadow: 0 16px 44px -20px rgba(var(--color-marca-rgb), var(--brillo-marca)),
+              inset 0 1px 1px rgba(255, 255, 255, 0.14);
 }
 
 /* Contenedor de imágenes con recorte suave */
@@ -169,4 +188,85 @@ body.menu-abierto {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .hover-elevar, .media-marco img { transition: none; }
+}
+
+/* ============================================================================
+   ACENTOS DE MARCA — el rojo, aplicado en dosis pequeñas
+   ============================================================================ */
+
+/* Resplandor rojo muy tenue detrás de las secciones sin video.
+   Sube el 0.14 si quieres que se note más; bájalo a 0 para quitarlo. */
+.resplandor-marca {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(65% 50% at 10% 18%, rgba(var(--color-marca-rgb), 0.16) 0%, rgba(0, 0, 0, 0) 70%),
+    radial-gradient(50% 45% at 94% 88%, rgba(var(--color-marca-rgb), 0.11) 0%, rgba(0, 0, 0, 0) 70%);
+  /* El degradado se desvanece arriba y abajo para que no se note el corte
+     entre una sección y la siguiente. */
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
+}
+
+/* Cuadrado del icono: el icono sigue siendo blanco, pero el vidrio que lo
+   contiene lleva un rescoldo rojo por dentro. */
+.caja-icono {
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.12),
+              inset 0 0 22px rgba(var(--color-marca-rgb), 0.22);
+}
+
+/* Puntito rojo (se usa en la etiqueta de estado de los proyectos) */
+.punto-marca {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 9999px;
+  background: var(--color-marca);
+  box-shadow: 0 0 8px rgba(var(--color-marca-rgb), 0.9);
+}
+
+/* Línea divisoria con un degradado rojo apenas perceptible */
+.linea-marca {
+  height: 1px;
+  border: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(var(--color-marca-rgb), 0.45) 0%,
+    rgba(255, 255, 255, 0.12) 35%,
+    rgba(255, 255, 255, 0.06) 100%
+  );
+}
+
+/* Borde divisorio teñido de rojo (se usa en el pie de página) */
+.borde-marca {
+  border-color: rgba(var(--color-marca-rgb), 0.28) !important;
+}
+
+/* Texto seleccionado con el mouse */
+::selection {
+  background: rgba(var(--color-marca-rgb), 0.85);
+  color: #ffffff;
+}
+
+/* Barra de scroll (solo en navegadores que la permiten personalizar) */
+* {
+  scrollbar-color: rgba(var(--color-marca-rgb), 0.55) transparent;
+  scrollbar-width: thin;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-fondo);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(var(--color-marca-rgb), 0.5);
+  border-radius: 9999px;
+  border: 3px solid var(--color-fondo);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--color-marca-rgb), 0.8);
 }

@@ -26,7 +26,7 @@ function Pildora({ children, className = '' }) {
 
 function CajaIcono({ nombre, className = '' }) {
   return (
-    <div className={'liquid-glass rounded-[0.75rem] h-11 w-11 shrink-0 flex items-center justify-center ' + className}>
+    <div className={'liquid-glass caja-icono rounded-[0.75rem] h-11 w-11 shrink-0 flex items-center justify-center ' + className}>
       <Icono nombre={nombre} className="h-6 w-6 text-white relative z-10" />
     </div>
   );
