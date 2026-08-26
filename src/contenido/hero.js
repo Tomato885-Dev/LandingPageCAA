@@ -10,6 +10,8 @@ window.CONTENIDO_HERO = {
   /* ---- FONDO -------------------------------------------------------------
      • video : dirección del video de fondo (.mp4). Déjalo en '' si no quieres
                video y usa solo una imagen.
+               👉 PARA USAR UN VIDEO TUYO: copia el archivo .mp4 en la carpeta
+                  assets/video/ y escribe aquí  'assets/video/portada.mp4'
      • imagen: se usa como respaldo mientras carga el video, o en su lugar.     */
   fondo: {
     video: 'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260418_080021_d598092b-c4c2-4e53-8e46-94cf9064cd50.mp4', // 👉 VIDEO: reemplazar por uno del CAA

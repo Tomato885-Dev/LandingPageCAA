@@ -305,7 +305,8 @@ logoImagen: 'assets/img/logo-caa.png',
 
 ### Cambiar los videos de fondo
 
-Cada sección puede tener un video de fondo. En `src/contenido/hero.js`:
+Cada sección puede tener un video de fondo. En `src/contenido/hero.js` (la
+portada) verás esto:
 
 ```js
 fondo: {
@@ -314,8 +315,30 @@ fondo: {
 },
 ```
 
-- Para **cambiar el video**: pega otra dirección `.mp4` (puede ser un enlace de
-  internet o un archivo tuyo, por ejemplo `'assets/img/portada.mp4'`).
+**Para poner tu propio video, en 3 pasos:**
+
+1. Copia tu archivo `.mp4` dentro de la carpeta `assets/video/`.
+   Ponle un nombre sin espacios ni acentos, por ejemplo `portada.mp4`.
+2. En `src/contenido/hero.js`, cambia la línea del `video` por la ruta de tu
+   archivo:
+
+```js
+fondo: {
+  video: 'assets/video/portada.mp4',
+  imagen: '',
+},
+```
+
+3. Guarda y recarga con `Ctrl + F5`.
+
+Los videos de las otras secciones se cambian igual, pero en su propio archivo:
+`nosotros.js`, `vision-mision.js`, `proyectos.js` o `colaboradores.js`.
+
+**Otras opciones:**
+
+- Para usar un video que ya está en internet: pega la dirección completa
+  (`'https://…/video.mp4'`). Tiene que ser un enlace directo al archivo `.mp4`,
+  **no** sirve un enlace de YouTube ni de Google Drive.
 - Para **quitar el video y usar una imagen fija**:
 
 ```js
@@ -327,8 +350,9 @@ fondo: {
 
 - Para **dejar el fondo negro**: deja los dos campos vacíos.
 
-> Los videos deben durar poco (5 a 15 segundos) y pesar poco (idealmente menos
-> de 5 MB): se repiten solos con un fundido automático.
+> Los videos deben durar poco (8 a 20 segundos) y pesar poco (menos de 10 MB):
+> se repiten solos en bucle, sin sonido y con un fundido automático.
+> Hay más consejos en `assets/video/README.md`.
 
 ---
 
