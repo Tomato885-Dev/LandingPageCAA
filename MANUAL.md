@@ -166,8 +166,8 @@ En el mismo archivo:
 
 ```js
 etiqueta: {
-  destacado: 'Nuevo',
-  texto: 'Periodo 2026 · Ya están abiertas las postulaciones a comisiones',
+  destacado: '+2',
+  texto: 'Periodo 2027 · ¡Vota Carlos por un CAA con experiencia!',
 },
 ```
 
@@ -181,14 +181,18 @@ etiqueta: null,
 
 ```js
 estadisticas: [
-  { icono: 'usuarios',  numero: '1.240', etiqueta: 'Estudiantes representados' },
-  { icono: 'estrella',  numero: '24',    etiqueta: 'Proyectos ejecutados este año' },
+  { icono: 'usuarios', numero: '2.100', etiqueta: 'Estudiantes representados' },
+  { icono: 'destello', numero: '63', tachado: true, etiqueta: 'Menos proyectos, más impacto.' },
+  { icono: 'objetivo', numero: '14', etiqueta: 'Proyectos pensados para generar un impacto real' },
 ],
 ```
 
 - Para **cambiar** una cifra: edita `numero` y `etiqueta`.
 - Para **agregar** una tercera: copia una línea completa y pégala debajo.
 - Para **quitar** una: borra la línea completa.
+- Para que un número salga **con una línea encima** (como cuando se descarta una
+  cifra), agrega `tachado: true,` dentro de esa línea. La raya sale en rojo.
+  Si no quieres el tachado, simplemente no escribas ese campo.
 - Los nombres de iconos posibles están en el [punto 12](#12-iconos-cuáles-hay-y-cómo-agregar-otros).
 
 ---
@@ -200,10 +204,19 @@ estadisticas: [
 `src/contenido/hero.js`:
 
 ```js
-titulo: 'Una comunidad estudiantil que se atreve a más',
+titulo: 'Cuidamos nuestra historia,\nConstruimos nuestro futuro',
 ```
 
 Este título se anima palabra por palabra. Lo ideal son **entre 5 y 9 palabras**.
+
+Ese `\n` que ves en el medio es un **salto de línea forzado**: obliga a que
+"Construimos nuestro futuro" empiece en una línea nueva. Úsalo donde quieras
+cortar el título a mano. Si no pones ningún `\n`, las palabras se acomodan solas
+según el ancho de la pantalla:
+
+```js
+titulo: 'Una comunidad estudiantil que se atreve a más',
+```
 
 ### Títulos de las demás secciones
 

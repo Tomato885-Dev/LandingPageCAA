@@ -11,12 +11,13 @@ window.CONTENIDO_NOSOTROS = {
   },
 
   /* ---- ENCABEZADO -------------------------------------------------------- */
-  kicker: '// Quiénes somos',       // texto chico sobre el título
-  titulo: ['Personas', 'que escuchan'],   // cada elemento es una línea
-  intro: 'El CAA es el órgano que representa a las y los estudiantes ante la ' +
-         'institución. Lo conformamos estudiantes de distintas generaciones y ' +
-         'carreras, organizados en una directiva y comisiones de trabajo ' +
-         'abiertas a toda la comunidad.',
+  kicker: '// ¿Por qué nosotros?',  // texto chico sobre el título
+  titulo: ['Experiencia', 'que nos une'], // cada elemento es una línea
+  intro: 'Somos un equipo con experiencia y participación activa en nuestra ' +
+         'comunidad. Conocemos de cerca sus desafíos porque escuchamos ' +
+         'diariamente a los estudiantes. Por eso, presentamos proyectos ' +
+         'concretos, pensados para generar un impacto real en el día a día ' +
+         'de todos.',
 
   /* ---- TARJETAS DE ÁREAS -------------------------------------------------
      Agrega o elimina tarjetas copiando un bloque { ... } completo.

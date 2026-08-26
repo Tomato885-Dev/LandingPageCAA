@@ -29,7 +29,9 @@ function BlurText({ text = '', className = '', delayPorPalabra = 100 }) {
     return () => observador.disconnect();
   }, []);
 
-  const palabras = String(text).split(' ');
+  // Un \n en el texto fuerza un salto de línea; dentro de cada línea las
+  // palabras siguen acomodándose solas según el ancho de la pantalla.
+  const lineas = String(text).split('\n').map((linea) => linea.trim().split(' '));
 
   const estiloParrafo = {
     display: 'flex',
@@ -39,31 +41,45 @@ function BlurText({ text = '', className = '', delayPorPalabra = 100 }) {
   };
 
   if (!motion) {
-    return <p ref={contenedorRef} className={className} style={estiloParrafo}>{text}</p>;
+    return (
+      <p ref={contenedorRef} className={className} style={estiloParrafo}>
+        {String(text).replace(/\n/g, ' ')}
+      </p>
+    );
   }
+
+  let indicePalabra = -1;   // cuenta corrida para escalonar la animación
 
   return (
     <p ref={contenedorRef} className={className} style={estiloParrafo}>
-      {palabras.map((palabra, i) => (
-        <motion.span
-          key={palabra + '-' + i}
-          style={{ display: 'inline-block', marginRight: '0.28em', willChange: 'transform, filter, opacity' }}
-          initial={{ filter: 'blur(10px)', opacity: 0, y: 50 }}
-          animate={visible ? {
-            filter: ['blur(10px)', 'blur(5px)', 'blur(0px)'],
-            opacity: [0, 0.5, 1],
-            y: [50, -5, 0],
-          } : {}}
-          transition={{
-            duration: 0.7,
-            times: [0, 0.5, 1],
-            ease: 'easeOut',
-            delay: (i * delayPorPalabra) / 1000,
-          }}
-        >
-          {palabra}
-        </motion.span>
-      ))}
+      {lineas.map((palabras, l) => [
+        // Separador invisible que empuja la línea siguiente hacia abajo
+        l > 0 ? <span key={'salto-' + l} style={{ flexBasis: '100%', height: 0 }} /> : null,
+        ...palabras.map((palabra, i) => {
+          indicePalabra += 1;
+          const orden = indicePalabra;
+          return (
+            <motion.span
+              key={l + '-' + palabra + '-' + i}
+              style={{ display: 'inline-block', marginRight: '0.28em', willChange: 'transform, filter, opacity' }}
+              initial={{ filter: 'blur(10px)', opacity: 0, y: 50 }}
+              animate={visible ? {
+                filter: ['blur(10px)', 'blur(5px)', 'blur(0px)'],
+                opacity: [0, 0.5, 1],
+                y: [50, -5, 0],
+              } : {}}
+              transition={{
+                duration: 0.7,
+                times: [0, 0.5, 1],
+                ease: 'easeOut',
+                delay: (orden * delayPorPalabra) / 1000,
+              }}
+            >
+              {palabra}
+            </motion.span>
+          );
+        }),
+      ])}
     </p>
   );
 }

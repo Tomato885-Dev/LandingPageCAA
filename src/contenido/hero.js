@@ -18,18 +18,20 @@ window.CONTENIDO_HERO = {
 
   /* ---- ETIQUETA SUPERIOR (la píldora pequeña sobre el título) ------------ */
   etiqueta: {
-    destacado: 'Nuevo',                                   // texto del chip blanco
-    texto: 'Periodo 2026 · Ya están abiertas las postulaciones a comisiones',
+    destacado: '+2',                                      // texto del chip rojo
+    texto: 'Periodo 2027 · ¡Vota Carlos por un CAA con experiencia!',
   },
 
   /* ---- TÍTULO PRINCIPAL --------------------------------------------------
-     Se anima palabra por palabra. Recomendado: entre 5 y 9 palabras.          */
-  titulo: 'Una comunidad estudiantil que se atreve a más',
+     Se anima palabra por palabra. Recomendado: entre 5 y 9 palabras.
+     Escribe \n donde quieras forzar un salto de línea.                        */
+  titulo: 'Cuidamos nuestra historia,\nConstruimos nuestro futuro',
 
   /* ---- TEXTO DESCRIPTIVO ------------------------------------------------- */
-  subtitulo: 'Somos el Centro de Alumnos CAA: representamos, organizamos y ' +
-             'construimos junto a ti. Escuchamos cada propuesta y la ' +
-             'convertimos en proyectos concretos para toda la comunidad.',
+  subtitulo: 'Con la experiencia de lo que hemos construido y la motivación ' +
+             'para seguir avanzando, Carlos +2 busca representar, escuchar y ' +
+             'trabajar junto a todos los estudiantes por un Centro de Alumnos ' +
+             'cada vez más cercano, activo y comprometido.',
 
   /* ---- BOTONES ----------------------------------------------------------- */
   botones: {
@@ -39,15 +41,18 @@ window.CONTENIDO_HERO = {
 
   /* ---- CIFRAS DESTACADAS -------------------------------------------------
      Puedes dejar 2, 3 o 4 tarjetas. Los nombres de iconos disponibles están
-     en src/componentes/ui/Iconos.jsx (lista al final del archivo).            */
+     en src/componentes/ui/Iconos.jsx (lista al final del archivo).
+     Agrega  tachado: true  si quieres que el número salga con una línea
+     encima, como cuando se descarta una cifra.                                */
   estadisticas: [
-    { icono: 'usuarios',  numero: '1.240', etiqueta: 'Estudiantes representados' },
-    { icono: 'estrella',  numero: '24',    etiqueta: 'Proyectos ejecutados este año' },
+    { icono: 'usuarios', numero: '2.100', etiqueta: 'Estudiantes representados' },
+    { icono: 'destello', numero: '63', tachado: true, etiqueta: 'Menos proyectos, más impacto.' },
+    { icono: 'objetivo', numero: '14', etiqueta: 'Proyectos pensados para generar un impacto real' },
   ],
 
   /* ---- FRANJA DE ALIADOS (parte baja de la portada) ---------------------- */
   aliados: {
-    texto: 'Trabajamos junto a federaciones, centros de alumnos y organizaciones',
-    nombres: ['Federación', 'Vinculación', 'Deportes', 'Cultura', 'Bienestar'],
+    texto: 'Impulsamos nuestra comunidad desde todos los frentes',
+    nombres: ['Cultura', 'Deporte', 'Acción Social', 'Participación Estudiantil', 'Convivencia y Comunidad'],
   },
 };

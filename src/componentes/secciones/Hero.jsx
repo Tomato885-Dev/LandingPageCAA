@@ -64,7 +64,15 @@ function Hero({ id }) {
               {c.estadisticas.map((dato, i) => (
                 <Panel key={i} className="rounded-tarjeta p-5 w-[210px] text-left">
                   <Icono nombre={dato.icono} className="relative z-10 h-7 w-7 text-white" />
-                  <p className="relative z-10 mt-5 font-heading italic text-white text-4xl tracking-[-1px] leading-none">
+                  <p
+                    className="relative z-10 mt-5 font-heading italic text-white text-4xl tracking-[-1px] leading-none"
+                    style={dato.tachado ? {
+                      textDecoration: 'line-through',
+                      textDecorationColor: 'var(--color-marca)',
+                      textDecorationThickness: '3px',
+                      opacity: 0.75,
+                    } : null}
+                  >
                     {dato.numero}
                   </p>
                   <p className="relative z-10 text-xs text-white font-body font-light mt-2">{dato.etiqueta}</p>
