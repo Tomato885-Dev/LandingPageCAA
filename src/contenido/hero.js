@@ -14,7 +14,7 @@ window.CONTENIDO_HERO = {
                   assets/video/ y escribe aquí  'assets/video/portada.mp4'
      • imagen: se usa como respaldo mientras carga el video, o en su lugar.     */
   fondo: {
-    video: 'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260418_080021_d598092b-c4c2-4e53-8e46-94cf9064cd50.mp4', // 👉 VIDEO: reemplazar por uno del CAA
+    video: 'assets/video/portada.mp4',   // 👉 VIDEO de la portada
     imagen: '',                     // 👉 IMAGEN: ej. 'assets/img/portada.jpg'
   },
 
