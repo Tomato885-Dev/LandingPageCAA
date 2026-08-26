@@ -286,22 +286,43 @@ imagen: 'assets/img/semana-estudiante.jpg',
 
 ### Cambiar el logo del menú
 
+El logo aparece en dos lugares: arriba a la izquierda en el menú, y abajo en el
+pie de página. Los dos salen del **mismo** archivo, así que se cambia una sola vez.
+
 En `src/contenido/sitio.js`:
 
 ```js
 marca: {
-  nombre: 'CAA',
-  nombreLargo: 'Centro de Alumnos CAA',
-  logoLetra: 'c',        // se usa si NO hay imagen
-  logoImagen: '',        // ← escribe aquí la ruta de tu logo
+  nombre: 'CAA 2027',
+  nombreLargo: '¡Vota Carlos!',
+  logoLetra: 'C',                            // respaldo, si NO hay imagen
+  logoImagen: 'assets/img/logo-carlos.png',  // ← la ruta de tu logo
 },
 ```
 
-Para usar un logo en imagen:
+**Para poner tu logo, en 2 pasos:**
 
-```js
-logoImagen: 'assets/img/logo-caa.png',
-```
+1. Sube el archivo del logo a la carpeta `assets/img/` con el nombre
+   `logo-carlos.png`.
+2. Listo. No hay que tocar nada más: la ruta ya está escrita.
+
+Si prefieres otro nombre de archivo, cambia también la ruta de `logoImagen`.
+
+**Cómo debe ser el archivo del logo:**
+
+- Formato `.png` (o `.svg` si lo tienes vectorial, se ve más nítido).
+- **Cuadrado**, por ejemplo 512 × 512 px. El logo se muestra dentro de un
+  recuadro de esquinas redondeadas, como el icono de una aplicación.
+- Puede tener su propio fondo de color (por ejemplo el fondo rojo de la
+  campaña): el recuadro lo respeta y le pone encima el borde de vidrio del
+  sitio, para que combine con el resto.
+- Deja poco margen alrededor del dibujo: mientras menos espacio vacío,
+  más grande se ve el logo.
+- Menos de 200 KB.
+
+> **Si la imagen no existe o está mal escrita la ruta, la página no se rompe:**
+> vuelve sola a mostrar la letra de `logoLetra`. Así que puedes dejar la ruta
+> puesta aunque todavía no hayas subido el archivo.
 
 ### Cambiar los videos de fondo
 

@@ -191,6 +191,25 @@ body.menu-abierto {
 }
 
 /* ============================================================================
+   RECUADRO DEL LOGO — para logos con fondo propio (como el de la campaña)
+   ----------------------------------------------------------------------------
+   El logo llena todo el recuadro y el borde de vidrio queda ENCIMA, para que
+   la imagen siga perteneciendo al mismo lenguaje visual del resto del sitio.
+   ============================================================================ */
+.rounded-logo {
+  border-radius: 1rem;               /* esquinas del recuadro del logo */
+}
+
+.logo-marco {
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.18),
+              0 8px 24px -10px rgba(var(--color-marca-rgb), 0.7);
+}
+
+/* El borde de vidrio se pinta por encima de la imagen */
+.logo-marco::before { z-index: 2; }
+.logo-marco img     { position: relative; z-index: 1; }
+
+/* ============================================================================
    ACENTOS DE MARCA — el rojo, aplicado en dosis pequeñas
    ============================================================================ */
 

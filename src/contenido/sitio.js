@@ -12,10 +12,10 @@ window.CONTENIDO_SITIO = {
     nombreLargo: '¡Vota Carlos!',
 
     // El logo del menú puede ser una LETRA o una IMAGEN.
-    // • Para usar una letra: deja logoImagen en '' y escribe la letra aquí.
+    // • Si hay imagen, se usa la imagen. Si no, se usa la letra de respaldo.
+    // • Si la imagen no existe o falla, la página vuelve sola a la letra.
     logoLetra: 'C',
-    // • Para usar una imagen: pon la ruta, por ejemplo 'assets/img/logo.png'
-    logoImagen: '',                 // 👉 IMAGEN: pendiente, el logo de la campaña
+    logoImagen: 'assets/img/logo-carlos.png',  // 👉 sube aquí el archivo del logo
   },
 
   /* ---- MENÚ SUPERIOR -----------------------------------------------------

@@ -13,6 +13,9 @@ Consejos rápidos:
   - Foto de integrante: 800 × 1000 px (vertical)
   - Imagen para compartir en redes (`og-caa.jpg`): 1200 × 630 px
   - Favicon (`favicon.png`): 64 × 64 px
+  - Logo de la campaña (`logo-carlos.png`): 512 × 512 px, cuadrado.
+    Puede traer su propio fondo de color; se muestra dentro de un recuadro
+    de esquinas redondeadas, como el icono de una aplicación.
 - Intenta que cada imagen pese menos de 400 KB para que la página cargue rápido.
 
 Para usarla, copia la ruta en el archivo de contenido correspondiente, por ejemplo:

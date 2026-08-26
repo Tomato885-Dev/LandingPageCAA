@@ -8,7 +8,7 @@
 const { useState: useStateNav, useEffect: useEffectNav } = React;
 
 function Navbar() {
-  const { marca, navegacion, botonMenu } = window.CONTENIDO_SITIO;
+  const { navegacion, botonMenu } = window.CONTENIDO_SITIO;
   const [abierto, setAbierto] = useStateNav(false);
 
   // Bloquea el scroll del fondo mientras el menú móvil está abierto
@@ -19,19 +19,14 @@ function Navbar() {
 
   const cerrar = () => setAbierto(false);
 
-  const Logo = (
-    <a href="#inicio" className="liquid-glass rounded-full h-12 w-12 flex items-center justify-center shrink-0" aria-label={marca.nombreLargo}>
-      {marca.logoImagen
-        ? <img src={marca.logoImagen} alt={marca.nombre} className="relative z-10 h-7 w-7 object-contain" />
-        : <span className="relative z-10 font-heading italic text-white text-2xl leading-none lowercase">{marca.logoLetra}</span>}
-    </a>
-  );
+  // El logo vive en su propio componente: src/componentes/ui/Logo.jsx
+  const Logotipo = <Logo tamano="h-14 w-14 sm:h-16 sm:w-16" tamanoLetra="text-2xl" />;
 
   return (
     <React.Fragment>
       <nav className="fixed top-4 left-0 right-0 z-50 px-4 sm:px-8 lg:px-16">
         <div className="flex items-center justify-between gap-4">
-          {Logo}
+          {Logotipo}
 
           {/* --- Menú centrado (solo en pantallas grandes) --- */}
           <div className="hidden lg:flex liquid-glass rounded-full px-1.5 py-1.5 items-center">
@@ -63,7 +58,7 @@ function Navbar() {
           </button>
 
           {/* --- Espaciador invisible para equilibrar el logo en escritorio --- */}
-          <span className="hidden lg:block h-12 w-12" aria-hidden="true" />
+          <span className="hidden lg:block h-14 w-14 sm:h-16 sm:w-16" aria-hidden="true" />
         </div>
       </nav>
 

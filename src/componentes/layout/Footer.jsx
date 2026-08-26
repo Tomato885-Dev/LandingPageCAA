@@ -98,11 +98,7 @@ function Footer() {
       {/* --- Línea final --- */}
       <div className="relative z-10 border-t borde-marca pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div className="flex items-center gap-3">
-          <span className="liquid-glass rounded-full h-10 w-10 flex items-center justify-center">
-            {marca.logoImagen
-              ? <img src={marca.logoImagen} alt={marca.nombre} className="relative z-10 h-6 w-6 object-contain" />
-              : <span className="relative z-10 font-heading italic text-white text-xl leading-none lowercase">{marca.logoLetra}</span>}
-          </span>
+          <Logo tamano="h-11 w-11" tamanoLetra="text-xl" />
           <span className="font-heading italic text-white text-xl">{marca.nombreLargo}</span>
         </div>
         <p className="text-xs text-white/70 font-body font-light">{c.legal}</p>
