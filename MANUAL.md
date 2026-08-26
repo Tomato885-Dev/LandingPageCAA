@@ -375,6 +375,28 @@ fondo: {
 > se repiten solos en bucle, sin sonido y con un fundido automático.
 > Hay más consejos en `assets/video/README.md`.
 
+### El velo: que el texto se lea sobre el video
+
+Encima de cada video hay una **capa oscura** (el "velo"). Sin ella, un video
+claro —un cielo, un día soleado, una toma aérea— hace que el texto blanco
+desaparezca y la portada quede ilegible.
+
+Si tu video es muy oscuro y quieres que se vea más, o al revés, regula el velo
+en `src/estilos/theme.css`:
+
+```css
+--velo-intensidad: 1;
+```
+
+| Valor | Resultado |
+|---|---|
+| `0` | Sin velo. El video se ve tal cual (solo sirve con videos muy oscuros). |
+| `0.5` | Velo suave. El video se luce más, el texto se lee justo. |
+| `1` | **Valor actual.** El texto se lee siempre. |
+| `1.3` | Velo fuerte. Para videos muy luminosos o con mucho detalle. |
+
+Es un solo número y afecta a todas las secciones con video a la vez.
+
 ---
 
 ## 7. Agregar un proyecto nuevo

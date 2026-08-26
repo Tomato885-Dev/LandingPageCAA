@@ -39,6 +39,15 @@
   /* Cuánto rojo llevan los bordes y los brillos del vidrio (0 = nada) */
   --vidrio-borde-marca: 0.6;
   --brillo-marca: 0.62;
+
+  /* ---- VELO SOBRE LOS VIDEOS -------------------------------------------
+     Capa oscura entre el video de fondo y el texto. Sin ella, un video claro
+     (un cielo, un día soleado) se "come" las letras blancas.
+       0    = sin velo, el video se ve tal cual
+       0.5  = velo suave
+       1    = velo fuerte, el texto se lee siempre
+     Si tu video es oscuro puedes bajarlo; si es muy luminoso, súbelo.        */
+  --velo-intensidad: 1;
 }
 
 /* ============================================================================
@@ -188,6 +197,38 @@ body.menu-abierto {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .hover-elevar, .media-marco img { transition: none; }
+}
+
+/* ============================================================================
+   VELO DE LOS VIDEOS — para que el texto blanco se lea sobre cualquier video
+   ----------------------------------------------------------------------------
+   Va entre el video (z-0) y el contenido (z-10). Oscurece más arriba y abajo
+   —donde están el menú y los pies de sección— y menos al centro, para que el
+   video se siga viendo.  La intensidad se regula con --velo-intensidad.
+   ============================================================================ */
+.velo-fondo {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, calc(0.74 * var(--velo-intensidad))) 0%,
+      rgba(0, 0, 0, calc(0.46 * var(--velo-intensidad))) 26%,
+      rgba(0, 0, 0, calc(0.44 * var(--velo-intensidad))) 60%,
+      rgba(0, 0, 0, calc(0.80 * var(--velo-intensidad))) 100%
+    ),
+    radial-gradient(
+      68% 52% at 50% 42%,
+      rgba(0, 0, 0, calc(0.34 * var(--velo-intensidad))) 0%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(var(--color-marca-rgb), calc(0.10 * var(--velo-intensidad))) 0%,
+      rgba(var(--color-marca-rgb), 0) 55%
+    );
 }
 
 /* ============================================================================

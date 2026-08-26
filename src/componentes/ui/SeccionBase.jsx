@@ -19,11 +19,15 @@ function SeccionBase({ id, fondo = {}, children, className = '', alturaMinima = 
   return (
     <section id={id} className={'relative w-full overflow-hidden bg-fondo ' + alturaMinima + ' ' + className}>
       {hayFondo ? (
-        <FadingVideo
-          src={fondo.video}
-          poster={fondo.imagen}
-          className="absolute inset-0 w-full h-full object-cover z-0"
-        />
+        <React.Fragment>
+          <FadingVideo
+            src={fondo.video}
+            poster={fondo.imagen}
+            className="absolute inset-0 w-full h-full object-cover z-0"
+          />
+          {/* Velo oscuro, para que el texto se lea sobre cualquier video */}
+          <div className="velo-fondo" aria-hidden="true" />
+        </React.Fragment>
       ) : (
         /* Sin video: un resplandor rojo muy tenue para que el negro no quede plano */
         <div className="resplandor-marca" aria-hidden="true" />

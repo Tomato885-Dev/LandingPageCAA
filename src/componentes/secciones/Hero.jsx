@@ -17,6 +17,10 @@ function Hero({ id }) {
         style={{ width: '120%', height: '120%' }}
       />
 
+      {/* --- Velo oscuro: sin esto, el texto blanco no se lee sobre un video
+              claro. Su intensidad se regula en src/estilos/theme.css --- */}
+      <div className="velo-fondo" aria-hidden="true" />
+
       {/* --- Contenido --- */}
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center pt-28 pb-8 px-4">
 
