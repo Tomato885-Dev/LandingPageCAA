@@ -48,7 +48,7 @@ function TarjetaGlass({
         ) : null}
 
         {texto ? (
-          <p className="mt-3 text-sm text-white/90 font-body font-light leading-snug max-w-[38ch]">
+          <p className="mt-3 text-sm text-white font-body font-light leading-snug max-w-[38ch]">
             {texto}
           </p>
         ) : null}
@@ -56,7 +56,7 @@ function TarjetaGlass({
         {puntos.length ? (
           <ul className="mt-5 space-y-2">
             {puntos.map((punto, i) => (
-              <li key={i} className="flex items-start gap-2.5 text-sm text-white/85 font-body font-light">
+              <li key={i} className="flex items-start gap-2.5 text-sm text-white font-body font-light">
                 <Icono nombre="check" className="h-4 w-4 mt-0.5 shrink-0 text-marca" strokeWidth={2.4} />
                 <span>{punto}</span>
               </li>

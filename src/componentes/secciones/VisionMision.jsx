@@ -37,7 +37,7 @@ function VisionMision({ id }) {
             </h3>
             <div className="flex flex-wrap gap-2">
               {c.valores.lista.map((valor, i) => (
-                <span key={i} className="liquid-glass rounded-full px-4 py-2 text-sm text-white/90 font-body">
+                <span key={i} className="liquid-glass rounded-full px-4 py-2 text-sm text-white font-body">
                   <span className="relative z-10">{valor}</span>
                 </span>
               ))}

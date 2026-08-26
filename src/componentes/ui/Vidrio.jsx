@@ -18,7 +18,7 @@ function Panel({ children, className = '', fuerte = false, elevar = true, ...pro
 
 function Pildora({ children, className = '' }) {
   return (
-    <span className={'liquid-glass rounded-full px-3 py-1 text-[11px] text-white/90 font-body whitespace-nowrap ' + className}>
+    <span className={'liquid-glass rounded-full px-3 py-1 text-[11px] text-white font-body whitespace-nowrap ' + className}>
       {children}
     </span>
   );
@@ -47,7 +47,7 @@ function Boton({ texto, url = '#', variante = 'principal', icono = 'flecha-diago
   const estilos = {
     principal: 'liquid-glass-strong rounded-full px-5 py-2.5 text-sm font-medium text-white hover-elevar',
     solido:    'bg-acento text-acento-texto rounded-full px-4 py-2 text-sm font-medium whitespace-nowrap hover-elevar',
-    texto:     'text-sm font-medium text-white/90 hover:text-white',
+    texto:     'text-sm font-medium text-white hover:text-marca',
   };
 
   return (

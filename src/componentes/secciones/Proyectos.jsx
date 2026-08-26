@@ -37,7 +37,7 @@ function TarjetaProyecto({ proyecto }) {
           <h3 className={'font-heading italic text-white tracking-[-1px] leading-none ' + (destacado ? 'text-4xl md:text-5xl' : 'text-3xl md:text-4xl')}>
             {proyecto.titulo}
           </h3>
-          <p className="mt-3 text-sm text-white/90 font-body font-light leading-snug max-w-[48ch]">
+          <p className="mt-3 text-sm text-white font-body font-light leading-snug max-w-[48ch]">
             {proyecto.descripcion}
           </p>
 

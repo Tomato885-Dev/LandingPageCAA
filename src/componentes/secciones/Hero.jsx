@@ -29,7 +29,7 @@ function Hero({ id }) {
                   {c.etiqueta.destacado}
                 </span>
               ) : null}
-              <span className="relative z-10 text-sm text-white/90 font-body">{c.etiqueta.texto}</span>
+              <span className="relative z-10 text-sm text-white font-body">{c.etiqueta.texto}</span>
             </div>
           </Reveal>
         ) : null}

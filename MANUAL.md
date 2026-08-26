@@ -449,9 +449,9 @@ Todo eso se controla desde `src/estilos/theme.css`, en el bloque de arriba:
 
   --radio-tarjeta: 1.25rem;
 
-  --vidrio-opacidad: 0.035;       /* cuánto rojo tiñe el vidrio  */
-  --vidrio-borde-marca: 0.35;     /* rojo en los bordes          */
-  --brillo-marca: 0.38;           /* brillo rojo al pasar el mouse */
+  --vidrio-opacidad: 0.06;        /* cuánto rojo tiñe el vidrio  */
+  --vidrio-borde-marca: 0.6;      /* rojo en los bordes          */
+  --brillo-marca: 0.62;           /* brillo rojo al pasar el mouse */
 }
 ```
 
@@ -489,7 +489,15 @@ Todo eso se controla desde `src/estilos/theme.css`, en el bloque de arriba:
 
 ### Subir o bajar la intensidad del rojo
 
-**Que se note menos:**
+**Un escalón más suave** (era el ajuste inicial del sitio):
+
+```css
+--vidrio-opacidad: 0.035;
+--vidrio-borde-marca: 0.35;
+--brillo-marca: 0.38;
+```
+
+**Muy sutil, casi sin rojo:**
 
 ```css
 --vidrio-opacidad: 0.02;
@@ -497,16 +505,16 @@ Todo eso se controla desde `src/estilos/theme.css`, en el bloque de arriba:
 --brillo-marca: 0.2;
 ```
 
-**Que se note más:**
+**Un escalón más marcado:**
 
 ```css
---vidrio-opacidad: 0.06;
---vidrio-borde-marca: 0.55;
---brillo-marca: 0.6;
+--vidrio-opacidad: 0.09;
+--vidrio-borde-marca: 0.8;
+--brillo-marca: 0.85;
 ```
 
 **Quitar el resplandor de fondo de las secciones:** en `theme.css`, busca
-`.resplandor-marca` y baja los valores `0.16` y `0.11` a `0`.
+`.resplandor-marca` y baja los valores `0.26` y `0.18` a `0`.
 
 **Ejemplo: cambiar toda la marca a azul**
 

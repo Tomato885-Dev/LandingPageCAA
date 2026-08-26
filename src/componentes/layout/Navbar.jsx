@@ -39,7 +39,7 @@ function Navbar() {
               <a
                 key={i}
                 href={enlace.url}
-                className="relative z-10 px-3 py-2 text-sm font-medium text-white/90 hover:text-white font-body transition-colors"
+                className="relative z-10 px-3 py-2 text-sm font-medium text-white/85 hover:text-white font-body transition-colors"
               >
                 {enlace.texto}
               </a>

@@ -12,7 +12,7 @@ function Media({ src, alt = '', className = '', proporcion = 'aspect-[16/9]', et
       {src ? (
         <img src={src} alt={alt} loading="lazy" className="h-full w-full object-cover" />
       ) : (
-        <div className="h-full w-full flex flex-col items-center justify-center gap-2 text-white/45">
+        <div className="h-full w-full flex flex-col items-center justify-center gap-2 text-white/60">
           <Icono nombre={icono} className="h-7 w-7" />
           <span className="text-[11px] font-body text-center px-4 leading-tight">{etiqueta}</span>
         </div>

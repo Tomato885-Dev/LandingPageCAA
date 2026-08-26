@@ -52,7 +52,7 @@ function Nosotros({ id }) {
                       <p className="font-heading italic text-white text-2xl leading-none tracking-[-0.5px]">
                         {persona.nombre}
                       </p>
-                      <p className="text-xs text-white/70 font-body font-light mt-2">{persona.cargo}</p>
+                      <p className="text-xs text-white/85 font-body font-light mt-2">{persona.cargo}</p>
                     </div>
                   </div>
                 </Panel>

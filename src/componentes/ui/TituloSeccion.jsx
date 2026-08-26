@@ -24,7 +24,7 @@ function TituloSeccion({ kicker, titulo = [], intro, className = '', centrado = 
 
       {intro ? (
         <Reveal comoLista delay={0.2}>
-          <p className={'mt-6 text-sm md:text-base text-white/90 font-body font-light leading-relaxed max-w-2xl' + (centrado ? ' mx-auto' : '')}>
+          <p className={'mt-6 text-sm md:text-base text-white font-body font-light leading-relaxed max-w-2xl' + (centrado ? ' mx-auto' : '')}>
             {intro}
           </p>
         </Reveal>

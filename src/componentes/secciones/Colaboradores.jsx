@@ -21,11 +21,11 @@ function TarjetaColaborador({ colaborador }) {
       )}
 
       {colaborador.logo ? (
-        <span className="relative z-10 text-xs text-white/80 font-body font-light">{colaborador.nombre}</span>
+        <span className="relative z-10 text-xs text-white/95 font-body font-light">{colaborador.nombre}</span>
       ) : null}
 
       {colaborador.tipo ? (
-        <span className="relative z-10 text-[11px] text-white/50 font-body font-light">{colaborador.tipo}</span>
+        <span className="relative z-10 text-[11px] text-white/70 font-body font-light">{colaborador.tipo}</span>
       ) : null}
     </React.Fragment>
   );

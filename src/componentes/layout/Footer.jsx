@@ -22,7 +22,7 @@ function Footer() {
             <h2 className="font-heading italic text-white text-5xl md:text-7xl leading-[0.9] tracking-[-3px]">
               {c.titulo}
             </h2>
-            <p className="mt-5 text-sm md:text-base text-white/85 font-body font-light leading-relaxed">
+            <p className="mt-5 text-sm md:text-base text-white font-body font-light leading-relaxed">
               {c.descripcion}
             </p>
           </div>
@@ -57,7 +57,7 @@ function Footer() {
         {c.columnas.map((columna, i) => (
           <Reveal comoLista key={i} delay={i * 0.05}>
             <div>
-              <h3 className="text-xs uppercase tracking-[0.18em] text-white/50 font-body font-medium mb-4">
+              <h3 className="text-xs uppercase tracking-[0.18em] text-white/70 font-body font-medium mb-4">
                 {columna.titulo}
               </h3>
               <ul className="space-y-2.5">
@@ -67,7 +67,7 @@ function Footer() {
                       href={enlace.url}
                       target={enlace.url && enlace.url.startsWith('http') ? '_blank' : undefined}
                       rel="noopener noreferrer"
-                      className="text-sm text-white/85 hover:text-white font-body font-light transition-colors"
+                      className="text-sm text-white/90 hover:text-white font-body font-light transition-colors"
                     >
                       {enlace.texto}
                     </a>
@@ -80,14 +80,14 @@ function Footer() {
 
         <Reveal comoLista delay={0.15}>
           <div>
-            <h3 className="text-xs uppercase tracking-[0.18em] text-white/50 font-body font-medium mb-4">Contacto</h3>
+            <h3 className="text-xs uppercase tracking-[0.18em] text-white/70 font-body font-medium mb-4">Contacto</h3>
             <ul className="space-y-3">
               {c.contacto.map((dato, i) => (
                 <li key={i} className="flex items-start gap-2.5">
-                  <Icono nombre={dato.icono} className="h-4 w-4 mt-0.5 shrink-0 text-white/70" />
+                  <Icono nombre={dato.icono} className="h-4 w-4 mt-0.5 shrink-0 text-white/85" />
                   {dato.url
-                    ? <a href={dato.url} className="text-sm text-white/85 hover:text-white font-body font-light transition-colors">{dato.texto}</a>
-                    : <span className="text-sm text-white/85 font-body font-light">{dato.texto}</span>}
+                    ? <a href={dato.url} className="text-sm text-white/90 hover:text-white font-body font-light transition-colors">{dato.texto}</a>
+                    : <span className="text-sm text-white font-body font-light">{dato.texto}</span>}
                 </li>
               ))}
             </ul>
@@ -105,7 +105,7 @@ function Footer() {
           </span>
           <span className="font-heading italic text-white text-xl">{marca.nombreLargo}</span>
         </div>
-        <p className="text-xs text-white/50 font-body font-light">{c.legal}</p>
+        <p className="text-xs text-white/70 font-body font-light">{c.legal}</p>
       </div>
     </footer>
   );
