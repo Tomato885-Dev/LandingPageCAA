@@ -16,6 +16,9 @@ Consejos rápidos:
   - Logo de la campaña (`logo-carlos.png`): 512 × 512 px, cuadrado.
     Puede traer su propio fondo de color; se muestra dentro de un recuadro
     de esquinas redondeadas, como el icono de una aplicación.
+
+`favicon.png` y `og-caa.jpg` están generados a partir de `logo-carlos.png`.
+Si cambias el logo, hay que volver a generarlos para que no queden desfasados.
 - Intenta que cada imagen pese menos de 400 KB para que la página cargue rápido.
 
 Para usarla, copia la ruta en el archivo de contenido correspondiente, por ejemplo:
