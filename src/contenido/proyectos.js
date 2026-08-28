@@ -78,9 +78,15 @@ window.CONTENIDO_PROYECTOS = {
     },
   ],
 
-  /* ---- LLAMADO A LA ACCIÓN AL FINAL DE LA SECCIÓN ------------------------ */
-  cta: {
-    texto: '¿Tienes una idea para la comunidad?',
-    boton: { texto: 'Preséntala al CAA', url: '#contacto' },  // 👉 ENLACE
-  },
+  /* ---- LLAMADO A LA ACCIÓN AL FINAL DE LA SECCIÓN ------------------------
+     Quitado: la sección termina en la última tarjeta de proyectos.
+
+     Si algún día quieres volver a mostrar el recuadro del final, cambia el
+     null de abajo por un bloque con este formato:
+
+       cta: {
+         texto: '¿Tienes una idea para la comunidad?',
+         boton: { texto: 'Preséntala al CAA', url: '#contacto' },
+       },                                                                     */
+  cta: null,
 };

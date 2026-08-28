@@ -530,8 +530,8 @@ automáticamente.
 | "Únete al CAA" (menú) | `src/contenido/sitio.js` | `botonMenu` |
 | Botones de la portada | `src/contenido/hero.js` | `botones.principal` y `botones.secundario` |
 | Botón de cada proyecto | `src/contenido/proyectos.js` | `proyectos[].enlace` |
-| "Preséntala al CAA" | `src/contenido/proyectos.js` | `cta.boton` |
-| "Escríbenos" (colaboradores) | `src/contenido/colaboradores.js` | `cta.boton` |
+| Recuadro del final de Proyectos *(quitado)* | `src/contenido/proyectos.js` | `cta` está en `null` |
+| Recuadro del final de Colaboradores *(quitado)* | `src/contenido/colaboradores.js` | `cta` está en `null` |
 | Botón grande del pie | `src/contenido/footer.js` | `boton` |
 | Redes sociales | `src/contenido/footer.js` | `redes` |
 | Columnas de enlaces del pie | `src/contenido/footer.js` | `columnas` |
