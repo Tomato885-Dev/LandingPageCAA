@@ -51,9 +51,15 @@ window.CONTENIDO_COLABORADORES = {
     { nombre: 'School of Rock',         logo: 'assets/logos/school-of-rock.png', url: '' },
   ],
 
-  /* ---- INVITACIÓN A COLABORAR ------------------------------------------- */
-  cta: {
-    texto: '¿Tu organización quiere colaborar con el CAA?',
-    boton: { texto: 'Escríbenos', url: 'mailto:contacto@caa.cl' },  // 👉 ENLACE
-  },
+  /* ---- INVITACIÓN A COLABORAR -------------------------------------------
+     Quitada: la sección termina en la última fila de auspicios.
+
+     Si algún día quieres volver a mostrar el recuadro de invitación, cambia
+     el null de abajo por un bloque con este formato:
+
+       cta: {
+         texto: '¿Tu organización quiere colaborar con el CAA?',
+         boton: { texto: 'Escríbenos', url: 'mailto:contacto@caa.cl' },
+       },                                                                       */
+  cta: null,
 };
