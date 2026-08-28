@@ -197,6 +197,62 @@ estadisticas: [
   Si no quieres el tachado, simplemente no escribas ese campo.
 - Los nombres de iconos posibles están en el [punto 12](#12-iconos-cuáles-hay-y-cómo-agregar-otros).
 
+### Ejemplo 4: escribir el texto de los "Pilares"
+
+Al final de la sección **Visión y Misión** hay dos barras grandes ("Ejecutar" e
+"Impulsar"). Al pincharlas se abre un panel con texto. Se editan en
+`src/contenido/vision-mision.js`, dentro de `pilares:`.
+
+```js
+pilares: {
+  titulo: 'Pilares',
+  lista: [
+    {
+      nombre: 'Ejecutar',
+      bajada: '',
+      icono: 'rayo',
+      texto: '',
+      puntos: [],
+    },
+    ...
+  ],
+},
+```
+
+| Campo | Para qué sirve |
+|---|---|
+| `nombre` | El título grande de la barra |
+| `bajada` | Frase corta que se ve **siempre**, aunque el pilar esté cerrado. Déjala en `''` si no quieres |
+| `icono` | El icono del cuadrado rojo. Los nombres están en el [punto 12](#12-iconos-cuáles-hay-y-cómo-agregar-otros) |
+| `texto` | El párrafo que aparece al desplegar |
+| `puntos` | Frases cortas con un ✓ rojo. Puede quedar en `[]` |
+
+Mientras `texto` y `puntos` estén vacíos, el panel muestra un aviso gris que
+dice *"Escribe aquí el texto de este pilar."*. **Ese aviso desaparece solo**
+apenas escribas algo; no hay que tocar nada más.
+
+Ejemplo ya rellenado:
+
+```js
+    {
+      nombre: 'Ejecutar',
+      bajada: 'Menos promesas, más acciones concretas.',
+      icono: 'rayo',
+      texto: 'Cada proyecto que presentamos tiene un responsable, un plazo y ' +
+             'una forma de comprobar que se cumplió.',
+      puntos: [
+        'Un responsable por proyecto.',
+        'Plazos públicos.',
+      ],
+    },
+```
+
+**Para agregar un tercer pilar:** copia un bloque `{ … },` completo y pégalo
+dentro de la lista. Las barras se acomodan solas.
+**Para quitar uno:** borra su bloque completo.
+
+Los dos pilares se pueden abrir al mismo tiempo: abrir uno no cierra el otro.
+
 ---
 
 ## 5. Cambiar títulos y subtítulos
@@ -922,7 +978,7 @@ cambio** (`Ctrl + Z`) y guarda. Casi siempre es una coma o una comilla.
 | Las cifras destacadas | `src/contenido/hero.js` |
 | El texto de "Quiénes somos" | `src/contenido/nosotros.js` |
 | Los integrantes del equipo y sus fotos | `src/contenido/nosotros.js` |
-| La visión, la misión y los valores | `src/contenido/vision-mision.js` |
+| La visión, la misión y los pilares | `src/contenido/vision-mision.js` |
 | Los proyectos | `src/contenido/proyectos.js` |
 | Los colaboradores y sus logos | `src/contenido/colaboradores.js` |
 | El contacto, las redes y los enlaces del pie | `src/contenido/footer.js` |

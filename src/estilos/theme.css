@@ -172,6 +172,62 @@ body.menu-abierto {
   transform: scale(1.04);
 }
 
+/* ============================================================================
+   DESPLEGABLES (los "Pilares": se pinchan y se abre un texto debajo)
+   ----------------------------------------------------------------------------
+   Truco: la fila de la grilla pasa de 0fr a 1fr, y así la altura se anima sola
+   sin que haya que saber cuánto mide el texto de adentro.
+   ============================================================================ */
+.desplegable {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.desplegable[data-abierto="true"] {
+  grid-template-rows: 1fr;
+}
+.desplegable > .desplegable-interior {
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.desplegable[data-abierto="true"] > .desplegable-interior {
+  opacity: 1;
+  transition-delay: 0.15s;
+}
+
+/* La flechita de la derecha gira cuando el pilar está abierto */
+.giro-flecha {
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+[data-abierto="true"] .giro-flecha {
+  transform: rotate(180deg);
+}
+
+/* Barra grande de cada pilar */
+.barra-pilar {
+  transition: background-color 0.35s ease, box-shadow 0.35s ease;
+}
+.barra-pilar:hover,
+.barra-pilar[data-abierto="true"] {
+  box-shadow: 0 16px 44px -22px rgba(var(--color-marca-rgb), var(--brillo-marca)),
+              inset 0 1px 1px rgba(255, 255, 255, 0.22);
+}
+.barra-pilar:focus-visible {
+  outline: 2px solid rgba(var(--color-marca-rgb), 0.9);
+  outline-offset: 3px;
+}
+
+/* Si el sistema pide menos animación, se abre y cierra sin transición */
+@media (prefers-reduced-motion: reduce) {
+  .desplegable,
+  .desplegable > .desplegable-interior,
+  .giro-flecha,
+  .barra-pilar {
+    transition: none;
+  }
+}
+
 /* Pantalla de carga inicial (se oculta cuando React monta la app) */
 #cargando {
   position: fixed;

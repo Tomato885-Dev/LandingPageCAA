@@ -47,9 +47,39 @@ window.CONTENIDO_VISION_MISION = {
     },
   ],
 
-  /* ---- VALORES (píldoras al final de la sección) ------------------------- */
-  valores: {
-    titulo: 'Nuestros valores',
-    lista: ['Transparencia', 'Cercanía', 'Colaboración', 'Respeto', 'Compromiso', 'Inclusión'],
+  /* ---- PILARES (las barras que se despliegan al final de la sección) ------
+     Cada pilar es una barra grande. Al pincharla se abre un panel debajo con
+     el texto.
+
+     👉 PARA ESCRIBIR EL TEXTO DE UN PILAR: rellena su campo  texto:  y, si
+        quieres, agrega frases sueltas dentro de  puntos: [ ... ].
+        Mientras estén vacíos, el panel muestra un aviso gris recordando que
+        falta llenarlo (ese aviso desaparece solo apenas escribas algo).
+
+     • nombre  : el título grande de la barra.
+     • bajada  : frase corta que se ve SIEMPRE, aunque el pilar esté cerrado.
+     • icono   : nombre de icono (la lista está en src/componentes/ui/Iconos.jsx).
+     • texto   : el párrafo que aparece al desplegar.
+     • puntos  : lista de frases cortas con viñeta roja (puede quedar vacía).
+
+     Para agregar un tercer pilar, copia un bloque { ... } completo.            */
+  pilares: {
+    titulo: 'Pilares',
+    lista: [
+      {
+        nombre: 'Ejecutar',
+        bajada: '',
+        icono: 'rayo',
+        texto: '',
+        puntos: [],
+      },
+      {
+        nombre: 'Impulsar',
+        bajada: '',
+        icono: 'destello',
+        texto: '',
+        puntos: [],
+      },
+    ],
   },
 };
