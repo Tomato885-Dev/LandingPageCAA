@@ -34,13 +34,15 @@ window.CONTENIDO_VISION_MISION = {
       icono: 'objetivo',
       etiqueta: 'Misión',
       titulo: 'Misión',
-      texto: 'Representar y acompañar a cada estudiante, gestionando ' +
-             'proyectos, actividades y canales de apoyo que respondan a lo ' +
-             'que la comunidad realmente necesita.',
+      texto: 'No venimos a llenar un libro de promesas: venimos a hacer que ' +
+             'las cosas pasen. Nuestra misión es construir un CAA serio, ' +
+             'cercano y responsable, que escuche al alumno, convierta sus ' +
+             'necesidades en acciones concretas y deje una base sólida para ' +
+             'quienes vienen después.',
       puntos: [
-        'Escuchar de forma permanente y abierta',
-        'Ejecutar proyectos medibles y rendir cuentas',
-        'Cuidar el bienestar y la vida estudiantil',
+        'Ejecutar: menos promesas, más acciones concretas.',
+        'Representar: escuchar y responder a las necesidades reales.',
+        'Proyectar: construir hoy pensando en las próximas generaciones.',
       ],
     },
   ],
