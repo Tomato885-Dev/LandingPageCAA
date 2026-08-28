@@ -567,9 +567,9 @@ Todo eso se controla desde `src/estilos/theme.css`, en el bloque de arriba:
 
   --radio-tarjeta: 1.25rem;
 
-  --vidrio-opacidad: 0.06;        /* cuánto rojo tiñe el vidrio  */
-  --vidrio-borde-marca: 0.6;      /* rojo en los bordes          */
-  --brillo-marca: 0.62;           /* brillo rojo al pasar el mouse */
+  --vidrio-opacidad: 0.14;        /* cuánto rojo tiñe el vidrio  */
+  --vidrio-borde-marca: 0.9;      /* rojo en los bordes          */
+  --brillo-marca: 0.9;            /* brillo rojo al pasar el mouse */
 }
 ```
 
@@ -602,17 +602,26 @@ Todo eso se controla desde `src/estilos/theme.css`, en el bloque de arriba:
 | El destello rojo del borde de las tarjetas | `--vidrio-borde-marca` |
 | El brillo al pasar el mouse | `--brillo-marca` |
 | El resplandor de fondo de las secciones | clase `.resplandor-marca` en `theme.css` |
+| El tinte rojo sobre los videos | clase `.velo-fondo` en `theme.css` |
 | El cuadrado del icono de cada tarjeta | clase `.caja-icono` en `theme.css` |
 | La barra de scroll y el texto seleccionado | final de `theme.css` |
 
 ### Subir o bajar la intensidad del rojo
 
-**Un escalón más suave** (era el ajuste inicial del sitio):
+**Un escalón más suave** (el ajuste anterior del sitio):
 
 ```css
---vidrio-opacidad: 0.035;
---vidrio-borde-marca: 0.35;
---brillo-marca: 0.38;
+--vidrio-opacidad: 0.06;
+--vidrio-borde-marca: 0.6;
+--brillo-marca: 0.62;
+```
+
+**Aún más rojo del que hay ahora:**
+
+```css
+--vidrio-opacidad: 0.20;
+--vidrio-borde-marca: 1;
+--brillo-marca: 1;
 ```
 
 **Muy sutil, casi sin rojo:**

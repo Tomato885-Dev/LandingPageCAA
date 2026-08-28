@@ -32,13 +32,13 @@
      El vidrio va teñido con el rojo de la marca en una cantidad mínima:
      no se ve "rojo", solo se siente más cálido que un vidrio neutro.        */
   --vidrio-tinte: var(--color-marca-rgb);  /* Tinte del vidrio              */
-  --vidrio-opacidad: 0.06;             /* Qué tan teñido está el vidrio     */
+  --vidrio-opacidad: 0.14;             /* Qué tan teñido está el vidrio     */
   --vidrio-desenfoque: 4px;            /* Desenfoque del vidrio suave       */
   --vidrio-desenfoque-fuerte: 50px;    /* Desenfoque del vidrio del CTA     */
 
   /* Cuánto rojo llevan los bordes y los brillos del vidrio (0 = nada) */
-  --vidrio-borde-marca: 0.6;
-  --brillo-marca: 0.62;
+  --vidrio-borde-marca: 0.9;
+  --brillo-marca: 0.9;
 
   /* ---- VELO SOBRE LOS VIDEOS -------------------------------------------
      Capa oscura entre el video de fondo y el texto. Sin ella, un video claro
@@ -132,12 +132,12 @@ body.menu-abierto {
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.78) 0%,
-    rgba(var(--color-marca-rgb), 0.7) 12%,
+    rgba(var(--color-marca-rgb), 0.95) 12%,
     rgba(255, 255, 255, 0.3) 22%,
     rgba(255, 255, 255, 0) 40%,
     rgba(255, 255, 255, 0) 60%,
     rgba(255, 255, 255, 0.3) 78%,
-    rgba(var(--color-marca-rgb), 0.7) 88%,
+    rgba(var(--color-marca-rgb), 0.95) 88%,
     rgba(255, 255, 255, 0.78) 100%
   );
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -226,8 +226,9 @@ body.menu-abierto {
     ),
     linear-gradient(
       180deg,
-      rgba(var(--color-marca-rgb), calc(0.10 * var(--velo-intensidad))) 0%,
-      rgba(var(--color-marca-rgb), 0) 55%
+      rgba(var(--color-marca-rgb), calc(0.30 * var(--velo-intensidad))) 0%,
+      rgba(var(--color-marca-rgb), calc(0.08 * var(--velo-intensidad))) 38%,
+      rgba(var(--color-marca-rgb), 0) 72%
     );
 }
 
@@ -276,8 +277,8 @@ body.menu-abierto {
   pointer-events: none;
   z-index: 0;
   background:
-    radial-gradient(65% 50% at 10% 18%, rgba(var(--color-marca-rgb), 0.26) 0%, rgba(0, 0, 0, 0) 70%),
-    radial-gradient(50% 45% at 94% 88%, rgba(var(--color-marca-rgb), 0.18) 0%, rgba(0, 0, 0, 0) 70%);
+    radial-gradient(65% 50% at 10% 18%, rgba(var(--color-marca-rgb), 0.46) 0%, rgba(0, 0, 0, 0) 70%),
+    radial-gradient(55% 50% at 94% 88%, rgba(var(--color-marca-rgb), 0.34) 0%, rgba(0, 0, 0, 0) 70%);
   /* El degradado se desvanece arriba y abajo para que no se note el corte
      entre una sección y la siguiente. */
   -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
@@ -288,7 +289,7 @@ body.menu-abierto {
    contiene lleva un rescoldo rojo por dentro. */
 .caja-icono {
   box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2),
-              inset 0 0 24px rgba(var(--color-marca-rgb), 0.38);
+              inset 0 0 26px rgba(var(--color-marca-rgb), 0.62);
 }
 
 /* Puntito rojo (se usa en la etiqueta de estado de los proyectos) */
@@ -307,15 +308,15 @@ body.menu-abierto {
   border: 0;
   background: linear-gradient(
     90deg,
-    rgba(var(--color-marca-rgb), 0.7) 0%,
-    rgba(255, 255, 255, 0.2) 35%,
+    rgba(var(--color-marca-rgb), 0.95) 0%,
+    rgba(var(--color-marca-rgb), 0.35) 35%,
     rgba(255, 255, 255, 0.08) 100%
   );
 }
 
 /* Borde divisorio teñido de rojo (se usa en el pie de página) */
 .borde-marca {
-  border-color: rgba(var(--color-marca-rgb), 0.45) !important;
+  border-color: rgba(var(--color-marca-rgb), 0.7) !important;
 }
 
 /* Texto seleccionado con el mouse */
