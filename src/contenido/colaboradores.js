@@ -19,20 +19,37 @@ window.CONTENIDO_COLABORADORES = {
          'del Centro de Alumnos.',
 
   /* ------------------------------------------------------------------------
-     CAMPOS DE CADA COLABORADOR
-     • nombre : cómo se llama (se muestra si no hay logo)
-     • logo   : ruta de la imagen, ej. 'assets/logos/nombre.png'
-                (fondo transparente y color claro se ven mejor)
-     • url    : sitio web del colaborador; usa '' si no tiene
-     • tipo   : texto pequeño bajo el nombre (opcional)
+     LOS AUSPICIOS
+
+     El orden de esta lista es el orden en que aparecen en la página.
+     Para mover uno de lugar, corta su línea y pégala donde corresponda.
+
+     CAMPOS DE CADA UNO
+     • nombre : el texto que se muestra debajo de la imagen
+     • logo   : ruta del archivo. Ya están escritas: solo hay que subir cada
+                imagen a  assets/logos/  con ese mismo nombre de archivo.
+                Mientras no esté subida, el recuadro muestra el marcador
+                "Agrega aquí el logo" y la página no se rompe.
+     • url    : sitio web de la marca. Si lo escribes, la casilla se vuelve un
+                enlace que se abre en otra pestaña. Déjalo en '' si no tiene.
      ------------------------------------------------------------------------ */
   colaboradores: [
-    { nombre: 'Dirección de Asuntos Estudiantiles', logo: '', url: '', tipo: 'Institución' },
-    { nombre: 'Federación de Estudiantes',          logo: '', url: '', tipo: 'Estudiantil' },
-    { nombre: 'Vinculación con el Medio',           logo: '', url: '', tipo: 'Institución' },
-    { nombre: 'Centro Cultural',                    logo: '', url: '', tipo: 'Organización' },
-    { nombre: 'Club Deportivo',                     logo: '', url: '', tipo: 'Organización' },
-    { nombre: 'Red de Egresados',                   logo: '', url: '', tipo: 'Comunidad' },
+    { nombre: 'Burger King',            logo: 'assets/logos/burger-king.png', url: '' },
+    { nombre: 'Starbucks',              logo: 'assets/logos/starbucks.png', url: '' },
+    { nombre: 'Just Burger',            logo: 'assets/logos/just-burger.png', url: '' },
+    { nombre: 'FEN',                    logo: 'assets/logos/fen.png', url: '' },
+    { nombre: 'Preuniversitario Gauss', logo: 'assets/logos/preuniversitario-gauss.png', url: '' },
+    { nombre: 'Acai',                   logo: 'assets/logos/acai.png', url: '' },
+    { nombre: 'Gnomo',                  logo: 'assets/logos/gnomo.png', url: '' },
+    { nombre: 'Nativo',                 logo: 'assets/logos/nativo.png', url: '' },
+    { nombre: 'AndPag',                 logo: 'assets/logos/andpag.png', url: '' },
+    { nombre: 'Elite',                  logo: 'assets/logos/elite.png', url: '' },
+    { nombre: 'Andesgear',              logo: 'assets/logos/andesgear.png', url: '' },
+    { nombre: 'Aprende +',              logo: 'assets/logos/aprende-mas.png', url: '' },
+    { nombre: 'Preu Fillad',            logo: 'assets/logos/preu-fillad.png', url: '' },
+    { nombre: 'Forus: Brands & Retail', logo: 'assets/logos/forus.png', url: '' },
+    { nombre: 'CCU',                    logo: 'assets/logos/ccu.png', url: '' },
+    { nombre: 'School of Rock',         logo: 'assets/logos/school-of-rock.png', url: '' },
   ],
 
   /* ---- INVITACIÓN A COLABORAR ------------------------------------------- */

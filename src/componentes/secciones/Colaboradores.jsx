@@ -6,31 +6,30 @@
 
 function TarjetaColaborador({ colaborador }) {
   const contenido = (
-    <React.Fragment>
-      {colaborador.logo ? (
-        <img
-          src={colaborador.logo}
-          alt={colaborador.nombre}
-          loading="lazy"
-          className="relative z-10 h-12 max-w-[80%] object-contain"
-        />
-      ) : (
-        <span className="relative z-10 font-heading italic text-white text-2xl md:text-[1.75rem] leading-tight tracking-tight">
-          {colaborador.nombre}
-        </span>
-      )}
+    <div className="relative z-10 w-full">
+      {/* Espacio de la imagen. Siempre está, haya logo o no, para que la
+          casilla no cambie de forma cuando se suban los archivos. */}
+      <Media
+        src={colaborador.logo}
+        alt={colaborador.nombre}
+        proporcion="aspect-[3/2]"
+        ajuste="object-contain p-4"
+        etiqueta="Agrega aquí el logo"
+        icono="imagen"
+      />
 
-      {colaborador.logo ? (
-        <span className="relative z-10 text-xs text-white/95 font-body font-light">{colaborador.nombre}</span>
-      ) : null}
+      <p className="text-sm md:text-[0.95rem] text-white font-body font-medium text-center mt-3 leading-tight">
+        {colaborador.nombre}
+      </p>
 
+      {/* Etiqueta opcional: solo aparece si está escrita en colaboradores.js */}
       {colaborador.tipo ? (
-        <span className="relative z-10 text-[11px] text-white/70 font-body font-light">{colaborador.tipo}</span>
+        <p className="text-[11px] text-white/70 font-body font-light text-center mt-1">{colaborador.tipo}</p>
       ) : null}
-    </React.Fragment>
+    </div>
   );
 
-  const clases = 'liquid-glass hover-elevar rounded-tarjeta p-6 min-h-[160px] flex flex-col items-center justify-center gap-2 text-center';
+  const clases = 'liquid-glass hover-elevar rounded-tarjeta p-3 h-full flex items-start';
 
   return colaborador.url
     ? <a href={colaborador.url} target="_blank" rel="noopener noreferrer" className={clases}>{contenido}</a>
@@ -44,10 +43,17 @@ function Colaboradores({ id }) {
     <SeccionBase id={id} fondo={c.fondo} alturaMinima="min-h-0">
       <TituloSeccion kicker={c.kicker} titulo={c.titulo} intro={c.intro} />
 
-      {/* --- Cuadrícula de colaboradores --- */}
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5 mt-16">
+      {/* --- Cuadrícula de colaboradores ---
+              Se usa flex para que, si el número no calza justo con las
+              columnas, la última fila quede centrada y no colgando. --- */}
+      <div className="flex flex-wrap justify-center gap-4 md:gap-5 mt-16">
         {c.colaboradores.map((colaborador, i) => (
-          <Reveal comoLista key={i} delay={(i % 3) * 0.08}>
+          <Reveal
+            comoLista
+            key={i}
+            delay={(i % 4) * 0.06}
+            className="w-[calc(50%-0.5rem)] md:w-[calc(33.333%-0.834rem)] lg:w-[calc(25%-0.9375rem)]"
+          >
             <TarjetaColaborador colaborador={colaborador} />
           </Reveal>
         ))}

@@ -8,7 +8,9 @@
 
 const { useState: useStateMedia } = React;
 
-function Media({ src, alt = '', className = '', proporcion = 'aspect-[16/9]', etiqueta = 'Agrega aquí tu imagen', icono = 'imagen' }) {
+// ajuste: 'object-cover'   → la imagen llena el recuadro y se recorta (fotos)
+//         'object-contain' → la imagen se ve entera, sin recortar (logos)
+function Media({ src, alt = '', className = '', proporcion = 'aspect-[16/9]', etiqueta = 'Agrega aquí tu imagen', icono = 'imagen', ajuste = 'object-cover' }) {
   // Si la ruta está escrita pero el archivo todavía no se ha subido, se vuelve
   // a mostrar el marcador en lugar del icono de "imagen rota" del navegador.
   const [falloImagen, setFalloImagen] = useStateMedia(false);
@@ -16,7 +18,7 @@ function Media({ src, alt = '', className = '', proporcion = 'aspect-[16/9]', et
   return (
     <div className={'media-marco rounded-tarjeta ' + proporcion + ' ' + className}>
       {src && !falloImagen ? (
-        <img src={src} alt={alt} loading="lazy" onError={() => setFalloImagen(true)} className="h-full w-full object-cover" />
+        <img src={src} alt={alt} loading="lazy" onError={() => setFalloImagen(true)} className={'h-full w-full ' + ajuste} />
       ) : (
         <div className="h-full w-full flex flex-col items-center justify-center gap-2 text-white/60">
           <Icono nombre={icono} className="h-7 w-7" />
