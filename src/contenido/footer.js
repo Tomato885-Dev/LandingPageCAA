@@ -30,7 +30,6 @@ window.CONTENIDO_FOOTER = {
      x, whatsapp. Borra los que no uses.                                       */
   redes: [
     { icono: 'instagram', nombre: 'Instagram', url: 'https://instagram.com/' },   // 👉 ENLACE
-    { icono: 'tiktok',    nombre: 'TikTok',    url: 'https://tiktok.com/' },      // 👉 ENLACE
     { icono: 'whatsapp',  nombre: 'WhatsApp',  url: 'https://wa.me/56900000000' },// 👉 ENLACE
     { icono: 'correo',    nombre: 'Correo',    url: 'mailto:contacto@caa.cl' },
   ],
