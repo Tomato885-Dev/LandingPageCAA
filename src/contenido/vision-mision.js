@@ -18,13 +18,16 @@ window.CONTENIDO_VISION_MISION = {
       icono: 'brujula',
       etiqueta: 'Visión',
       titulo: 'Visión',
-      texto: 'Ser un Centro de Alumnos reconocido por su cercanía, su ' +
-             'transparencia y su capacidad de transformar las inquietudes ' +
-             'del estudiantado en mejoras reales y duraderas.',
+      texto: 'El Verbo no necesita más promesas: necesita un CAA que sepa ' +
+             'escuchar, priorizar y transformar. Queremos pasar de la cantidad ' +
+             'al impacto, fortaleciendo lo que funciona y construyendo ' +
+             'proyectos con propósito, continuidad y futuro. Un Verbo más ' +
+             'vivo, unido y participativo, donde cada alumno sea parte de lo ' +
+             'que construimos.',
       puntos: [
-        'Una comunidad informada y participativa',
-        'Espacios estudiantiles dignos y accesibles',
-        'Representación con datos y no con supuestos',
+        'Impacto real: menos promesas, más resultados.',
+        'Continuidad: fortalecer y proyectar lo que funciona.',
+        'Comunidad: un Verbo más unido, participativo y vivo.',
       ],
     },
     {
