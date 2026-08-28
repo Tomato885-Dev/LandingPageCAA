@@ -36,9 +36,17 @@ function Nosotros({ id }) {
             </h3>
           </Reveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-8">
+          {/* Se usa flex en vez de grid para que una última fila incompleta
+              (por ejemplo 7 integrantes = 4 + 3) quede centrada y no colgando
+              hacia la izquierda. */}
+          <div className="flex flex-wrap justify-center gap-5 mt-8">
             {c.equipo.integrantes.map((persona, i) => (
-              <Reveal comoLista key={i} delay={i * 0.07}>
+              <Reveal
+                comoLista
+                key={i}
+                delay={i * 0.07}
+                className="w-[calc(50%-0.625rem)] md:w-[calc(33.333%-0.834rem)] lg:w-[calc(25%-0.9375rem)]"
+              >
                 <Panel className="rounded-tarjeta p-3 h-full">
                   <div className="relative z-10">
                     <Media
@@ -52,7 +60,10 @@ function Nosotros({ id }) {
                       <p className="font-heading italic text-white text-2xl leading-none tracking-[-0.5px]">
                         {persona.nombre}
                       </p>
-                      <p className="text-xs text-white/85 font-body font-light mt-2">{persona.cargo}</p>
+                      {/* El cargo es opcional: si no está escrito, no se muestra */}
+                      {persona.cargo ? (
+                        <p className="text-xs text-white/85 font-body font-light mt-2">{persona.cargo}</p>
+                      ) : null}
                     </div>
                   </div>
                 </Panel>

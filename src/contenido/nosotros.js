@@ -48,15 +48,26 @@ window.CONTENIDO_NOSOTROS = {
   ],
 
   /* ---- EQUIPO / DIRECTIVA ------------------------------------------------
-     👉 FOTOS: guarda las imágenes en assets/img/ y escribe la ruta en "foto".
-        Si dejas "foto" vacío, se muestra un recuadro con las iniciales.        */
+     Cada integrante lleva solo NOMBRE y FOTO.
+
+     👉 FOTOS: sube las 7 imágenes a la carpeta  assets/img/equipo/  con los
+        nombres que ya están escritos abajo (integrante-1.jpg, integrante-2.jpg,
+        y así). No hace falta cambiar nada más aquí.
+        Mientras una foto no esté subida, ese recuadro muestra el marcador
+        "Foto del integrante" y la página no se rompe.
+
+     Para agregar o quitar a alguien, copia o borra una línea { ... } completa.
+     El diseño se reacomoda solo, sean 4, 7 u 11 integrantes.                   */
   equipo: {
-    titulo: 'La directiva 2026',
+    titulo: 'La directiva 2027',
     integrantes: [
-      { nombre: 'Nombre Apellido', cargo: 'Presidencia',      foto: '' },
-      { nombre: 'Nombre Apellido', cargo: 'Vicepresidencia',  foto: '' },
-      { nombre: 'Nombre Apellido', cargo: 'Secretaría',       foto: '' },
-      { nombre: 'Nombre Apellido', cargo: 'Tesorería',        foto: '' },
+      { nombre: 'Nombre Apellido', foto: 'assets/img/equipo/integrante-1.jpg' },
+      { nombre: 'Nombre Apellido', foto: 'assets/img/equipo/integrante-2.jpg' },
+      { nombre: 'Nombre Apellido', foto: 'assets/img/equipo/integrante-3.jpg' },
+      { nombre: 'Nombre Apellido', foto: 'assets/img/equipo/integrante-4.jpg' },
+      { nombre: 'Nombre Apellido', foto: 'assets/img/equipo/integrante-5.jpg' },
+      { nombre: 'Nombre Apellido', foto: 'assets/img/equipo/integrante-6.jpg' },
+      { nombre: 'Nombre Apellido', foto: 'assets/img/equipo/integrante-7.jpg' },
     ],
   },
 };

@@ -6,11 +6,17 @@
    ir la imagen (así nunca queda un hueco raro en la página).
    ============================================================================ */
 
+const { useState: useStateMedia } = React;
+
 function Media({ src, alt = '', className = '', proporcion = 'aspect-[16/9]', etiqueta = 'Agrega aquí tu imagen', icono = 'imagen' }) {
+  // Si la ruta está escrita pero el archivo todavía no se ha subido, se vuelve
+  // a mostrar el marcador en lugar del icono de "imagen rota" del navegador.
+  const [falloImagen, setFalloImagen] = useStateMedia(false);
+
   return (
     <div className={'media-marco rounded-tarjeta ' + proporcion + ' ' + className}>
-      {src ? (
-        <img src={src} alt={alt} loading="lazy" className="h-full w-full object-cover" />
+      {src && !falloImagen ? (
+        <img src={src} alt={alt} loading="lazy" onError={() => setFalloImagen(true)} className="h-full w-full object-cover" />
       ) : (
         <div className="h-full w-full flex flex-col items-center justify-center gap-2 text-white/60">
           <Icono nombre={icono} className="h-7 w-7" />

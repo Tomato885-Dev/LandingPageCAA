@@ -68,8 +68,10 @@ LandingPageCAA/
 ├── MANUAL.md                   ← Este manual
 │
 ├── assets/
-│   ├── img/                    ← 📷 AQUÍ VAN LAS IMÁGENES (fotos, portadas, favicon)
-│   └── logos/                  ← 📷 AQUÍ VAN LOS LOGOS DE COLABORADORES
+│   ├── img/                    ← 📷 AQUÍ VAN LAS IMÁGENES (logo, portadas, favicon)
+│   │   └── equipo/             ← 📷 AQUÍ VAN LAS FOTOS DE LOS INTEGRANTES
+│   ├── logos/                  ← 📷 AQUÍ VAN LOS LOGOS DE COLABORADORES
+│   └── video/                  ← 🎬 AQUÍ VAN LOS VIDEOS DE FONDO
 │
 └── src/
     ├── contenido/              ← ✍️  TEXTOS, IMÁGENES Y ENLACES (lo que más vas a editar)
@@ -274,7 +276,7 @@ imagen: 'assets/img/semana-estudiante.jpg',
 | Logo del menú | `src/contenido/sitio.js` | `marca.logoImagen` |
 | Fondo de la portada | `src/contenido/hero.js` | `fondo.imagen` |
 | Fondo de "Quiénes somos" | `src/contenido/nosotros.js` | `fondo.imagen` |
-| Fotos de la directiva | `src/contenido/nosotros.js` | `equipo.integrantes[].foto` |
+| Fotos del equipo | `src/contenido/nosotros.js` | `equipo.integrantes[].foto` |
 | Fotos de proyectos | `src/contenido/proyectos.js` | `proyectos[].imagen` |
 | Logos de colaboradores | `src/contenido/colaboradores.js` | `colaboradores[].logo` |
 | Icono de la pestaña (favicon) | `index.html` | `<link rel="icon" ...>` |
@@ -282,7 +284,40 @@ imagen: 'assets/img/semana-estudiante.jpg',
 
 > **Mientras no pongas una imagen**, la página muestra un recuadro gris que dice
 > "Agrega aquí tu imagen". Así siempre sabes dónde falta contenido y la página
-> nunca se ve rota.
+> nunca se ve rota. Lo mismo pasa si la ruta está escrita pero el archivo
+> todavía no se ha subido: sale el marcador, no el icono de imagen rota.
+
+### Las fotos del equipo
+
+En `src/contenido/nosotros.js`, cada integrante lleva **solo su nombre y su
+foto** (no hay cargos):
+
+```js
+equipo: {
+  titulo: 'La directiva 2027',
+  integrantes: [
+    { nombre: 'Nombre Apellido', foto: 'assets/img/equipo/integrante-1.jpg' },
+    { nombre: 'Nombre Apellido', foto: 'assets/img/equipo/integrante-2.jpg' },
+    ...
+  ],
+},
+```
+
+**Para poner las fotos:** sube los archivos a `assets/img/equipo/` con esos
+nombres exactos (`integrante-1.jpg`, `integrante-2.jpg`, …). El número
+corresponde al orden de la lista: `integrante-1.jpg` es la foto de la primera
+persona. No hay que tocar el código.
+
+Las fotos deben ser **verticales, proporción 4:5** (por ejemplo 800 × 1000 px).
+El recuadro recorta al centro, así que deja la cara centrada y con aire arriba.
+
+**Para agregar o quitar integrantes:** copia o borra una línea `{ ... }`
+completa. El diseño se reacomoda solo y **centra la última fila** si queda
+incompleta (con 7 integrantes quedan 4 arriba y 3 abajo, centrados).
+
+> Si algún día quieres mostrar el cargo de alguien, agrega
+> `cargo: 'Presidencia',` dentro de su línea. Si no está escrito, no se
+> muestra nada.
 
 ### Cambiar el logo del menú
 
@@ -872,7 +907,7 @@ cambio** (`Ctrl + Z`) y guarda. Casi siempre es una coma o una comilla.
 | El video o la imagen de fondo de la portada | `src/contenido/hero.js` |
 | Las cifras destacadas | `src/contenido/hero.js` |
 | El texto de "Quiénes somos" | `src/contenido/nosotros.js` |
-| Los integrantes de la directiva y sus fotos | `src/contenido/nosotros.js` |
+| Los integrantes del equipo y sus fotos | `src/contenido/nosotros.js` |
 | La visión, la misión y los valores | `src/contenido/vision-mision.js` |
 | Los proyectos | `src/contenido/proyectos.js` |
 | Los colaboradores y sus logos | `src/contenido/colaboradores.js` |
