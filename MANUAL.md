@@ -864,8 +864,10 @@ navegacion: [
 - `titulo` y `descripcion`: el texto grande de "Hablemos".
 - `contacto`: correo, teléfono y dirección (cada uno con su icono).
 - `redes`: los círculos de redes sociales. Borra los que no uses.
-- `columnas`: las listas de enlaces. Puedes agregar una columna nueva copiando
-  un bloque completo `{ titulo: …, enlaces: [ … ] }`.
+- `columnas`: las listas de enlaces. Ahora hay una sola ("El CAA"). Puedes
+  agregar otra copiando un bloque completo `{ titulo: …, enlaces: [ … ] }`.
+  Los datos de contacto se agregan solos como última columna, siempre a la
+  derecha, así que el pie queda equilibrado haya una o tres columnas.
 - `legal`: la línea final con el año (el año se pone solo).
 
 ---

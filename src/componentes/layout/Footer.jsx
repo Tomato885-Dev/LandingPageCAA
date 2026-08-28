@@ -78,7 +78,10 @@ function Footer() {
           </Reveal>
         ))}
 
-        <Reveal comoLista delay={0.15}>
+        {/* El contacto se ancla siempre a la última columna: así, haya una o
+            tres columnas de enlaces, queda a la derecha y el pie no se ve
+            desbalanceado. */}
+        <Reveal comoLista delay={0.15} className="md:col-start-4">
           <div>
             <h3 className="text-xs uppercase tracking-[0.18em] text-white/70 font-body font-medium mb-4">Contacto</h3>
             <ul className="space-y-3">

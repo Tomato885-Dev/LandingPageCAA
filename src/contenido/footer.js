@@ -36,7 +36,9 @@ window.CONTENIDO_FOOTER = {
   ],
 
   /* ---- COLUMNAS DE ENLACES ----------------------------------------------
-     Puedes agregar más columnas copiando un bloque { titulo, enlaces } .       */
+     Los datos de contacto se agregan solos como última columna, así que aquí
+     solo van las columnas de enlaces.
+     Para agregar otra, copia un bloque { titulo, enlaces } completo.           */
   columnas: [
     {
       titulo: 'El CAA',
@@ -45,22 +47,6 @@ window.CONTENIDO_FOOTER = {
         { texto: 'Visión y misión', url: '#vision-mision' },
         { texto: 'Proyectos',       url: '#proyectos' },
         { texto: 'Colaboradores',   url: '#colaboradores' },
-      ],
-    },
-    {
-      titulo: 'Participa',
-      enlaces: [
-        { texto: 'Postula a una comisión', url: '#' },   // 👉 ENLACE
-        { texto: 'Propón un proyecto',     url: '#' },   // 👉 ENLACE
-        { texto: 'Calendario de asambleas', url: '#' },  // 👉 ENLACE
-      ],
-    },
-    {
-      titulo: 'Transparencia',
-      enlaces: [
-        { texto: 'Actas de asamblea', url: '#' },        // 👉 ENLACE
-        { texto: 'Rendición de cuentas', url: '#' },     // 👉 ENLACE
-        { texto: 'Estatutos', url: '#' },                // 👉 ENLACE
       ],
     },
   ],
