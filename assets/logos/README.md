@@ -1,6 +1,6 @@
 # Logos de los auspicios
 
-Aquí van las 16 imágenes, con estos nombres de archivo exactos:
+Aquí van las 15 imágenes, con estos nombres de archivo exactos:
 
 | # | Marca | Archivo |
 |---|---|---|
@@ -11,15 +11,14 @@ Aquí van las 16 imágenes, con estos nombres de archivo exactos:
 | 5 | Preuniversitario Gauss | `preuniversitario-gauss.png` |
 | 6 | Acai | `acai.png` |
 | 7 | Gnomo | `gnomo.png` |
-| 8 | Nativo | `nativo.png` |
-| 9 | AndPag | `andpag.png` |
-| 10 | Elite | `elite.png` |
-| 11 | Andesgear | `andesgear.png` |
-| 12 | Aprende + | `aprende-mas.png` |
-| 13 | Preu Fillad | `preu-fillad.png` |
-| 14 | Forus: Brands & Retail | `forus.png` |
-| 15 | CCU | `ccu.png` |
-| 16 | School of Rock | `school-of-rock.png` |
+| 8 | AndPag | `andpag.png` |
+| 9 | Elite | `elite.png` |
+| 10 | Andesgear | `andesgear.png` |
+| 11 | Aprende + | `aprende-mas.png` |
+| 12 | Preu Fillad | `preu-fillad.png` |
+| 13 | Forus: Brands & Retail | `forus.png` |
+| 14 | CCU | `ccu.png` |
+| 15 | School of Rock | `school-of-rock.png` |
 
 El orden de la tabla es el orden en que aparecen en la página. Para cambiarlo,
 mueve la línea correspondiente en `src/contenido/colaboradores.js`.

@@ -41,7 +41,6 @@ window.CONTENIDO_COLABORADORES = {
     { nombre: 'Preuniversitario Gauss', logo: 'assets/logos/preuniversitario-gauss.png', url: '' },
     { nombre: 'Acai',                   logo: 'assets/logos/acai.png', url: '' },
     { nombre: 'Gnomo',                  logo: 'assets/logos/gnomo.png', url: '' },
-    { nombre: 'Nativo',                 logo: 'assets/logos/nativo.png', url: '' },
     { nombre: 'AndPag',                 logo: 'assets/logos/andpag.png', url: '' },
     { nombre: 'Elite',                  logo: 'assets/logos/elite.png', url: '' },
     { nombre: 'Andesgear',              logo: 'assets/logos/andesgear.png', url: '' },
