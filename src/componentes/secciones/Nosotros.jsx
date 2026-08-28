@@ -12,20 +12,22 @@ function Nosotros({ id }) {
       {/* --- Encabezado --- */}
       <TituloSeccion kicker={c.kicker} titulo={c.titulo} intro={c.intro} />
 
-      {/* --- Tarjetas de áreas --- */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
-        {c.tarjetas.map((tarjeta, i) => (
-          <Reveal comoLista key={i} delay={i * 0.1}>
-            <TarjetaGlass
-              icono={tarjeta.icono}
-              etiquetas={tarjeta.etiquetas}
-              titulo={tarjeta.titulo}
-              texto={tarjeta.texto}
-              className="h-full"
-            />
-          </Reveal>
-        ))}
-      </div>
+      {/* --- Tarjetas de áreas (solo si hay alguna escrita en nosotros.js) --- */}
+      {c.tarjetas && c.tarjetas.length ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
+          {c.tarjetas.map((tarjeta, i) => (
+            <Reveal comoLista key={i} delay={i * 0.1}>
+              <TarjetaGlass
+                icono={tarjeta.icono}
+                etiquetas={tarjeta.etiquetas}
+                titulo={tarjeta.titulo}
+                texto={tarjeta.texto}
+                className="h-full"
+              />
+            </Reveal>
+          ))}
+        </div>
+      ) : null}
 
       {/* --- Equipo / directiva --- */}
       {c.equipo && c.equipo.integrantes && c.equipo.integrantes.length ? (

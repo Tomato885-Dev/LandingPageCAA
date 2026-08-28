@@ -20,32 +20,22 @@ window.CONTENIDO_NOSOTROS = {
          'de todos.',
 
   /* ---- TARJETAS DE ÁREAS -------------------------------------------------
-     Agrega o elimina tarjetas copiando un bloque { ... } completo.
-     "icono" debe ser un nombre de la lista de src/componentes/ui/Iconos.jsx    */
-  tarjetas: [
-    {
-      icono: 'usuarios',
-      etiquetas: ['Elegida por votación', 'Periodo anual', '7 integrantes'],
-      titulo: 'Directiva',
-      texto: 'Coordina el trabajo del centro, representa al estudiantado en ' +
-             'las instancias oficiales y responde por la ejecución del plan ' +
-             'de trabajo comprometido.',
-    },
-    {
-      icono: 'megafono',
-      etiquetas: ['Abiertas a todos', 'Cultura', 'Deporte', 'Bienestar'],
-      titulo: 'Comisiones',
-      texto: 'Equipos temáticos donde cualquier estudiante puede participar. ' +
-             'Ahí nacen y se ejecutan la mayoría de las actividades del año.',
-    },
-    {
-      icono: 'calendario',
-      etiquetas: ['Mensual', 'Voto informado', 'Actas públicas'],
-      titulo: 'Asamblea',
-      texto: 'La instancia donde se decide en conjunto. Toda propuesta ' +
-             'relevante se discute y se vota con la comunidad presente.',
-    },
-  ],
+     Ahora mismo esta sección va sin tarjetas: del texto de introducción se
+     pasa directo a las fotos del equipo.
+
+     Si algún día quieres volver a mostrar tarjetas aquí (por ejemplo, tus
+     áreas de trabajo o tus ejes de campaña), agrégalas dentro de los
+     corchetes con este formato:
+
+       {
+         icono: 'megafono',
+         etiquetas: ['Una etiqueta', 'Otra'],
+         titulo: 'Título de la tarjeta',
+         texto: 'Dos o tres frases explicando de qué se trata.',
+       },
+
+     Los nombres de iconos están en src/componentes/ui/Iconos.jsx              */
+  tarjetas: [],
 
   /* ---- EQUIPO / DIRECTIVA ------------------------------------------------
      Cada integrante lleva solo NOMBRE y FOTO.
