@@ -1,18 +1,20 @@
 # Fotos del equipo
 
-Aquí van las 7 fotos de los integrantes, con estos nombres exactos:
+Aquí van las 7 fotos de los integrantes, con estos nombres de archivo exactos:
 
-    integrante-1.jpg
-    integrante-2.jpg
-    integrante-3.jpg
-    integrante-4.jpg
-    integrante-5.jpg
-    integrante-6.jpg
-    integrante-7.jpg
+| Integrante | Archivo |
+|---|---|
+| Carlos Gomez | `carlos-gomez.jpg` |
+| Tomas Leon | `tomas-leon.jpg` |
+| Juan Casanova | `juan-casanova.jpg` |
+| Emilio Bascuñan | `emilio-bascunan.jpg` |
+| Vicente Donoso | `vicente-donoso.jpg` |
+| Tomas Del Valle | `tomas-del-valle.jpg` |
+| Nicolas Velasco | `nicolas-velasco.jpg` |
 
-El orden de los archivos es el mismo orden en que aparecen los nombres en
-`src/contenido/nosotros.js`. Es decir: `integrante-1.jpg` es la foto de la
-primera persona de esa lista, y así sucesivamente.
+Los nombres de archivo van **sin tildes y sin ñ** (por eso `emilio-bascunan.jpg`
+y no `emilio-bascuñan.jpg`): algunos servidores no los manejan bien. El nombre
+que se ve en la página se escribe aparte, en `src/contenido/nosotros.js`.
 
 Cómo deben ser las fotos:
 
@@ -23,3 +25,6 @@ Cómo deben ser las fotos:
 - Menos de 400 KB cada una.
 - Mientras una foto no esté subida, ese recuadro muestra el marcador
   "Foto del integrante". La página no se rompe.
+
+Si cambias el orden de los integrantes en `nosotros.js`, no pasa nada: cada
+persona lleva escrita la ruta de su propia foto.

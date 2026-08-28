@@ -41,8 +41,8 @@ window.CONTENIDO_NOSOTROS = {
      Cada integrante lleva solo NOMBRE y FOTO.
 
      👉 FOTOS: sube las 7 imágenes a la carpeta  assets/img/equipo/  con los
-        nombres que ya están escritos abajo (integrante-1.jpg, integrante-2.jpg,
-        y así). No hace falta cambiar nada más aquí.
+        nombres de archivo que ya están escritos abajo (carlos-gomez.jpg,
+        tomas-leon.jpg, y así). No hace falta cambiar nada más aquí.
         Mientras una foto no esté subida, ese recuadro muestra el marcador
         "Foto del integrante" y la página no se rompe.
 
@@ -51,13 +51,13 @@ window.CONTENIDO_NOSOTROS = {
   equipo: {
     titulo: 'La directiva 2027',
     integrantes: [
-      { nombre: 'Nombre Apellido', foto: 'assets/img/equipo/integrante-1.jpg' },
-      { nombre: 'Nombre Apellido', foto: 'assets/img/equipo/integrante-2.jpg' },
-      { nombre: 'Nombre Apellido', foto: 'assets/img/equipo/integrante-3.jpg' },
-      { nombre: 'Nombre Apellido', foto: 'assets/img/equipo/integrante-4.jpg' },
-      { nombre: 'Nombre Apellido', foto: 'assets/img/equipo/integrante-5.jpg' },
-      { nombre: 'Nombre Apellido', foto: 'assets/img/equipo/integrante-6.jpg' },
-      { nombre: 'Nombre Apellido', foto: 'assets/img/equipo/integrante-7.jpg' },
+      { nombre: 'Carlos Gomez',     foto: 'assets/img/equipo/carlos-gomez.jpg' },
+      { nombre: 'Tomas Leon',       foto: 'assets/img/equipo/tomas-leon.jpg' },
+      { nombre: 'Juan Casanova',    foto: 'assets/img/equipo/juan-casanova.jpg' },
+      { nombre: 'Emilio Bascuñan',  foto: 'assets/img/equipo/emilio-bascunan.jpg' },
+      { nombre: 'Vicente Donoso',   foto: 'assets/img/equipo/vicente-donoso.jpg' },
+      { nombre: 'Tomas Del Valle',  foto: 'assets/img/equipo/tomas-del-valle.jpg' },
+      { nombre: 'Nicolas Velasco',  foto: 'assets/img/equipo/nicolas-velasco.jpg' },
     ],
   },
 };

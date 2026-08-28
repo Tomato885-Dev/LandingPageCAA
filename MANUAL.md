@@ -296,17 +296,20 @@ foto** (no hay cargos):
 equipo: {
   titulo: 'La directiva 2027',
   integrantes: [
-    { nombre: 'Nombre Apellido', foto: 'assets/img/equipo/integrante-1.jpg' },
-    { nombre: 'Nombre Apellido', foto: 'assets/img/equipo/integrante-2.jpg' },
+    { nombre: 'Carlos Gomez', foto: 'assets/img/equipo/carlos-gomez.jpg' },
+    { nombre: 'Tomas Leon',   foto: 'assets/img/equipo/tomas-leon.jpg' },
     ...
   ],
 },
 ```
 
-**Para poner las fotos:** sube los archivos a `assets/img/equipo/` con esos
-nombres exactos (`integrante-1.jpg`, `integrante-2.jpg`, …). El número
-corresponde al orden de la lista: `integrante-1.jpg` es la foto de la primera
-persona. No hay que tocar el código.
+**Para poner las fotos:** sube los archivos a `assets/img/equipo/` con los
+nombres de archivo que ya están escritos en cada línea (`carlos-gomez.jpg`,
+`tomas-leon.jpg`, …). La lista completa está en `assets/img/equipo/README.md`.
+No hay que tocar el código.
+
+> Los nombres de archivo van sin tildes ni ñ, aunque el nombre que se muestra
+> en la página sí las lleve. Son dos cosas distintas: el archivo y el texto.
 
 Las fotos deben ser **verticales, proporción 4:5** (por ejemplo 800 × 1000 px).
 El recuadro recorta al centro, así que deja la cara centrada y con aire arriba.
