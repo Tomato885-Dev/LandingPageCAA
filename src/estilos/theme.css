@@ -232,6 +232,20 @@ body.menu-abierto {
 }
 
 /* ============================================================================
+   PLACA DE LOS LOGOS — el recuadro blanco donde va cada auspicio
+   ----------------------------------------------------------------------------
+   Los logos de las marcas vienen de todo tipo: unos claros, otros oscuros,
+   algunos con su propio fondo blanco. Sobre el negro del sitio, la mitad no se
+   veía. La placa blanca los deja legibles a todos y en sus colores oficiales.
+
+   Si algún día quieres volver al fondo oscuro, cambia el color de abajo por
+   rgba(255, 255, 255, 0.05).
+   ============================================================================ */
+.placa-logo {
+  background: #ffffff !important;
+}
+
+/* ============================================================================
    RECUADRO DEL LOGO — para logos con fondo propio (como el de la campaña)
    ----------------------------------------------------------------------------
    El logo llena todo el recuadro y el borde de vidrio queda ENCIMA, para que

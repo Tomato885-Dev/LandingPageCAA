@@ -9,13 +9,13 @@ Aquí van las 15 imágenes, con estos nombres de archivo exactos:
 | 3 | Just Burger | `just-burger.png` |
 | 4 | FEN | `fen.png` |
 | 5 | Preuniversitario Gauss | `preuniversitario-gauss.png` |
-| 6 | Acai | `acai.png` |
+| 6 | Açai | `acai.png` |
 | 7 | Gnomo | `gnomo.png` |
 | 8 | AndPag | `andpag.png` |
 | 9 | Elite | `elite.png` |
 | 10 | Andesgear | `andesgear.png` |
 | 11 | Aprende + | `aprende-mas.png` |
-| 12 | Preu Fillad | `preu-fillad.png` |
+| 12 | Preu Filadd | `preu-filadd.png` |
 | 13 | Forus: Brands & Retail | `forus.png` |
 | 14 | CCU | `ccu.png` |
 | 15 | School of Rock | `school-of-rock.png` |

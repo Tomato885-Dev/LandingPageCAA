@@ -13,9 +13,10 @@ function TarjetaColaborador({ colaborador }) {
         src={colaborador.logo}
         alt={colaborador.nombre}
         proporcion="aspect-[3/2]"
-        ajuste="object-contain p-4"
+        ajuste="object-contain p-5"
         etiqueta="Agrega aquí el logo"
         icono="imagen"
+        className={colaborador.logo ? 'placa-logo' : ''}
       />
 
       <p className="text-sm md:text-[0.95rem] text-white font-body font-medium text-center mt-3 leading-tight">
