@@ -10,19 +10,17 @@ window.CONTENIDO_FOOTER = {
 
   /* ---- BLOQUE PRINCIPAL -------------------------------------------------- */
   titulo: 'Hablemos',
-  descripcion: 'El Centro de Alumnos CAA está para escucharte. Escríbenos, ' +
-               'pásate por la oficina o cuéntanos tu idea: toda propuesta se ' +
-               'revisa y se responde.',
+  descripcion: 'El Centro de Alumnos CAA está para escucharte. Escríbenos y ' +
+               'cuéntanos tu idea: cualquier propuesta se revisa y responde.',
 
   /* ---- BOTÓN PRINCIPAL DEL PIE ------------------------------------------ */
-  boton: { texto: 'Escríbenos', url: 'mailto:contacto@caa.cl' },   // 👉 ENLACE
+  boton: { texto: 'Escríbenos', url: 'mailto:carlosgomezp@verbo.cl' },   // 👉 ENLACE
 
   /* ---- DATOS DE CONTACTO -------------------------------------------------
      "icono" debe existir en src/componentes/ui/Iconos.jsx                     */
   contacto: [
-    { icono: 'correo',    texto: 'contacto@caa.cl',            url: 'mailto:contacto@caa.cl' },
-    { icono: 'telefono',  texto: '+56 9 0000 0000',            url: 'tel:+56900000000' },
-    { icono: 'ubicacion', texto: 'Oficina CAA, Edificio A',    url: '' },
+    { icono: 'correo',    texto: 'carlosgomezp@verbo.cl',  url: 'mailto:carlosgomezp@verbo.cl' },
+    { icono: 'telefono',  texto: '+569 7154 4681',         url: 'tel:+56971544681' },
   ],
 
   /* ---- REDES SOCIALES ----------------------------------------------------
@@ -30,8 +28,8 @@ window.CONTENIDO_FOOTER = {
      x, whatsapp. Borra los que no uses.                                       */
   redes: [
     { icono: 'instagram', nombre: 'Instagram', url: 'https://instagram.com/' },   // 👉 ENLACE
-    { icono: 'whatsapp',  nombre: 'WhatsApp',  url: 'https://wa.me/56900000000' },// 👉 ENLACE
-    { icono: 'correo',    nombre: 'Correo',    url: 'mailto:contacto@caa.cl' },
+    { icono: 'whatsapp',  nombre: 'WhatsApp',  url: 'https://wa.me/56971544681' },// 👉 ENLACE
+    { icono: 'correo',    nombre: 'Correo',    url: 'mailto:carlosgomezp@verbo.cl' },
   ],
 
   /* ---- COLUMNAS DE ENLACES ----------------------------------------------

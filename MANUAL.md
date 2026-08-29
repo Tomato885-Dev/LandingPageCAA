@@ -562,7 +562,7 @@ Abre `src/contenido/colaboradores.js`.
 Todos los botones se escriben igual: un texto y una dirección.
 
 ```js
-boton: { texto: 'Escríbenos', url: 'mailto:contacto@caa.cl' },
+boton: { texto: 'Escríbenos', url: 'mailto:carlosgomezp@verbo.cl' },
 ```
 
 Tipos de dirección que puedes usar:

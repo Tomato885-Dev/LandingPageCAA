@@ -81,7 +81,7 @@ function Footer() {
         {/* El contacto se ancla siempre a la última columna: así, haya una o
             tres columnas de enlaces, queda a la derecha y el pie no se ve
             desbalanceado. */}
-        <Reveal comoLista delay={0.15} className="md:col-start-4">
+        <Reveal comoLista delay={0.15} className="col-span-2 md:col-span-1 md:col-start-4 min-w-0">
           <div>
             <h3 className="text-xs uppercase tracking-[0.18em] text-white/70 font-body font-medium mb-4">Contacto</h3>
             <ul className="space-y-3">
@@ -89,8 +89,8 @@ function Footer() {
                 <li key={i} className="flex items-start gap-2.5">
                   <Icono nombre={dato.icono} className="h-4 w-4 mt-0.5 shrink-0 text-white/85" />
                   {dato.url
-                    ? <a href={dato.url} className="text-sm text-white/90 hover:text-white font-body font-light transition-colors">{dato.texto}</a>
-                    : <span className="text-sm text-white font-body font-light">{dato.texto}</span>}
+                    ? <a href={dato.url} className="text-sm text-white/90 hover:text-white font-body font-light transition-colors min-w-0 break-words">{dato.texto}</a>
+                    : <span className="text-sm text-white font-body font-light min-w-0 break-words">{dato.texto}</span>}
                 </li>
               ))}
             </ul>
