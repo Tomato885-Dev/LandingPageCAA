@@ -48,6 +48,9 @@ window.CONTENIDO_FOOTER = {
     },
   ],
 
-  /* ---- LÍNEA FINAL ------------------------------------------------------- */
-  legal: '© ' + new Date().getFullYear() + ' Centro de Alumnos CAA. Hecho por y para la comunidad estudiantil.',
+  /* ---- LÍNEA FINAL -------------------------------------------------------
+     El año va escrito a mano (2027, el periodo de la campaña). Antes se ponía
+     solo el año en curso; si algún día quieres volver a eso, escribe:
+       legal: '© ' + new Date().getFullYear() + ' Campaña para el Centro de Alumnos.',  */
+  legal: '© 2027 Campaña para el Centro de Alumnos.',
 };
