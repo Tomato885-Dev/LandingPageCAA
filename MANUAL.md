@@ -197,7 +197,47 @@ estadisticas: [
   Si no quieres el tachado, simplemente no escribas ese campo.
 - Los nombres de iconos posibles están en el [punto 12](#12-iconos-cuáles-hay-y-cómo-agregar-otros).
 
-### Ejemplo 4: escribir el texto de los "Pilares"
+### Ejemplo 4: textos largos y el enlace "Leer más"
+
+Cuando un texto es muy largo, no se muestra entero de golpe: se deja visible
+lo importante y el resto queda detrás de un enlace **"Leer más"** que se abre
+hacia abajo. Lo que está arriba **no se mueve**.
+
+Así funcionan las tarjetas de **Visión** y **Misión**
+(`src/contenido/vision-mision.js`):
+
+```js
+    {
+      icono: 'brujula',
+      etiqueta: 'Visión',
+      titulo: 'Visión',
+
+      texto: 'Primer párrafo. SE VE SIEMPRE.',
+
+      puntos: [                      // los 3 ✓ rojos, SE VEN SIEMPRE
+        'Frase clave uno.',
+        'Frase clave dos.',
+        'Frase clave tres.',
+      ],
+
+      masTexto: [                    // esto queda detrás de "Leer más"
+        'Segundo párrafo.',
+
+        'Tercer párrafo.',
+      ],
+    },
+```
+
+- Para **mover un párrafo** de escondido a siempre visible, córtalo de
+  `masTexto` y pégalo en `texto` (o al revés).
+- Si borras `masTexto` o lo dejas en `[]`, **el enlace "Leer más" desaparece
+  solo** y la tarjeta queda como una tarjeta normal.
+- Los párrafos largos se cortan en varias líneas con ` + ` al final de cada
+  una. Ese `+` no sale en la página.
+
+---
+
+### Ejemplo 5: escribir el texto de los "Pilares"
 
 Al final de la sección **Visión y Misión** hay dos barras grandes ("Ejecutar" e
 "Impulsar"). Al pincharlas se abre un panel con texto. Se editan en

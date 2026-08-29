@@ -105,8 +105,10 @@ function VisionMision({ id }) {
     <SeccionBase id={id} fondo={c.fondo} alturaMinima="min-h-0">
       <TituloSeccion kicker={c.kicker} titulo={c.titulo} />
 
-      {/* --- Los dos bloques (Visión y Misión) --- */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
+      {/* --- Los dos bloques (Visión y Misión) ---
+              items-start: al abrir "Leer más" en uno, el otro NO se estira
+              para acompañarlo; cada tarjeta mide lo que mide su contenido. */}
+      <div className="grid grid-cols-1 md:grid-cols-2 items-start gap-6 mt-16">
         {c.bloques.map((bloque, i) => (
           <Reveal comoLista key={i} delay={i * 0.12}>
             <TarjetaGlass
@@ -115,8 +117,10 @@ function VisionMision({ id }) {
               titulo={bloque.titulo}
               texto={bloque.texto}
               puntos={bloque.puntos}
-              alturaMinima="min-h-[380px]"
-              className="h-full"
+              masTexto={bloque.masTexto}
+              indice={i}
+              anchoTexto="max-w-none"
+              alturaMinima="min-h-0"
             />
           </Reveal>
         ))}
