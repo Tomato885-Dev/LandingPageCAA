@@ -189,11 +189,16 @@ body.menu-abierto {
 .desplegable > .desplegable-interior {
   overflow: hidden;
   opacity: 0;
-  transition: opacity 0.25s ease;
+  /* visibility oculta el texto de verdad mientras está cerrado: así no lo
+     leen los lectores de pantalla ni lo encuentra el buscador del navegador
+     (Ctrl+F). Se apaga recién cuando termina de cerrarse. */
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0s linear 0.45s;
 }
 .desplegable[data-abierto="true"] > .desplegable-interior {
   opacity: 1;
-  transition-delay: 0.15s;
+  visibility: visible;
+  transition: opacity 0.25s ease 0.15s, visibility 0s linear 0s;
 }
 
 /* La flechita de la derecha gira cuando el pilar está abierto */

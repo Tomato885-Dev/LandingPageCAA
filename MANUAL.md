@@ -347,6 +347,31 @@ intro: 'Cada proyecto nace de una necesidad concreta planteada por la comunidad.
 
 Para quitarlo: `intro: '',`
 
+**Si el texto es largo** (como en "¿Por qué nosotros?"), se puede partir en
+tres, y así no cae todo de golpe sobre el lector:
+
+```js
+  intro: [                       // SE VE SIEMPRE
+    'Primer párrafo.',
+    'Segundo párrafo.',
+  ],
+
+  introMas: [                    // detrás del enlace "Leer más"
+    'Tercer párrafo.',
+    'Cuarto párrafo.',
+  ],
+
+  cierre: 'La frase final, destacada con una línea roja al costado. ' +
+          'También SE VE SIEMPRE.',
+```
+
+- Al pinchar "Leer más" el texto crece **hacia abajo**: nada de lo que está
+  arriba se mueve de lugar.
+- Para mover un párrafo de escondido a siempre visible, córtalo de `introMas`
+  y pégalo al final de `intro` (o al revés).
+- Si dejas `introMas: []`, **el enlace desaparece solo**.
+- `cierre` es opcional: si lo dejas en `''`, no sale.
+
 ---
 
 ## 6. Cambiar o agregar imágenes (y videos de fondo)

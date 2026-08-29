@@ -3,10 +3,34 @@
    ----------------------------------------------------------------------------
    Muestra el texto pequeño ("kicker") y el título grande en varias líneas.
    Los textos se editan en los archivos de src/contenido/.
+
+   El texto de introducción admite tres partes:
+     • intro     → uno o varios párrafos. SE VEN SIEMPRE.
+     • introMas  → párrafos que quedan detrás del enlace "Leer más".
+     • cierre    → frase de cierre destacada. SE VE SIEMPRE.
+   Si no pasas introMas, no aparece ningún enlace y todo funciona como antes.
    ============================================================================ */
 
-function TituloSeccion({ kicker, titulo = [], intro, className = '', centrado = false }) {
+const { useState: useStateTitulo } = React;
+
+function TituloSeccion({
+  kicker,
+  titulo = [],
+  intro,
+  introMas = [],
+  cierre = '',
+  textoLeerMas = 'Leer más',
+  textoLeerMenos = 'Leer menos',
+  className = '',
+  centrado = false,
+}) {
   const lineas = Array.isArray(titulo) ? titulo : [titulo];
+  const [abierto, setAbierto] = useStateTitulo(false);
+
+  // "intro" acepta una frase suelta o una lista de párrafos.
+  const parrafos = Array.isArray(intro) ? intro.filter(Boolean) : (intro ? [intro] : []);
+  const parrafosExtra = (introMas || []).filter(Boolean);
+  const anchoTexto = 'max-w-2xl' + (centrado ? ' mx-auto' : '');
 
   return (
     <div className={(centrado ? 'text-center mx-auto ' : '') + className}>
@@ -22,10 +46,54 @@ function TituloSeccion({ kicker, titulo = [], intro, className = '', centrado = 
         </h2>
       </Reveal>
 
-      {intro ? (
+      {parrafos.length ? (
         <Reveal comoLista delay={0.2}>
-          <p className={'mt-6 text-sm md:text-base text-white font-body font-light leading-relaxed max-w-2xl' + (centrado ? ' mx-auto' : '')}>
-            {intro}
+          <div className={'mt-6 space-y-4 ' + anchoTexto}>
+            {parrafos.map((parrafo, i) => (
+              <p key={i} className="text-sm md:text-base text-white font-body font-light leading-relaxed">
+                {parrafo}
+              </p>
+            ))}
+          </div>
+        </Reveal>
+      ) : null}
+
+      {/* --- "Leer más": el resto del texto crece hacia abajo --- */}
+      {parrafosExtra.length ? (
+        <Reveal comoLista delay={0.25}>
+          <div className={anchoTexto}>
+            <button
+              type="button"
+              onClick={() => setAbierto(!abierto)}
+              aria-expanded={abierto}
+              aria-controls="intro-mas"
+              data-abierto={abierto ? 'true' : 'false'}
+              className="enlace-leer-mas mt-5 inline-flex items-center gap-2 text-sm font-body font-medium text-white hover:text-marca transition-colors cursor-pointer"
+            >
+              <span>{abierto ? textoLeerMenos : textoLeerMas}</span>
+              <Icono nombre="flecha-abajo" className="giro-flecha h-4 w-4" />
+            </button>
+
+            <div id="intro-mas" className="desplegable" data-abierto={abierto ? 'true' : 'false'}>
+              <div className="desplegable-interior">
+                <div className="pt-5 space-y-4">
+                  {parrafosExtra.map((parrafo, i) => (
+                    <p key={i} className="text-sm md:text-base text-white/90 font-body font-light leading-relaxed">
+                      {parrafo}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      ) : null}
+
+      {/* --- Frase de cierre destacada --- */}
+      {cierre ? (
+        <Reveal comoLista delay={0.3}>
+          <p className={'mt-8 border-l-2 borde-marca pl-5 font-heading italic text-white text-xl md:text-2xl leading-snug ' + anchoTexto}>
+            {cierre}
           </p>
         </Reveal>
       ) : null}

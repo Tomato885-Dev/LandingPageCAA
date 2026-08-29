@@ -10,7 +10,13 @@ function Nosotros({ id }) {
   return (
     <SeccionBase id={id} fondo={c.fondo}>
       {/* --- Encabezado --- */}
-      <TituloSeccion kicker={c.kicker} titulo={c.titulo} intro={c.intro} />
+      <TituloSeccion
+        kicker={c.kicker}
+        titulo={c.titulo}
+        intro={c.intro}
+        introMas={c.introMas}
+        cierre={c.cierre}
+      />
 
       {/* --- Tarjetas de áreas (solo si hay alguna escrita en nosotros.js) --- */}
       {c.tarjetas && c.tarjetas.length ? (

@@ -13,11 +13,52 @@ window.CONTENIDO_NOSOTROS = {
   /* ---- ENCABEZADO -------------------------------------------------------- */
   kicker: '// ¿Por qué nosotros?',  // texto chico sobre el título
   titulo: ['Experiencia', 'que nos une'], // cada elemento es una línea
-  intro: 'Somos un equipo con experiencia y participación activa en nuestra ' +
-         'comunidad. Conocemos de cerca sus desafíos porque escuchamos ' +
-         'diariamente a los estudiantes. Por eso, presentamos proyectos ' +
-         'concretos, pensados para generar un impacto real en el día a día ' +
-         'de todos.',
+  /* ---- TEXTO DE INTRODUCCIÓN ---------------------------------------------
+     Como el texto es largo, se muestra en tres partes:
+
+     • intro    → los primeros párrafos. SE VEN SIEMPRE.
+     • introMas → el resto. Queda detrás del enlace "Leer más" y se despliega
+                  hacia abajo, sin mover nada de lo que está arriba.
+     • cierre   → la frase final, destacada con una línea roja al costado.
+                  SE VE SIEMPRE, esté abierto o cerrado.
+
+     👉 Para mover un párrafo de escondido a siempre visible, córtalo de
+        introMas y pégalo al final de intro (o al revés).
+     👉 Si dejas  introMas: []  , el enlace "Leer más" desaparece solo.        */
+  intro: [
+    'La pregunta que más se repite durante esta semana de campaña es: ' +
+    '¿Por qué votar por ustedes?',
+
+    'Nuestra respuesta no se fundamenta solamente en que dejamos de lado las ' +
+    'ideas escritas en papel, y venimos con proyectos claros y medidas ' +
+    'concretas para solucionar los problemas reales de todo el alumnado del ' +
+    'colegio. Se basa en que somos un equipo con experiencia, que conoce el ' +
+    'colegio y que ya ha demostrado que sabe llevar proyectos adelante.',
+  ],
+
+  introMas: [
+    'Hemos liderado proyectos sociales como Plantemos Juntos, Trabajos ' +
+    'Verbitas, ALXV y Misiones, donde hemos tenido que organizar, escuchar, ' +
+    'coordinar y movilizar a otros, logrando una gestión destacada. Hemos ' +
+    'sido capitanes de selección, aprendiendo a liderar equipos, motivar y ' +
+    'trabajar por un objetivo común. También hemos participado en la ' +
+    'organización del Alcántara, consiguiendo auspicios y colaboradores para ' +
+    'hacer realidad distintos proyectos.',
+
+    'Hemos sido presidentes de curso, estando cerca de los alumnos y ' +
+    'liderando actividades de la vida cotidiana, como pichangas o juntadas ' +
+    'de completos. También hemos sido parte del Tribunal de Honor, donde ' +
+    'hemos demostrado nuestro compromiso con la transparencia, la ' +
+    'responsabilidad y el cumplimiento de las normas.',
+
+    'Todo esto demuestra que durante este tiempo no solo hemos trabajado ' +
+    'para impulsar al alumnado y crear proyectos que generen un impacto ' +
+    'real, sino que también hemos desarrollado las habilidades necesarias ' +
+    'para llevar adelante una gestión seria, responsable y cercana.',
+  ],
+
+  cierre: 'Por eso queremos ser tu CAA: porque no venimos a aprender a ' +
+          'gestionar, venimos a poner nuestra experiencia al servicio del Verbo.',
 
   /* ---- TARJETAS DE ÁREAS -------------------------------------------------
      Ahora mismo esta sección va sin tarjetas: del texto de introducción se
