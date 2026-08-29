@@ -14,9 +14,8 @@ window.CONTENIDO_COLABORADORES = {
   },
 
   kicker: '// Colaboradores',
-  titulo: ['Quienes caminan', 'con nosotros'],
-  intro: 'Organizaciones, unidades y personas que hacen posible el trabajo ' +
-         'del Centro de Alumnos.',
+  titulo: ['Colaboradores'],
+  intro: 'Organizaciones, unidades y personas que colaboran con la campaña.',
 
   /* ------------------------------------------------------------------------
      LOS AUSPICIOS
