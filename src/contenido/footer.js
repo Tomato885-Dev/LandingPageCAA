@@ -10,8 +10,8 @@ window.CONTENIDO_FOOTER = {
 
   /* ---- BLOQUE PRINCIPAL -------------------------------------------------- */
   titulo: 'Hablemos',
-  descripcion: 'El Centro de Alumnos CAA está para escucharte. Escríbenos y ' +
-               'cuéntanos tu idea: cualquier propuesta se revisa y responde.',
+  descripcion: 'La campaña está para escucharte: cuéntanos tu idea y te ' +
+               'responderemos lo antes posible.',
 
   /* ---- BOTÓN PRINCIPAL DEL PIE ------------------------------------------ */
   boton: { texto: 'Escríbenos', url: 'mailto:carlosgomezp@verbo.cl' },   // 👉 ENLACE
