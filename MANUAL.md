@@ -203,49 +203,45 @@ Al final de la sección **Visión y Misión** hay dos barras grandes ("Ejecutar"
 "Impulsar"). Al pincharlas se abre un panel con texto. Se editan en
 `src/contenido/vision-mision.js`, dentro de `pilares:`.
 
-```js
-pilares: {
-  titulo: 'Pilares',
-  lista: [
-    {
-      nombre: 'Ejecutar',
-      bajada: '',
-      icono: 'rayo',
-      texto: '',
-      puntos: [],
-    },
-    ...
-  ],
-},
-```
-
 | Campo | Para qué sirve |
 |---|---|
 | `nombre` | El título grande de la barra |
-| `bajada` | Frase corta que se ve **siempre**, aunque el pilar esté cerrado. Déjala en `''` si no quieres |
+| `bajada` | Frase corta que se ve **siempre**, aunque el pilar esté cerrado. Déjala en `''` si no la quieres |
 | `icono` | El icono del cuadrado rojo. Los nombres están en el [punto 12](#12-iconos-cuáles-hay-y-cómo-agregar-otros) |
-| `texto` | El párrafo que aparece al desplegar |
+| `texto` | Lo que aparece al desplegar. Uno o varios párrafos |
 | `puntos` | Frases cortas con un ✓ rojo. Puede quedar en `[]` |
 
-Mientras `texto` y `puntos` estén vacíos, el panel muestra un aviso gris que
-dice *"Escribe aquí el texto de este pilar."*. **Ese aviso desaparece solo**
-apenas escribas algo; no hay que tocar nada más.
-
-Ejemplo ya rellenado:
+**Un solo párrafo** se escribe entre comillas:
 
 ```js
     {
       nombre: 'Ejecutar',
-      bajada: 'Menos promesas, más acciones concretas.',
+      bajada: 'Que las ideas pasen del papel a la realidad.',
       icono: 'rayo',
-      texto: 'Cada proyecto que presentamos tiene un responsable, un plazo y ' +
-             'una forma de comprobar que se cumplió.',
-      puntos: [
-        'Un responsable por proyecto.',
-        'Plazos públicos.',
-      ],
+      texto: 'Un proyecto no vale por cómo suena, sino por si se puede ' +
+             'hacer bien.',
+      puntos: [],
     },
 ```
+
+**Varios párrafos** van entre corchetes, cada uno entre comillas y separado
+del siguiente por una coma. Así están escritos los dos pilares actuales:
+
+```js
+      texto: [
+        'Primer párrafo. Si es largo, se corta en varias líneas con  + ' +
+        'al final de cada una, como esta.',
+
+        'Segundo párrafo.',
+      ],
+```
+
+Ese `+` al final de la línea no sale en la página: solo sirve para que el
+texto no quede en una línea eterna dentro del archivo.
+
+Si dejas `texto` y `puntos` vacíos, el panel muestra un aviso gris que dice
+*"Escribe aquí el texto de este pilar."*. **Ese aviso desaparece solo** apenas
+escribas algo; no hay que tocar nada más.
 
 **Para agregar un tercer pilar:** copia un bloque `{ … },` completo y pégalo
 dentro de la lista. Las barras se acomodan solas.

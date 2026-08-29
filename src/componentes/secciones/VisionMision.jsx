@@ -12,7 +12,12 @@ const { useState: useStatePilar } = React;
 function BarraPilar({ pilar, indice }) {
   const [abierto, setAbierto] = useStatePilar(false);
   const idPanel = 'pilar-panel-' + indice;
-  const hayContenido = Boolean(pilar.texto) || (pilar.puntos && pilar.puntos.length > 0);
+
+  // "texto" acepta las dos formas: una frase suelta, o una lista de párrafos.
+  const parrafos = Array.isArray(pilar.texto)
+    ? pilar.texto.filter(Boolean)
+    : (pilar.texto ? [pilar.texto] : []);
+  const hayContenido = parrafos.length > 0 || (pilar.puntos && pilar.puntos.length > 0);
 
   return (
     <div className="liquid-glass rounded-tarjeta overflow-hidden">
@@ -56,14 +61,18 @@ function BarraPilar({ pilar, indice }) {
 
             {hayContenido ? (
               <React.Fragment>
-                {pilar.texto ? (
-                  <p className="text-sm md:text-base text-white font-body font-light leading-relaxed max-w-[70ch]">
-                    {pilar.texto}
-                  </p>
+                {parrafos.length ? (
+                  <div className="space-y-4 max-w-[72ch]">
+                    {parrafos.map((parrafo, i) => (
+                      <p key={i} className="text-sm md:text-base text-white font-body font-light leading-relaxed">
+                        {parrafo}
+                      </p>
+                    ))}
+                  </div>
                 ) : null}
 
                 {pilar.puntos && pilar.puntos.length ? (
-                  <ul className={'space-y-3 ' + (pilar.texto ? 'mt-5' : '')}>
+                  <ul className={'space-y-3 ' + (parrafos.length ? 'mt-5' : '')}>
                     {pilar.puntos.map((punto, i) => (
                       <li key={i} className="flex items-start gap-2.5">
                         <Icono nombre="check" className="h-4 w-4 mt-1 shrink-0 text-marca" strokeWidth={2.4} />
