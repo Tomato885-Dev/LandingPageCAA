@@ -4,13 +4,13 @@ Aquí van las 7 fotos de los integrantes, con estos nombres de archivo exactos:
 
 | Integrante | Archivo |
 |---|---|
-| Carlos Gomez | `carlos-gomez.jpg` |
-| Tomas Leon | `tomas-leon.jpg` |
+| Carlos Gómez | `carlos-gomez.jpg` |
+| Tomás León | `tomas-leon.jpg` |
 | Juan Casanova | `juan-casanova.jpg` |
-| Emilio Bascuñan | `emilio-bascunan.jpg` |
+| Emilio Bascuñán | `emilio-bascunan.jpg` |
 | Vicente Donoso | `vicente-donoso.jpg` |
-| Tomas Del Valle | `tomas-del-valle.jpg` |
-| Nicolas Velasco | `nicolas-velasco.jpg` |
+| Tomás Del Valle | `tomas-del-valle.jpg` |
+| Nicolás Velasco | `nicolas-velasco.jpg` |
 
 Los nombres de archivo van **sin tildes y sin ñ** (por eso `emilio-bascunan.jpg`
 y no `emilio-bascuñan.jpg`): algunos servidores no los manejan bien. El nombre

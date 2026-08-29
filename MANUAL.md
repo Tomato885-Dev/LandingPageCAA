@@ -413,8 +413,8 @@ foto** (no hay cargos):
 equipo: {
   titulo: 'Nuestro núcleo',
   integrantes: [
-    { nombre: 'Carlos Gomez', foto: 'assets/img/equipo/carlos-gomez.jpg' },
-    { nombre: 'Tomas Leon',   foto: 'assets/img/equipo/tomas-leon.jpg' },
+    { nombre: 'Carlos Gómez', foto: 'assets/img/equipo/carlos-gomez.jpg' },
+    { nombre: 'Tomás León',   foto: 'assets/img/equipo/tomas-leon.jpg' },
     ...
   ],
 },

@@ -92,13 +92,13 @@ window.CONTENIDO_NOSOTROS = {
   equipo: {
     titulo: 'Nuestro núcleo',
     integrantes: [
-      { nombre: 'Carlos Gomez',     foto: 'assets/img/equipo/carlos-gomez.jpg' },
-      { nombre: 'Tomas Leon',       foto: 'assets/img/equipo/tomas-leon.jpg' },
-      { nombre: 'Juan Casanova',    foto: 'assets/img/equipo/juan-casanova.jpg' },
-      { nombre: 'Emilio Bascuñan',  foto: 'assets/img/equipo/emilio-bascunan.jpg' },
-      { nombre: 'Vicente Donoso',   foto: 'assets/img/equipo/vicente-donoso.jpg' },
-      { nombre: 'Tomas Del Valle',  foto: 'assets/img/equipo/tomas-del-valle.jpg' },
-      { nombre: 'Nicolas Velasco',  foto: 'assets/img/equipo/nicolas-velasco.jpg' },
+      { nombre: 'Carlos Gómez',      foto: 'assets/img/equipo/carlos-gomez.jpg' },
+      { nombre: 'Tomás León',        foto: 'assets/img/equipo/tomas-leon.jpg' },
+      { nombre: 'Juan Casanova',     foto: 'assets/img/equipo/juan-casanova.jpg' },
+      { nombre: 'Emilio Bascuñán',   foto: 'assets/img/equipo/emilio-bascunan.jpg' },
+      { nombre: 'Vicente Donoso',    foto: 'assets/img/equipo/vicente-donoso.jpg' },
+      { nombre: 'Tomás Del Valle',   foto: 'assets/img/equipo/tomas-del-valle.jpg' },
+      { nombre: 'Nicolás Velasco',   foto: 'assets/img/equipo/nicolas-velasco.jpg' },
     ],
   },
 };
