@@ -17,8 +17,8 @@ window.CONTENIDO_PROYECTOS = {
 
   kicker: '// Proyectos',
   titulo: ['Línea de tiempo', 'del mandato'],
-  intro: 'Octubre 2026 – Octubre 2027. Fechas estimadas por mes, sujetas a ' +
-         'confirmación. Pincha cualquier actividad para ver su detalle.',
+  intro: 'Fechas estimadas por mes, sujetas a confirmación. Pincha cualquier ' +
+         'actividad para ver su detalle.',
 
   lineaTiempo: {
 
