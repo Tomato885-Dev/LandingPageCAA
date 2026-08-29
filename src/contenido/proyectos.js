@@ -17,8 +17,7 @@ window.CONTENIDO_PROYECTOS = {
 
   kicker: '// Proyectos',
   titulo: ['Línea de tiempo', 'del mandato'],
-  intro: 'Fechas estimadas por mes, sujetas a confirmación. Pincha cualquier ' +
-         'actividad para ver su detalle.',
+  intro: 'Pincha cualquier actividad para ver su detalle.',
 
   lineaTiempo: {
 
@@ -36,8 +35,12 @@ window.CONTENIDO_PROYECTOS = {
       tradicional: 'Otras actividades (eventos, deportivo, cultura, elecciones, cuentas públicas)',
     },
 
+    /* Aviso que va ARRIBA, junto a la leyenda de colores. */
     nota: 'Las actividades con flecha (→) son permanentes: comienzan ese mes ' +
           'y se mantienen durante todo el año.',
+
+    /* Aviso que va DEBAJO de la línea de tiempo. Déjalo en '' si no lo quieres. */
+    notaFinal: 'Fechas estimadas por mes, sujetas a confirmación.',
 
     /* ======================================================================
        LAS ACTIVIDADES

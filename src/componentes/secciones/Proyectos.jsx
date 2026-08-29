@@ -246,6 +246,12 @@ function Proyectos({ id }) {
           <div className="lg:hidden">
             <LineaVertical lt={lt} alPinchar={setAbierta} />
           </div>
+
+          {lt.notaFinal ? (
+            <p className="text-xs text-white/60 font-body font-light italic mt-8">
+              {lt.notaFinal}
+            </p>
+          ) : null}
         </div>
       </Reveal>
 
