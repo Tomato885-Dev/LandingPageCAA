@@ -30,10 +30,10 @@ window.CONTENIDO_HERO = {
   titulo: 'Cuidamos nuestra historia,\nConstruimos nuestro futuro',
 
   /* ---- TEXTO DESCRIPTIVO ------------------------------------------------- */
-  subtitulo: 'Con la experiencia de lo que hemos construido y la motivación ' +
-             'para seguir avanzando, Carlos +2 busca representar, escuchar y ' +
-             'trabajar junto a todos los estudiantes por un Centro de Alumnos ' +
-             'cada vez más cercano, activo y comprometido.',
+  subtitulo: 'Con la experiencia de haber liderado proyectos reales y la ' +
+             'convicción de que el Verbo necesita continuidad, Carlos +2 ' +
+             'busca ejecutar, impulsar y representar a cada estudiante ' +
+             'mediante un Centro de Alumnos serio, cercano y comprometido.',
 
   /* ---- BOTONES ----------------------------------------------------------- */
   botones: {

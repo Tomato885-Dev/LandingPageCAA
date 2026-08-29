@@ -1,94 +1,283 @@
 /* ============================================================================
-   Proyectos.jsx — SECCIÓN 4: PROYECTOS
+   Proyectos.jsx — SECCIÓN 4: LÍNEA DE TIEMPO DEL MANDATO
    ----------------------------------------------------------------------------
-   Los proyectos se agregan/editan en:  src/contenido/proyectos.js
-   (no hace falta tocar este archivo para agregar un proyecto nuevo)
+   Las actividades se editan en:  src/contenido/proyectos.js
+   (no hace falta tocar este archivo para agregar, quitar o mover una)
+
+   En pantalla ancha se dibuja horizontal, como un calendario del año.
+   En celular la misma información se muestra vertical, mes por mes: una
+   línea de tiempo horizontal no cabe en un teléfono.
    ============================================================================ */
 
-function TarjetaProyecto({ proyecto }) {
-  // Si el proyecto está marcado como "destacado", la tarjeta ocupa todo el
-  // ancho y se muestra con la imagen a un lado (solo en pantallas grandes).
-  const destacado = Boolean(proyecto.destacado);
+const { useState: useStateLT, useEffect: useEffectLT, useRef: useRefLT } = React;
 
+const ALTO_CARRIL = 44;      // alto de cada fila de cajas, en píxeles
+const ALTO_EJE = 56;         // espacio del eje con los nombres de los meses
+const SEPARACION = 10;       // aire mínimo entre dos cajas de la misma fila
+
+/* ----------------------------------------------------------------------------
+   Reparte las actividades en filas para que ninguna se pise con otra.
+   Las más anchas van primero, así quedan pegadas al eje y las cajas chicas
+   se apilan hacia afuera.
+   ---------------------------------------------------------------------------- */
+function repartirEnCarriles(actividades, meses, anchoColumna) {
+  const anchoTotal = meses.length * anchoColumna;
+
+  const conMedidas = actividades.map((a) => {
+    const iDesde = meses.indexOf(a.desde);
+    const iHasta = a.hasta ? meses.indexOf(a.hasta) : iDesde;
+    // Ancho aproximado del texto. No hace falta que sea exacto: solo sirve
+    // para decidir qué cabe al lado de qué.
+    const anchoTexto = a.nombre.length * 7.1 + (a.permanente ? 62 : 34);
+    const esBarra = iHasta > iDesde;
+    let ancho = esBarra
+      ? Math.max((iHasta - iDesde) * anchoColumna, anchoTexto)
+      : anchoTexto;
+    ancho = Math.min(ancho, anchoTotal);
+    let izquierda = esBarra
+      ? (iDesde + 0.5) * anchoColumna
+      : (iDesde + 0.5) * anchoColumna - ancho / 2;
+    // Que ninguna caja se salga del recuadro.
+    izquierda = Math.max(0, Math.min(izquierda, anchoTotal - ancho));
+    return { ...a, iDesde, iHasta, esBarra, ancho, izquierda };
+  });
+
+  // Barras largas primero; entre iguales, la que empieza antes.
+  const orden = conMedidas.slice().sort((a, b) =>
+    (b.ancho - a.ancho) || (a.iDesde - b.iDesde)
+  );
+
+  const carriles = [];
+  for (const it of orden) {
+    let n = 0;
+    while (
+      carriles[n] &&
+      carriles[n].some((o) =>
+        !(it.izquierda + it.ancho + SEPARACION <= o.izquierda ||
+          o.izquierda + o.ancho + SEPARACION <= it.izquierda))
+    ) n++;
+    if (!carriles[n]) carriles[n] = [];
+    carriles[n].push(it);
+    it.carril = n;
+  }
+
+  return { items: orden, totalCarriles: carriles.length };
+}
+
+/* ----------------------------------------------------------------------------
+   Una caja de la línea de tiempo (sirve para las dos versiones)
+   ---------------------------------------------------------------------------- */
+function CajaActividad({ actividad, alPinchar, estilo, className = '', mostrarHasta = false }) {
+  const clase = actividad.tipo === 'propuesta' ? 'caja-propuesta' : 'caja-tradicional';
   return (
-    <Panel className="rounded-tarjeta p-5 h-full">
-      <div className={'relative z-10 flex flex-col h-full gap-5 ' + (destacado ? 'lg:flex-row lg:items-stretch lg:gap-8' : '')}>
-
-        {/* --- Imagen --- */}
-        <div className={'relative ' + (destacado ? 'lg:w-1/2 lg:shrink-0 lg:h-full' : '')}>
-          <Media
-            src={proyecto.imagen}
-            alt={proyecto.titulo}
-            proporcion={destacado ? 'aspect-[16/10] lg:aspect-auto lg:h-full lg:min-h-[320px]' : 'aspect-[16/10]'}
-            etiqueta="Agrega aquí la imagen del proyecto"
-          />
-          {proyecto.estado ? (
-            <span className="absolute top-3 left-3 liquid-glass rounded-full px-3 py-1 text-[11px] font-medium text-white">
-              <span className="relative z-10 flex items-center gap-1.5">
-                <i className="punto-marca" />
-                {proyecto.estado}
-              </span>
-            </span>
-          ) : null}
-        </div>
-
-        {/* --- Texto --- */}
-        <div className={'flex flex-col flex-1 ' + (destacado ? 'lg:py-2' : '')}>
-          <h3 className={'font-heading italic text-white tracking-[-1px] leading-none ' + (destacado ? 'text-4xl md:text-5xl' : 'text-3xl md:text-4xl')}>
-            {proyecto.titulo}
-          </h3>
-          <p className="mt-3 text-sm text-white font-body font-light leading-snug max-w-[48ch]">
-            {proyecto.descripcion}
-          </p>
-
-          {proyecto.etiquetas && proyecto.etiquetas.length ? (
-            <div className="flex flex-wrap gap-1.5 mt-4">
-              {proyecto.etiquetas.map((etiqueta, i) => <Pildora key={i}>{etiqueta}</Pildora>)}
-            </div>
-          ) : null}
-
-          <div className="flex-1" />
-
-          {proyecto.enlace && proyecto.enlace.url ? (
-            <div className="mt-6">
-              <Boton texto={proyecto.enlace.texto} url={proyecto.enlace.url} variante="principal" />
-            </div>
-          ) : null}
-        </div>
-      </div>
-    </Panel>
+    <button
+      type="button"
+      onClick={() => alPinchar(actividad)}
+      style={estilo}
+      title={actividad.nombre}
+      className={'caja-actividad ' + clase + ' ' + className}
+    >
+      <span className="caja-actividad-texto">{actividad.nombre}</span>
+      {/* En la versión vertical no hay eje que muestre hasta cuándo dura,
+          así que la propia caja lo dice. */}
+      {mostrarHasta && actividad.hasta ? (
+        <span className="caja-hasta">hasta {actividad.hasta}</span>
+      ) : null}
+      {actividad.permanente ? <span className="caja-flecha" aria-hidden="true">→</span> : null}
+    </button>
   );
 }
 
+/* ----------------------------------------------------------------------------
+   Versión horizontal (pantallas anchas)
+   ---------------------------------------------------------------------------- */
+function LineaHorizontal({ lt, alPinchar }) {
+  const contenedorRef = useRefLT(null);
+  const [ancho, setAncho] = useStateLT(1100);
+
+  useEffectLT(() => {
+    const el = contenedorRef.current;
+    if (!el) return;
+    const medir = () => setAncho(el.getBoundingClientRect().width);
+    medir();
+    if (typeof ResizeObserver === 'undefined') {
+      window.addEventListener('resize', medir);
+      return () => window.removeEventListener('resize', medir);
+    }
+    const ro = new ResizeObserver(medir);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
+  const anchoColumna = ancho / lt.meses.length;
+  const arriba = repartirEnCarriles(lt.actividades.filter((a) => a.tipo === 'tradicional'), lt.meses, anchoColumna);
+  const abajo  = repartirEnCarriles(lt.actividades.filter((a) => a.tipo === 'propuesta'),   lt.meses, anchoColumna);
+
+  const altoArriba = arriba.totalCarriles * ALTO_CARRIL;
+  const altoAbajo  = abajo.totalCarriles * ALTO_CARRIL;
+
+  return (
+    <div ref={contenedorRef} className="relative w-full" style={{ height: altoArriba + ALTO_EJE + altoAbajo }}>
+
+      {/* Líneas verticales de cada mes, de arriba abajo */}
+      {lt.meses.map((mes, i) => (
+        <span key={'g' + i} className="lt-guia" style={{ left: (i + 0.5) * anchoColumna }} />
+      ))}
+
+      {/* Actividades del colegio, sobre el eje */}
+      {arriba.items.map((a, i) => (
+        <CajaActividad
+          key={'v' + i}
+          actividad={a}
+          alPinchar={alPinchar}
+          estilo={{
+            position: 'absolute',
+            left: a.izquierda,
+            width: a.ancho,
+            top: altoArriba - (a.carril + 1) * ALTO_CARRIL,
+          }}
+        />
+      ))}
+
+      {/* El eje */}
+      <div className="lt-eje" style={{ top: altoArriba + 8 }}>
+        {lt.meses.map((mes, i) => (
+          <span key={i} className="lt-mes" style={{ left: (i + 0.5) * anchoColumna }}>{mes}</span>
+        ))}
+      </div>
+
+      {/* Proyectos de campaña, bajo el eje */}
+      {abajo.items.map((a, i) => (
+        <CajaActividad
+          key={'r' + i}
+          actividad={a}
+          alPinchar={alPinchar}
+          estilo={{
+            position: 'absolute',
+            left: a.izquierda,
+            width: a.ancho,
+            top: altoArriba + ALTO_EJE + a.carril * ALTO_CARRIL - 8,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
+/* ----------------------------------------------------------------------------
+   Versión vertical (celular y tablet)
+   ---------------------------------------------------------------------------- */
+function LineaVertical({ lt, alPinchar }) {
+  // Cada actividad aparece en el mes en que empieza.
+  const porMes = lt.meses
+    .map((mes) => ({ mes, items: lt.actividades.filter((a) => a.desde === mes) }))
+    .filter((g) => g.items.length > 0);
+
+  return (
+    <div className="lt-vertical">
+      {porMes.map((grupo, i) => (
+        <div key={i} className="lt-vertical-mes">
+          <div className="lt-vertical-marca" aria-hidden="true" />
+          <p className="font-heading italic text-white text-2xl leading-none">{grupo.mes}</p>
+          <div className="flex flex-col items-start gap-2 mt-3">
+            {grupo.items.map((a, j) => (
+              <CajaActividad key={j} actividad={a} alPinchar={alPinchar} mostrarHasta className="caja-actividad-vertical" />
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/* ----------------------------------------------------------------------------
+   La sección completa
+   ---------------------------------------------------------------------------- */
 function Proyectos({ id }) {
   const c = window.CONTENIDO_PROYECTOS;
+  const lt = c.lineaTiempo;
+  const [abierta, setAbierta] = useStateLT(null);
+
+  if (!lt || !lt.actividades || !lt.actividades.length) {
+    return (
+      <SeccionBase id={id} fondo={c.fondo} alturaMinima="min-h-0">
+        <TituloSeccion kicker={c.kicker} titulo={c.titulo} intro={c.intro} />
+      </SeccionBase>
+    );
+  }
+
+  const esPropuesta = abierta && abierta.tipo === 'propuesta';
+  const parrafos = abierta
+    ? (Array.isArray(abierta.detalle) ? abierta.detalle.filter(Boolean) : (abierta.detalle ? [abierta.detalle] : []))
+    : [];
+
+  const cuando = (a) => {
+    if (!a) return '';
+    if (a.permanente) return 'Desde ' + a.desde + ' · se mantiene todo el año';
+    if (a.hasta) return a.desde + ' – ' + a.hasta;
+    return a.desde;
+  };
 
   return (
     <SeccionBase id={id} fondo={c.fondo} alturaMinima="min-h-0">
       <TituloSeccion kicker={c.kicker} titulo={c.titulo} intro={c.intro} />
 
-      {/* --- Lista de proyectos --- */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
-        {c.proyectos.map((proyecto, i) => (
-          <Reveal comoLista key={i} delay={(i % 3) * 0.1} className={proyecto.destacado ? 'lg:col-span-3' : ''}>
-            <TarjetaProyecto proyecto={proyecto} />
-          </Reveal>
-        ))}
-      </div>
+      {/* --- Leyenda --- */}
+      <Reveal comoLista delay={0.1}>
+        <div className="flex flex-wrap items-center gap-x-7 gap-y-3 mt-12">
+          <span className="flex items-center gap-2.5 text-xs md:text-sm text-white font-body">
+            <i className="lt-punto lt-punto-propuesta" /> {lt.leyenda.propuesta}
+          </span>
+          <span className="flex items-center gap-2.5 text-xs md:text-sm text-white font-body">
+            <i className="lt-punto lt-punto-tradicional" /> {lt.leyenda.tradicional}
+          </span>
+        </div>
+        {lt.nota ? (
+          <p className="text-xs text-white/60 font-body font-light italic mt-3">{lt.nota}</p>
+        ) : null}
+      </Reveal>
 
-      {/* --- Invitación final --- */}
-      {c.cta && c.cta.texto ? (
-        <Reveal comoLista delay={0.1}>
-          <Panel elevar={false} className="rounded-tarjeta mt-10 p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-            <p className="relative z-10 font-heading italic text-white text-3xl md:text-4xl tracking-[-1px] leading-none">
-              {c.cta.texto}
-            </p>
-            <div className="relative z-10">
-              <Boton texto={c.cta.boton.texto} url={c.cta.boton.url} variante="principal" />
-            </div>
-          </Panel>
-        </Reveal>
-      ) : null}
+      {/* --- La línea de tiempo --- */}
+      <Reveal comoLista delay={0.2}>
+        <div className="mt-10">
+          <div className="hidden lg:block">
+            <LineaHorizontal lt={lt} alPinchar={setAbierta} />
+          </div>
+          <div className="lg:hidden">
+            <LineaVertical lt={lt} alPinchar={setAbierta} />
+          </div>
+        </div>
+      </Reveal>
+
+      {/* --- Cuadro de detalle --- */}
+      <Modal
+        abierto={Boolean(abierta)}
+        alCerrar={() => setAbierta(null)}
+        titulo={abierta ? abierta.nombre : ''}
+        etiqueta={abierta ? (
+          <React.Fragment>
+            <i className={'lt-punto ' + (esPropuesta ? 'lt-punto-propuesta' : 'lt-punto-tradicional')} />
+            {esPropuesta ? 'Proyecto de campaña' : 'Actividad del colegio'}
+          </React.Fragment>
+        ) : null}
+        subtitulo={cuando(abierta)}
+      >
+        {parrafos.length ? (
+          <div className="space-y-4">
+            {parrafos.map((parrafo, i) => (
+              <p key={i} className="text-sm md:text-base text-white font-body font-light leading-relaxed">
+                {parrafo}
+              </p>
+            ))}
+          </div>
+        ) : (
+          /* Aviso mientras el detalle no está escrito. Desaparece solo apenas
+             se rellene el campo "detalle" en src/contenido/proyectos.js */
+          <p className="text-sm text-white/45 font-body font-light italic">
+            Escribe aquí el detalle de esta actividad.
+          </p>
+        )}
+      </Modal>
     </SeccionBase>
   );
 }

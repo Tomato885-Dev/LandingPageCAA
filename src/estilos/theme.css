@@ -48,6 +48,17 @@
        1    = velo fuerte, el texto se lee siempre
      Si tu video es oscuro puedes bajarlo; si es muy luminoso, súbelo.        */
   --velo-intensidad: 1;
+
+  /* Colores de la línea de tiempo (sección Proyectos).
+     • propuesta   = lo que proponemos nosotros → el rojo de la marca
+     • tradicional = lo que el colegio ya hace  → verde
+     El verde está elegido para que el texto blanco encima se lea igual de
+     bien que sobre el rojo (contraste 5,0 en los dos). Si lo cambias por uno
+     más claro, el nombre de la actividad se empieza a perder. */
+  --color-propuesta: var(--color-marca);
+  --color-propuesta-rgb: var(--color-marca-rgb);
+  --color-tradicional: #15803d;
+  --color-tradicional-rgb: 21, 128, 61;
 }
 
 /* ============================================================================
@@ -407,4 +418,196 @@ body.menu-abierto {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(var(--color-marca-rgb), 0.8);
+}
+
+
+/* ============================================================================
+   LÍNEA DE TIEMPO (sección Proyectos)
+   ----------------------------------------------------------------------------
+   En pantalla ancha se dibuja horizontal; en celular, vertical. Las medidas
+   de las filas están en src/componentes/secciones/Proyectos.jsx
+   ============================================================================ */
+
+/* --- Cada caja de actividad --- */
+.caja-actividad {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  height: 34px;
+  padding: 0 0.75rem;
+  border-radius: 0.5rem;
+  border: 0;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1;
+  color: #ffffff;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+              filter 0.25s ease;
+}
+.caja-actividad-texto {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.caja-flecha {
+  flex-shrink: 0;
+  font-size: 0.95rem;
+  line-height: 1;
+  opacity: 0.85;
+}
+.caja-propuesta   { background: var(--color-propuesta); }
+.caja-tradicional { background: var(--color-tradicional); }
+
+.caja-actividad:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.12);
+  z-index: 5;
+}
+.caja-propuesta:hover {
+  box-shadow: 0 10px 26px -10px rgba(var(--color-propuesta-rgb), 0.95);
+}
+.caja-tradicional:hover {
+  box-shadow: 0 10px 26px -10px rgba(var(--color-tradicional-rgb), 0.95);
+}
+.caja-actividad:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+  z-index: 6;
+}
+
+/* --- Versión horizontal --- */
+.lt-guia {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.07);
+  pointer-events: none;
+}
+.lt-eje {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(var(--color-marca-rgb), 0.85) 0%,
+    rgba(255, 255, 255, 0.45) 60%,
+    rgba(255, 255, 255, 0.18) 100%
+  );
+  pointer-events: none;
+}
+.lt-mes {
+  position: absolute;
+  top: 14px;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* --- Versión vertical (celular y tablet) --- */
+.lt-vertical {
+  position: relative;
+  padding-left: 1.75rem;
+}
+.lt-vertical::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 6px;
+  bottom: 6px;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    rgba(var(--color-marca-rgb), 0.85) 0%,
+    rgba(255, 255, 255, 0.25) 100%
+  );
+}
+.lt-vertical-mes { position: relative; padding-bottom: 2rem; }
+.lt-vertical-mes:last-child { padding-bottom: 0; }
+.lt-vertical-marca {
+  position: absolute;
+  left: -1.75rem;
+  top: 6px;
+  width: 11px;
+  height: 11px;
+  border-radius: 9999px;
+  background: var(--color-marca);
+  box-shadow: 0 0 10px rgba(var(--color-marca-rgb), 0.9);
+}
+.caja-actividad-vertical {
+  height: auto;
+  min-height: 34px;
+  max-width: 100%;
+  padding: 0.5rem 0.85rem;
+  justify-content: flex-start;
+  text-align: left;
+}
+.caja-actividad-vertical .caja-actividad-texto { white-space: normal; }
+.caja-hasta {
+  flex-shrink: 0;
+  margin-left: 0.15rem;
+  font-size: 0.68rem;
+  font-weight: 500;
+  opacity: 0.8;
+  white-space: nowrap;
+}
+
+/* --- Puntitos de la leyenda --- */
+.lt-punto {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+.lt-punto-propuesta   { background: var(--color-propuesta); }
+.lt-punto-tradicional { background: var(--color-tradicional); }
+
+/* ============================================================================
+   CUADRO DE DETALLE (modal)
+   ============================================================================ */
+.modal-fondo {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: modal-entra 0.2s ease-out;
+}
+.modal-caja {
+  width: 100%;
+  max-width: 640px;
+  max-height: 85vh;
+  overflow-y: auto;
+  animation: modal-sube 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.modal-cerrar:hover { border-color: #ffffff !important; }
+.modal-cerrar:focus-visible {
+  outline: 2px solid rgba(var(--color-marca-rgb), 0.9);
+  outline-offset: 3px;
+}
+
+@keyframes modal-entra { from { opacity: 0; } to { opacity: 1; } }
+@keyframes modal-sube {
+  from { opacity: 0; transform: translateY(14px) scale(0.985); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .caja-actividad { transition: none; }
+  .modal-fondo, .modal-caja { animation: none; }
 }

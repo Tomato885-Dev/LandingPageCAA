@@ -14,7 +14,7 @@ parte de la página.
 4. [Cambiar los textos de cada sección](#4-cambiar-los-textos-de-cada-sección)
 5. [Cambiar títulos y subtítulos](#5-cambiar-títulos-y-subtítulos)
 6. [Cambiar o agregar imágenes (y videos de fondo)](#6-cambiar-o-agregar-imágenes-y-videos-de-fondo)
-7. [Agregar un proyecto nuevo](#7-agregar-un-proyecto-nuevo)
+7. [La línea de tiempo (sección Proyectos)](#7-la-línea-de-tiempo-sección-proyectos)
 8. [Agregar o eliminar un colaborador](#8-agregar-o-eliminar-un-colaborador)
 9. [Modificar enlaces y botones](#9-modificar-enlaces-y-botones)
 10. [Cambiar colores y otros elementos del diseño](#10-cambiar-colores-y-otros-elementos-del-diseño)
@@ -554,43 +554,88 @@ Es un solo número y afecta a todas las secciones con video a la vez.
 
 ---
 
-## 7. Agregar un proyecto nuevo
+## 7. La línea de tiempo (sección Proyectos)
 
-Abre `src/contenido/proyectos.js` y busca la lista `proyectos: [ … ]`.
+La sección **Proyectos** ya no son tarjetas: es una **línea de tiempo** del
+mandato. Cada actividad es una caja que se puede pinchar para leer su detalle.
 
-**Copia y pega este bloque completo** dentro de la lista (antes del `]`):
+- En **computador** se dibuja horizontal, con los meses en el eje.
+- En **celular** la misma información aparece vertical, mes por mes. Una línea
+  horizontal no cabe en un teléfono, por eso hay dos versiones. **No hay que
+  escribir nada dos veces**: las dos salen de la misma lista.
+
+Todo se edita en `src/contenido/proyectos.js`, dentro de `lineaTiempo`.
+
+### Agregar una actividad
+
+Copia una línea completa dentro de `actividades: [ ... ]` y cámbiale los datos:
 
 ```js
-    {
-      titulo: 'Nombre del proyecto',
-      descripcion: 'Explica en dos o tres líneas de qué se trata el proyecto.',
-      imagen: 'assets/img/mi-proyecto.jpg',
-      estado: 'En curso',
-      etiquetas: ['Cultura', 'Comunidad'],
-      enlace: { texto: 'Ver más', url: 'https://ejemplo.cl' },
-      destacado: false,
-    },
+      { tipo: 'propuesta', nombre: 'Nombre corto', desde: 'May 27', detalle: '' },
 ```
 
-Qué significa cada campo:
+| Campo | Para qué sirve |
+|---|---|
+| `tipo` | `'propuesta'` = **rojo** (lo que proponen ustedes) · `'tradicional'` = **verde** (lo que el colegio ya hace) |
+| `nombre` | El texto de la caja. Mientras más corto, mejor |
+| `desde` | El mes. Tiene que estar escrito **igual** que en la lista `meses` |
+| `hasta` | Solo si dura varios meses: dibuja una barra larga. Si es de un mes, no escribas este campo |
+| `permanente` | `true` le pone la flecha (→): empieza ese mes y sigue todo el año. No lleva `hasta` |
+| `detalle` | El texto que se lee al pinchar |
 
-| Campo | Para qué sirve | Ejemplo |
-|---|---|---|
-| `titulo` | Nombre del proyecto | `'Semana del Estudiante'` |
-| `descripcion` | Explicación corta | `'Una semana de actividades…'` |
-| `imagen` | Foto del proyecto (o `''` si aún no hay) | `'assets/img/semana.jpg'` |
-| `estado` | Etiqueta sobre la foto | `'En curso'`, `'Próximamente'`, `'Finalizado'` |
-| `etiquetas` | Palabras clave (0 a 4) | `['Cultura', 'Anual']` |
-| `enlace` | Botón del proyecto. Usa `null` si no tiene | `{ texto: 'Ver más', url: '#' }` |
-| `destacado` | `true` = tarjeta ancha con la foto al costado | `false` |
+Ejemplos de los tres casos:
 
-**Recomendación:** deja `destacado: true` en **un solo** proyecto (el más
-importante). Los demás en `false`.
+```js
+      // de un solo mes
+      { tipo: 'propuesta', nombre: 'Noche Verde 1', desde: 'May 27', detalle: '' },
 
-**Para eliminar un proyecto:** borra su bloque completo, desde `{` hasta `},`.
+      // barra larga
+      { tipo: 'propuesta', nombre: 'Paseos Culturales', desde: 'Mar 27', hasta: 'Oct 27', detalle: '' },
 
-**Para cambiar el orden:** mueve los bloques de lugar. El primero de la lista
-aparece primero en la página.
+      // permanente (con flecha)
+      { tipo: 'propuesta', nombre: 'CAA 911', desde: 'Oct 26', permanente: true, detalle: '' },
+```
+
+**Para quitar una actividad:** borra su línea completa.
+**Para moverla de mes:** cambia el `desde`. Las cajas se reacomodan solas para
+no pisarse entre ellas; no hay que ordenar nada a mano.
+
+### Escribir el detalle
+
+`detalle` puede ser una frase entre comillas, o varios párrafos entre corchetes:
+
+```js
+      detalle: [
+        'Primer párrafo.',
+
+        'Segundo párrafo.',
+      ],
+```
+
+Mientras esté vacío, el cuadro muestra un aviso gris que dice *"Escribe aquí el
+detalle de esta actividad."*. **Ese aviso desaparece solo** apenas escribas algo.
+
+### Los meses del eje
+
+```js
+    meses: ['Oct 26', 'Nov 26', ... , 'Oct 27'],
+```
+
+Si agregas o quitas un mes, el eje se reparte solo. Eso sí: si borras un mes que
+alguna actividad estaba usando, esa actividad deja de aparecer. Cambia también su
+`desde`.
+
+### Los colores
+
+Están en `src/estilos/theme.css`:
+
+```css
+  --color-propuesta: var(--color-marca);   /* rojo  */
+  --color-tradicional: #15803d;            /* verde */
+```
+
+El verde está elegido para que el nombre blanco encima se lea igual de bien que
+sobre el rojo. Si lo cambias por uno más claro, el texto se empieza a perder.
 
 ---
 
