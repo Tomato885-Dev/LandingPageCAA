@@ -689,7 +689,7 @@ automáticamente.
 
 | Botón | Archivo | Campo |
 |---|---|---|
-| "Únete al CAA" (menú) | `src/contenido/sitio.js` | `botonMenu` |
+| "Hablemos" (botón rojo del menú) | `src/contenido/sitio.js` | `botonMenu` |
 | Botones de la portada | `src/contenido/hero.js` | `botones.principal` y `botones.secundario` |
 | Botón de cada proyecto | `src/contenido/proyectos.js` | `proyectos[].enlace` |
 | Recuadro del final de Proyectos *(quitado)* | `src/contenido/proyectos.js` | `cta` está en `null` |
@@ -741,7 +741,7 @@ Todo eso se controla desde `src/estilos/theme.css`, en el bloque de arriba:
 | `--color-marca-rgb` | El mismo color en formato RGB. **Si cambias el de arriba, cambia también este** (ver nota) |
 | `--color-fondo` | El fondo de toda la página |
 | `--color-texto` | El color general de los textos |
-| `--color-acento` | Color del botón "Únete al CAA" y del chip "Nuevo" (por defecto, el rojo) |
+| `--color-acento` | Color del botón rojo del menú y del chip destacado (por defecto, el rojo) |
 | `--color-acento-texto` | Color de la letra **dentro** de ese botón |
 | `--radio-tarjeta` | Qué tan redondeadas son las tarjetas |
 | `--vidrio-opacidad` | Cuánto rojo lleva el vidrio de las tarjetas |
@@ -756,7 +756,7 @@ Todo eso se controla desde `src/estilos/theme.css`, en el bloque de arriba:
 
 | Dónde se ve | Cómo se controla |
 |---|---|
-| Botón "Únete al CAA" y chip "Nuevo" | `--color-acento` |
+| Botón rojo del menú y chip destacado | `--color-acento` |
 | Los textos pequeños tipo `// Proyectos` | clase `text-marca` en `src/componentes/ui/TituloSeccion.jsx` |
 | Los ✓ de Visión y Misión | `text-marca` en `src/componentes/ui/TarjetaGlass.jsx` |
 | El puntito de "En curso" en los proyectos | clase `.punto-marca` |

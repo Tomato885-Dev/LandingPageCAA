@@ -32,7 +32,7 @@ window.CONTENIDO_SITIO = {
 
   /* ---- BOTÓN DESTACADO DEL MENÚ ------------------------------------------ */
   botonMenu: {
-    texto: 'Únete al CAA',
+    texto: 'Hablemos',
     url: '#contacto',               // 👉 ENLACE: formulario, correo o sección
   },
 };
