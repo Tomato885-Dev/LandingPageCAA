@@ -17,7 +17,10 @@ window.CONTENIDO_PROYECTOS = {
 
   kicker: '// Proyectos',
   titulo: ['Línea de tiempo', 'del mandato'],
-  intro: 'Pincha cualquier actividad para ver su detalle.',
+  intro: 'En el marco de nuestro pilar Ejecutar, nosotros les presentamos ' +
+         'nuestra propuesta de cómo será nuestra gestión si asumimos para ' +
+         'liderar el próximo año el CAA, donde indicamos cuáles serán las ' +
+         'actividades desarrolladas cada mes.',
 
   lineaTiempo: {
 
@@ -34,6 +37,9 @@ window.CONTENIDO_PROYECTOS = {
       propuesta:   'Proyectos CAA (nuevos)',
       tradicional: 'Otras actividades (eventos, deportivo, cultura, elecciones, cuentas públicas)',
     },
+
+    /* Instrucción chica que va ARRIBA, junto a la leyenda de colores. */
+    ayuda: 'Pincha cualquier actividad para ver su detalle.',
 
     /* Aviso que va ARRIBA, junto a la leyenda de colores. */
     nota: 'Las actividades con flecha (→) son permanentes: comienzan ese mes ' +

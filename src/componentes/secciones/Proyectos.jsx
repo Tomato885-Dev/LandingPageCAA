@@ -220,7 +220,12 @@ function Proyectos({ id }) {
 
   return (
     <SeccionBase id={id} fondo={c.fondo} alturaMinima="min-h-0">
-      <TituloSeccion kicker={c.kicker} titulo={c.titulo} intro={c.intro} />
+      <TituloSeccion
+        kicker={c.kicker}
+        titulo={c.titulo}
+        intro={c.intro}
+        tamanoIntro="text-base md:text-lg lg:text-xl"
+      />
 
       {/* --- Leyenda --- */}
       <Reveal comoLista delay={0.1}>
@@ -232,8 +237,11 @@ function Proyectos({ id }) {
             <i className="lt-punto lt-punto-tradicional" /> {lt.leyenda.tradicional}
           </span>
         </div>
+        {lt.ayuda ? (
+          <p className="text-sm text-white/85 font-body font-light mt-4">{lt.ayuda}</p>
+        ) : null}
         {lt.nota ? (
-          <p className="text-xs text-white/60 font-body font-light italic mt-3">{lt.nota}</p>
+          <p className="text-xs text-white/60 font-body font-light italic mt-1.5">{lt.nota}</p>
         ) : null}
       </Reveal>
 

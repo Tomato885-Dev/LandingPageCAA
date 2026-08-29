@@ -21,6 +21,7 @@ function TituloSeccion({
   cierre = '',
   textoLeerMas = 'Leer más',
   textoLeerMenos = 'Leer menos',
+  tamanoIntro = 'text-sm md:text-base',
   className = '',
   centrado = false,
 }) {
@@ -50,7 +51,7 @@ function TituloSeccion({
         <Reveal comoLista delay={0.2}>
           <div className={'mt-6 space-y-4 ' + anchoTexto}>
             {parrafos.map((parrafo, i) => (
-              <p key={i} className="text-sm md:text-base text-white font-body font-light leading-relaxed">
+              <p key={i} className={'text-white font-body font-light leading-relaxed ' + tamanoIntro}>
                 {parrafo}
               </p>
             ))}
