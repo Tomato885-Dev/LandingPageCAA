@@ -90,7 +90,7 @@ window.CONTENIDO_NOSOTROS = {
      Para agregar o quitar a alguien, copia o borra una línea { ... } completa.
      El diseño se reacomoda solo, sean 4, 7 u 11 integrantes.                   */
   equipo: {
-    titulo: 'La directiva 2027',
+    titulo: 'Nuestro núcleo',
     integrantes: [
       { nombre: 'Carlos Gomez',     foto: 'assets/img/equipo/carlos-gomez.jpg' },
       { nombre: 'Tomas Leon',       foto: 'assets/img/equipo/tomas-leon.jpg' },

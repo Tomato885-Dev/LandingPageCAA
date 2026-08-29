@@ -411,7 +411,7 @@ foto** (no hay cargos):
 
 ```js
 equipo: {
-  titulo: 'La directiva 2027',
+  titulo: 'Nuestro núcleo',
   integrantes: [
     { nombre: 'Carlos Gomez', foto: 'assets/img/equipo/carlos-gomez.jpg' },
     { nombre: 'Tomas Leon',   foto: 'assets/img/equipo/tomas-leon.jpg' },
