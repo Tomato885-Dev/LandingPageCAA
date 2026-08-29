@@ -52,9 +52,15 @@ window.CONTENIDO_HERO = {
     { icono: 'objetivo', numero: '14', etiqueta: 'Proyectos pensados para generar un impacto real' },
   ],
 
-  /* ---- FRANJA DE ALIADOS (parte baja de la portada) ---------------------- */
-  aliados: {
-    texto: 'Impulsamos nuestra comunidad desde todos los frentes',
-    nombres: ['Cultura', 'Deporte', 'Acción Social', 'Participación Estudiantil', 'Convivencia y Comunidad'],
-  },
+  /* ---- FRANJA DE LA PARTE BAJA DE LA PORTADA ----------------------------
+     Quitada: la portada termina en las cifras destacadas.
+
+     Si algún día quieres volver a mostrar una franja de palabras abajo,
+     cambia el null por un bloque con este formato:
+
+       aliados: {
+         texto: 'Impulsamos nuestra comunidad desde todos los frentes',
+         nombres: ['Cultura', 'Deporte', 'Acción Social'],
+       },                                                                     */
+  aliados: null,
 };
