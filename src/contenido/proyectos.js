@@ -75,19 +75,165 @@ window.CONTENIDO_PROYECTOS = {
     actividades: [
 
       /* ---------- PROYECTOS DE CAMPAÑA (rojo) ---------------------------- */
-      { tipo: 'propuesta', nombre: 'CAA 911',            desde: 'Oct 26', permanente: true,  detalle: '' },
-      { tipo: 'propuesta', nombre: 'App CAA',            desde: 'Oct 26', permanente: true,  detalle: '' },
-      { tipo: 'propuesta', nombre: 'Imprime al Toque',   desde: 'Nov 26', permanente: true,  detalle: '' },
-      { tipo: 'propuesta', nombre: 'Plan Lector',        desde: 'Mar 27', permanente: true,  detalle: '' },
-      { tipo: 'propuesta', nombre: 'Comitivas',          desde: 'Mar 27', permanente: true,  detalle: '' },
-      { tipo: 'propuesta', nombre: 'ADN',                desde: 'Mar 27', permanente: true,  detalle: '' },
-      { tipo: 'propuesta', nombre: 'Paseos Culturales',  desde: 'Mar 27', hasta: 'Oct 27',   detalle: '' },
-      { tipo: 'propuesta', nombre: 'Wickso Liga',        desde: 'Abr 27', hasta: 'May 27',   detalle: '' },
-      { tipo: 'propuesta', nombre: 'Noche Verde 1',      desde: 'May 27',                    detalle: '' },
-      { tipo: 'propuesta', nombre: 'Semana Social',      desde: 'May 27',                    detalle: '' },
-      { tipo: 'propuesta', nombre: 'Más que un Saludo',  desde: 'Jun 27',                    detalle: '' },
-      { tipo: 'propuesta', nombre: 'Wickso Playoffs',    desde: 'Jul 27', hasta: 'Ago 27',   detalle: '' },
-      { tipo: 'propuesta', nombre: 'Noche Verde 2',      desde: 'Oct 27',                    detalle: '' },
+      {
+        tipo: 'propuesta',
+        nombre: 'CAA 911',
+        desde: 'Oct 26', permanente: true,
+        detalle:
+          '¿Tienes un problema o idea urgente? Tu Centro de Alumnos al ' +
+          'rescate: un canal rápido y directo para responder a tus ' +
+          'necesidades en el colegio.',
+      },
+      {
+        tipo: 'propuesta',
+        nombre: 'App CAA',
+        desde: 'Oct 26', permanente: true,
+        detalle: '',   // 👉 FALTA ESCRIBIR
+      },
+      {
+        tipo: 'propuesta',
+        nombre: 'Imprime al Toque',
+        desde: 'Nov 26', permanente: true,
+        detalle:
+          'Print & Go CVD implementará un servicio de impresión gestionado ' +
+          'por el Centro de Alumnos, permitiendo que todos los estudiantes ' +
+          'puedan imprimir material académico de forma simple, ordenada y ' +
+          'accesible. Con ello, buscamos reducir las brechas de acceso y ' +
+          'asegurar que ningún alumno quede en desventaja por no contar con ' +
+          'una impresora.',
+      },
+      {
+        tipo: 'propuesta',
+        nombre: 'Plan Lector',
+        desde: 'Mar 27', permanente: true,
+        detalle: [
+          'Queremos transformar el Plan Lector para que leer deje de ser una ' +
+          'obligación y se convierta en una experiencia significativa. Sin ' +
+          'eliminar las lecturas obligatorias, proponemos que una de las ' +
+          'lecturas del año sea de libre elección, permitiendo que los ' +
+          'estudiantes seleccionen un libro de acuerdo con sus intereses, ' +
+          'siempre con la aprobación del profesor.',
+
+          'La evaluación se realizará de forma oral, promoviendo el análisis, ' +
+          'la reflexión y el desarrollo de habilidades de comunicación, ' +
+          'además de reducir el uso de la inteligencia artificial como ' +
+          'sustituto de la lectura.',
+
+          'Con esta reforma buscamos formar lectores más autónomos, críticos ' +
+          'y motivados, acercando la lectura a los intereses reales de los ' +
+          'alumnos y fortaleciendo una cultura lectora que perdure más allá ' +
+          'del colegio.',
+        ],
+      },
+      {
+        tipo: 'propuesta',
+        nombre: 'Comitivas',
+        desde: 'Mar 27', permanente: true,
+        detalle:
+          'Buscamos fortalecer las comitivas del Centro de Alumnos ' +
+          'entregándoles una organización clara, funciones definidas y ' +
+          'proyectos propios. Así, más estudiantes podrán participar ' +
+          'activamente, desarrollar habilidades de liderazgo y trabajo en ' +
+          'equipo, y contribuir de manera concreta a la vida escolar.',
+      },
+      {
+        tipo: 'propuesta',
+        nombre: 'ADN',
+        desde: 'Mar 27', permanente: true,
+        detalle:
+          'ADN transforma la hora de Orientación en un espacio para aprender ' +
+          'habilidades útiles para la vida. Desde 3° Básico hasta 4° Medio, ' +
+          'los alumnos desarrollarán herramientas prácticas que los preparen ' +
+          'para enfrentar con autonomía, responsabilidad y confianza los ' +
+          'desafíos del futuro.',
+      },
+      {
+        tipo: 'propuesta',
+        nombre: 'Paseos Culturales',
+        desde: 'Mar 27', hasta: 'Oct 27',
+        detalle: '',   // 👉 FALTA ESCRIBIR
+      },
+      {
+        tipo: 'propuesta',
+        nombre: 'Wickso Liga',
+        desde: 'Abr 27', hasta: 'May 27',
+        detalle: [
+          'Proponemos una Copa Wickso anual con un campeonato de liga en el ' +
+          'primer semestre y playoffs en el segundo, finalizando con una Gran ' +
+          'Final que defina al campeón absoluto.',
+
+          'Además, cada equipo podrá diseñar su propia camiseta, ' +
+          'fortaleciendo la identidad, la participación y el sentido de ' +
+          'pertenencia.',
+        ],
+      },
+      {
+        tipo: 'propuesta',
+        nombre: 'Noche Verde 1',
+        desde: 'May 27',
+        detalle:
+          'La Noche Verde busca recuperar y fortalecer el espíritu de la ' +
+          'barra verbita, transformándola en un espacio de unión, identidad y ' +
+          'apoyo hacia nuestros atletas. A través de una jornada previa al ' +
+          'interescolar con actividades, música, invitados y un banderazo ' +
+          'final, queremos revivir una tradición basada en el orgullo, el ' +
+          'respeto y la sana competencia, representando lo que significa ser ' +
+          'Verbita.',
+      },
+      {
+        tipo: 'propuesta',
+        nombre: 'Semana Social',
+        desde: 'May 27',
+        detalle:
+          'Semana Social busca que los estudiantes salgan de su realidad ' +
+          'cotidiana y conozcan distintas realidades de nuestro país, ' +
+          'superando la llamada “burbuja social” en la que muchas veces ' +
+          'vivimos. A través de experiencias de servicio y contacto directo ' +
+          'con otras comunidades, alumnos de 2° y 3° medio podrán poner sus ' +
+          'talentos al servicio de los demás, fortaleciendo la empatía, la ' +
+          'conciencia social y el compromiso de ser agentes de cambio desde ' +
+          'los valores del Verbo Divino.',
+      },
+      {
+        tipo: 'propuesta',
+        nombre: 'Más que un Saludo',
+        desde: 'Jun 27',
+        detalle:
+          'Más que un Saludo busca fortalecer los vínculos dentro de la ' +
+          'comunidad escolar, generando un espacio donde alumnos y ' +
+          'funcionarios puedan conocerse más allá de sus roles habituales. A ' +
+          'través del deporte, juegos y actividades compartidas, el proyecto ' +
+          'promueve el respeto, la cercanía y el sentido de pertenencia, ' +
+          'reconociendo el aporte de cada persona que forma parte del Verbo ' +
+          'Divino.',
+      },
+      {
+        tipo: 'propuesta',
+        nombre: 'Wickso Playoffs',
+        desde: 'Jul 27', hasta: 'Ago 27',
+        detalle: [
+          'Proponemos una Copa Wickso anual con un campeonato de liga en el ' +
+          'primer semestre y playoffs en el segundo, finalizando con una Gran ' +
+          'Final que defina al campeón absoluto.',
+
+          'Además, cada equipo podrá diseñar su propia camiseta, ' +
+          'fortaleciendo la identidad, la participación y el sentido de ' +
+          'pertenencia.',
+        ],
+      },
+      {
+        tipo: 'propuesta',
+        nombre: 'Noche Verde 2',
+        desde: 'Oct 27',
+        detalle:
+          'La Noche Verde busca recuperar y fortalecer el espíritu de la ' +
+          'barra verbita, transformándola en un espacio de unión, identidad y ' +
+          'apoyo hacia nuestros atletas. A través de una jornada previa al ' +
+          'interescolar con actividades, música, invitados y un banderazo ' +
+          'final, queremos revivir una tradición basada en el orgullo, el ' +
+          'respeto y la sana competencia, representando lo que significa ser ' +
+          'Verbita.',
+      },
 
       /* ---------- ACTIVIDADES DEL COLEGIO (verde) ------------------------ */
       { tipo: 'tradicional', nombre: 'Asumimos',              desde: 'Oct 26',                  detalle: '' },
@@ -110,6 +256,41 @@ window.CONTENIDO_PROYECTOS = {
       { tipo: 'tradicional', nombre: 'Cuenta Pública 3',      desde: 'Oct 27',                  detalle: '' },
       { tipo: 'tradicional', nombre: 'Interescolar Final',    desde: 'Oct 27',                  detalle: '' },
       { tipo: 'tradicional', nombre: 'Huella de Invierno 27', desde: 'Oct 27',                  detalle: '' },
+    ],
+
+    /* ======================================================================
+       TEXTOS ESCRITOS QUE TODAVÍA NO TIENEN LUGAR EN LA LÍNEA DE TIEMPO
+
+       Estos dos proyectos ya tienen su texto redactado, pero no aparecían en
+       la línea de tiempo original, así que falta decidir EN QUÉ MES van.
+
+       👉 Para ponerlos en la página: corta el bloque { ... } que quieras,
+          pégalo dentro de la lista "actividades" de arriba, y escríbele el
+          mes en "desde" (y "hasta" o "permanente: true" si corresponde).
+       ====================================================================== */
+    pendientesDeUbicar: [
+      {
+        tipo: 'propuesta',
+        nombre: 'Reciclaje',
+        desde: '',   // 👉 FALTA EL MES
+        detalle:
+          'Queremos que reciclar sea parte de la vida diaria del Verbo. Para ' +
+          'ello, instalaremos multicontenedores de reciclaje en puntos ' +
+          'estratégicos del colegio, junto con una campaña de educación ' +
+          'ambiental para toda la comunidad.',
+      },
+      {
+        tipo: 'propuesta',
+        nombre: 'Verbo por el Mundo',
+        desde: '',   // 👉 FALTA EL MES
+        detalle:
+          'Verbo por el Mundo propone una experiencia misionera que ' +
+          'permitirá a los estudiantes recorrer distintas comunidades de ' +
+          'Chile, viviendo el servicio, la evangelización y el encuentro con ' +
+          'otras realidades. Más que un viaje, busca fortalecer la fe, el ' +
+          'compromiso con los demás y la identidad verbita, haciendo vida el ' +
+          'lema “Salgan al Mundo”.',
+      },
     ],
   },
 
