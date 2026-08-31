@@ -21,7 +21,7 @@ window.CONTENIDO_HERO = {
   /* ---- ETIQUETA SUPERIOR (la píldora pequeña sobre el título) ------------ */
   etiqueta: {
     destacado: '+2',                                      // texto del chip rojo
-    texto: 'Periodo 2027 · ¡Vota Carlos por un CAA con experiencia!',
+    texto: '¡Vota Carlos por un CAA que te impulsa y ejecuta!',
   },
 
   /* ---- TÍTULO PRINCIPAL --------------------------------------------------
