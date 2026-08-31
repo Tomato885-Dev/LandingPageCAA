@@ -1,3 +1,7 @@
 .DS_Store
 Thumbs.db
 node_modules/
+
+# Carpeta que genera la construcción. Se rehace sola en cada publicación,
+# no hace falta guardarla en el repositorio.
+dist/

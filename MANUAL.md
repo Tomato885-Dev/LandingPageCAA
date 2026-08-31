@@ -1036,23 +1036,65 @@ navegacion: [
 
 ## 14. Publicar la página en internet
 
-La página es un sitio estático: se puede publicar gratis.
+### Cómo funciona ahora
 
-**Opción A — GitHub Pages (gratis):**
+Cada vez que subes un cambio a GitHub, **la página se publica sola**. No hay
+que instalar ni ejecutar nada.
 
-1. Sube la carpeta a un repositorio de GitHub.
-2. En el repositorio: `Settings` → `Pages`.
-3. En "Source" elige la rama (por ejemplo `main`) y la carpeta `/ (root)`.
-4. Guarda. En pocos minutos tendrás una dirección tipo
-   `https://tuusuario.github.io/LandingPageCAA/`.
+Por detrás pasa esto: GitHub toma los archivos, arma una versión optimizada y
+la publica. Eso reduce el peso de la página de unos 6 MB a 2 MB y hace que
+abra en la mitad de tiempo, sobre todo en celulares antiguos. La página se ve
+exactamente igual: solo carga más rápido.
 
-**Opción B — Netlify (gratis, arrastrando la carpeta):**
+**👉 Una sola vez, para activarlo:** en el repositorio, `Settings` → `Pages`
+→ en "Source" elegir **"GitHub Actions"** (no "Deploy from a branch").
 
-1. Entra a [app.netlify.com/drop](https://app.netlify.com/drop).
-2. Arrastra la carpeta completa del proyecto.
-3. Listo, te entrega una dirección al instante.
+Después de eso, cada push publica solo. Puedes ver cómo va en la pestaña
+**Actions** del repositorio: si aparece un ✅, ya está publicada; si aparece
+una ❌, algo falló y ahí mismo dice qué.
 
-> Para actualizar el sitio, vuelve a subir los archivos modificados.
+### Ponerle un nombre propio (dominio)
+
+1. Compra el dominio. Para `.cl` es en **NIC.cl** (~$10.000 al año); para
+   `.com`, en Cloudflare o Namecheap (~12 USD al año).
+2. En el repositorio: `Settings` → `Pages` → **Custom domain**, escribe el
+   dominio y guarda.
+3. En donde compraste el dominio, apunta el DNS a GitHub (la misma página de
+   Settings te dice qué valores poner).
+4. Marca **"Enforce HTTPS"** para que la dirección salga con candado.
+
+La construcción respeta el archivo `CNAME` que GitHub crea en el paso 2, así
+que el dominio no se pierde al publicar de nuevo.
+
+### Qué archivos son de la publicación (no hay que tocarlos)
+
+| Archivo | Para qué |
+|---|---|
+| `.github/workflows/publicar.yml` | Le dice a GitHub que publique en cada push |
+| `build/construir.mjs` | Arma la versión optimizada |
+| `package.json` | Lista las herramientas que usa la construcción |
+| `tailwind.config.js` | Copia de la configuración que está dentro de `index.html` |
+| `dist/` | La versión optimizada. **Se rehace sola**; no se guarda en el repositorio |
+
+**Lo importante:** tú sigues editando `src/contenido/…` igual que siempre, y
+abriendo `index.html` para ver los cambios. Nada de eso cambió. La versión
+optimizada se arma sola al publicar.
+
+> Si algún día agregas un archivo nuevo de componente, agrégalo a `index.html`
+> como siempre. La construcción lee esa lista, así que lo toma solo.
+
+### Verla en tu computador antes de publicar
+
+Igual que antes: abre `index.html` (ver el [punto 1](#1-cómo-ver-la-página-en-tu-computador)).
+Esa versión usa el modo de desarrollo, que es más lento pero permite editar y
+recargar sin construir nada.
+
+### Otra opción, si prefieres no usar GitHub
+
+Al ser un sitio estático, también sirve **Netlify**: entra a
+[app.netlify.com/drop](https://app.netlify.com/drop) y arrastra la carpeta.
+Te da una dirección al instante, pero ahí publicarías la versión sin
+optimizar, y tendrías que volver a arrastrarla en cada cambio.
 
 ---
 

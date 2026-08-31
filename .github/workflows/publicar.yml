@@ -1,0 +1,55 @@
+# ============================================================================
+#  Publica la página en internet.
+# ----------------------------------------------------------------------------
+#  Se ejecuta solo cada vez que subes un cambio. No hay que instalar ni correr
+#  nada a mano: GitHub arma la versión optimizada y la publica.
+#
+#  👉 PARA QUE ESTO FUNCIONE, UNA SOLA VEZ:
+#     en el repositorio, Settings → Pages → Source: elegir "GitHub Actions".
+# ============================================================================
+name: Publicar la página
+
+on:
+  push:
+    branches: [main, claude/caa-landing-page-pbhtln]
+  workflow_dispatch:        # permite lanzarla a mano desde la pestaña Actions
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  construir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar las herramientas de construcción
+        run: npm ci
+
+      - name: Armar la versión optimizada
+        run: npm run build
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  publicar:
+    needs: construir
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+    steps:
+      - id: despliegue
+        uses: actions/deploy-pages@v4
