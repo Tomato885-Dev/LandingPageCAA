@@ -7,12 +7,14 @@
    Boton     → botón o enlace (3 estilos: 'principal', 'solido', 'texto')
    ============================================================================ */
 
-function Panel({ children, className = '', fuerte = false, elevar = true, ...props }) {
+/* "as" permite que el panel sea otra etiqueta en vez de un div: por ejemplo
+   as="button" cuando la tarjeta completa tiene que ser pinchable. */
+function Panel({ children, className = '', fuerte = false, elevar = true, as: Etiqueta = 'div', ...props }) {
   const base = fuerte ? 'liquid-glass-strong' : 'liquid-glass';
   return (
-    <div className={base + (elevar ? ' hover-elevar' : '') + ' ' + className} {...props}>
+    <Etiqueta className={base + (elevar ? ' hover-elevar' : '') + ' ' + className} {...props}>
       {children}
-    </div>
+    </Etiqueta>
   );
 }
 

@@ -87,18 +87,59 @@ window.CONTENIDO_NOSOTROS = {
         Mientras una foto no esté subida, ese recuadro muestra el marcador
         "Foto del integrante" y la página no se rompe.
 
+     👉 INFORMACIÓN DE CADA UNO: al pinchar una foto se abre un cuadro con la
+        foto más grande y, debajo, el texto del campo "info". Puede ser una
+        frase entre comillas o varios párrafos entre corchetes:
+
+          info: [
+            'Primer párrafo.',
+
+            'Segundo párrafo.',
+          ],
+
+        Mientras esté vacío, el cuadro muestra un aviso gris que desaparece
+        solo apenas escribas algo.
+
      Para agregar o quitar a alguien, copia o borra una línea { ... } completa.
      El diseño se reacomoda solo, sean 4, 7 u 11 integrantes.                   */
   equipo: {
     titulo: 'Nuestro núcleo',
     integrantes: [
-      { nombre: 'Carlos Gómez',      foto: 'assets/img/equipo/carlos-gomez.jpg' },
-      { nombre: 'Tomás León',        foto: 'assets/img/equipo/tomas-leon.jpg' },
-      { nombre: 'Juan Casanova',     foto: 'assets/img/equipo/juan-casanova.jpg' },
-      { nombre: 'Emilio Bascuñán',   foto: 'assets/img/equipo/emilio-bascunan.jpg' },
-      { nombre: 'Vicente Donoso',    foto: 'assets/img/equipo/vicente-donoso.jpg' },
-      { nombre: 'Tomás Del Valle',   foto: 'assets/img/equipo/tomas-del-valle.jpg' },
-      { nombre: 'Nicolás Velasco',   foto: 'assets/img/equipo/nicolas-velasco.jpg' },
+      {
+        nombre: 'Carlos Gómez',
+        foto: 'assets/img/equipo/carlos-gomez.jpg',
+        info: '',   // 👉 ESCRIBE AQUÍ su información
+      },
+      {
+        nombre: 'Tomás León',
+        foto: 'assets/img/equipo/tomas-leon.jpg',
+        info: '',   // 👉 ESCRIBE AQUÍ su información
+      },
+      {
+        nombre: 'Juan Casanova',
+        foto: 'assets/img/equipo/juan-casanova.jpg',
+        info: '',   // 👉 ESCRIBE AQUÍ su información
+      },
+      {
+        nombre: 'Emilio Bascuñán',
+        foto: 'assets/img/equipo/emilio-bascunan.jpg',
+        info: '',   // 👉 ESCRIBE AQUÍ su información
+      },
+      {
+        nombre: 'Vicente Donoso',
+        foto: 'assets/img/equipo/vicente-donoso.jpg',
+        info: '',   // 👉 ESCRIBE AQUÍ su información
+      },
+      {
+        nombre: 'Tomás Del Valle',
+        foto: 'assets/img/equipo/tomas-del-valle.jpg',
+        info: '',   // 👉 ESCRIBE AQUÍ su información
+      },
+      {
+        nombre: 'Nicolás Velasco',
+        foto: 'assets/img/equipo/nicolas-velasco.jpg',
+        info: '',   // 👉 ESCRIBE AQUÍ su información
+      },
     ],
   },
 };

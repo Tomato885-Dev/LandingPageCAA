@@ -406,15 +406,24 @@ imagen: 'assets/img/semana-estudiante.jpg',
 
 ### Las fotos del equipo
 
-En `src/contenido/nosotros.js`, cada integrante lleva **solo su nombre y su
-foto** (no hay cargos):
+En `src/contenido/nosotros.js`, cada integrante lleva **su nombre, su foto y
+su información** (no hay cargos).
+
+Al pinchar una foto en la página se abre un cuadro con **la foto más grande y,
+debajo, el texto del campo `info`** — ahí va el "curriculum" de cada uno.
+Mientras `info` esté vacío, el cuadro muestra un aviso gris que desaparece solo
+apenas escribas algo. `info` admite una frase entre comillas o varios párrafos
+entre corchetes, igual que los demás textos largos de la página.
 
 ```js
 equipo: {
   titulo: 'Nuestro núcleo',
   integrantes: [
-    { nombre: 'Carlos Gómez', foto: 'assets/img/equipo/carlos-gomez.jpg' },
-    { nombre: 'Tomás León',   foto: 'assets/img/equipo/tomas-leon.jpg' },
+    {
+      nombre: 'Carlos Gómez',
+      foto: 'assets/img/equipo/carlos-gomez.jpg',
+      info: 'Lo que quieras contar de él. Se lee al pinchar su foto.',
+    },
     ...
   ],
 },
