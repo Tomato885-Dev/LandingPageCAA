@@ -152,7 +152,7 @@ window.CONTENIDO_PROYECTOS = {
           'equipo, y contribuir de manera concreta a la vida escolar.',
       },
       {
-        tipo: 'propuesta',
+        tipo: 'reforma',
         nombre: 'ADN',
         desde: 'Mar 27', permanente: true,
         detalle:
@@ -164,7 +164,7 @@ window.CONTENIDO_PROYECTOS = {
           'desafíos del futuro.',
       },
       {
-        tipo: 'propuesta',
+        tipo: 'reforma',
         nombre: 'Paseos Culturales',
         desde: 'Mar 27', hasta: 'Oct 27',
         detalle:
@@ -178,7 +178,7 @@ window.CONTENIDO_PROYECTOS = {
           'podrán vivir una experiencia especial en el Teatro Municipal.',
       },
       {
-        tipo: 'propuesta',
+        tipo: 'reforma',
         nombre: 'Wickso Liga',
         desde: 'Abr 27', hasta: 'May 27', grupo: 'wickso',
         detalle: [
@@ -232,7 +232,7 @@ window.CONTENIDO_PROYECTOS = {
           'Divino.',
       },
       {
-        tipo: 'propuesta',
+        tipo: 'reforma',
         nombre: 'Wickso Playoffs',
         desde: 'Jul 27', hasta: 'Ago 27', grupo: 'wickso',
         detalle: [
