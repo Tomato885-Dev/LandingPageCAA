@@ -88,7 +88,15 @@ window.CONTENIDO_PROYECTOS = {
         tipo: 'propuesta',
         nombre: 'App CAA',
         desde: 'Oct 26', permanente: true,
-        detalle: '',   // 👉 FALTA ESCRIBIR
+        detalle:
+          '¿Te ha pasado que te enteras tarde de una actividad, torneo o ' +
+          'iniciativa que te habría gustado conocer? Esta app busca cambiar ' +
+          'eso. Tendremos en un solo lugar noticias, eventos, inscripciones, ' +
+          'actividades y espacios para participar y conectar con estudiantes ' +
+          'de toda la enseñanza media. Además, podrás conocer iniciativas, ' +
+          'proyectos y emprendimientos de otros alumnos. Una plataforma hecha ' +
+          'para nuestra comunidad, segura, organizada y pensada para seguir ' +
+          'creciendo junto a nosotros.',
       },
       {
         tipo: 'propuesta',
@@ -151,7 +159,15 @@ window.CONTENIDO_PROYECTOS = {
         tipo: 'propuesta',
         nombre: 'Paseos Culturales',
         desde: 'Mar 27', hasta: 'Oct 27',
-        detalle: '',   // 👉 FALTA ESCRIBIR
+        detalle:
+          'Los Paseos Culturales no deberían ser una actividad que ocurre una ' +
+          'vez y desaparece. Queremos recuperarlos y convertirlos en una ' +
+          'experiencia mensual, donde nosotros mismos podamos elegir a dónde ' +
+          'ir y qué conocer. Desde lugares históricos y artísticos hasta ' +
+          'expresiones de la cultura popular, cada salida será una ' +
+          'oportunidad para salir de la rutina, compartir con otros cursos y ' +
+          'descubrir algo nuevo. Y para cerrar el año, quienes más participen ' +
+          'podrán vivir una experiencia especial en el Teatro Municipal.',
       },
       {
         tipo: 'propuesta',
