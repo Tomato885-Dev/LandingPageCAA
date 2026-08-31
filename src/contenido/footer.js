@@ -29,7 +29,6 @@ window.CONTENIDO_FOOTER = {
   redes: [
     { icono: 'instagram', nombre: 'Instagram', url: 'https://instagram.com/' },   // 👉 ENLACE
     { icono: 'whatsapp',  nombre: 'WhatsApp',  url: 'https://wa.me/56971544681' },// 👉 ENLACE
-    { icono: 'correo',    nombre: 'Correo',    url: 'mailto:carlosgomezp@verbo.cl' },
   ],
 
   /* ---- COLUMNAS DE ENLACES ----------------------------------------------
