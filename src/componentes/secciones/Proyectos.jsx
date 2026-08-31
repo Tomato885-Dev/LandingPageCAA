@@ -19,6 +19,12 @@ const SEPARACION = 10;       // aire mínimo entre dos cajas de la misma fila
    Reparte las actividades en filas para que ninguna se pise con otra.
    Las más anchas van primero, así quedan pegadas al eje y las cajas chicas
    se apilan hacia afuera.
+
+   Las actividades que comparten el campo "grupo" se colocan TODAS en la misma
+   fila, aunque ocurran en meses distintos (por ejemplo Wickso Liga y Wickso
+   Playoffs, o Noche Verde 1 y 2). Si dos del mismo grupo se pisaran entre
+   ellas, el grupo se ignora y cada una busca su propia fila: es preferible
+   perder la alineación antes que dibujar una caja encima de otra.
    ---------------------------------------------------------------------------- */
 function repartirEnCarriles(actividades, meses, anchoColumna) {
   const anchoTotal = meses.length * anchoColumna;
@@ -42,26 +48,45 @@ function repartirEnCarriles(actividades, meses, anchoColumna) {
     return { ...a, iDesde, iHasta, esBarra, ancho, izquierda };
   });
 
-  // Barras largas primero; entre iguales, la que empieza antes.
-  const orden = conMedidas.slice().sort((a, b) =>
-    (b.ancho - a.ancho) || (a.iDesde - b.iDesde)
-  );
+  const sePisan = (a, b) =>
+    !(a.izquierda + a.ancho + SEPARACION <= b.izquierda ||
+      b.izquierda + b.ancho + SEPARACION <= a.izquierda);
 
-  const carriles = [];
-  for (const it of orden) {
-    let n = 0;
-    while (
-      carriles[n] &&
-      carriles[n].some((o) =>
-        !(it.izquierda + it.ancho + SEPARACION <= o.izquierda ||
-          o.izquierda + o.ancho + SEPARACION <= it.izquierda))
-    ) n++;
-    if (!carriles[n]) carriles[n] = [];
-    carriles[n].push(it);
-    it.carril = n;
+  // Las del mismo grupo viajan juntas: se colocan como una sola unidad.
+  const unidades = [];
+  const porGrupo = {};
+  for (const it of conMedidas) {
+    if (!it.grupo) { unidades.push([it]); continue; }
+    if (!porGrupo[it.grupo]) { porGrupo[it.grupo] = []; unidades.push(porGrupo[it.grupo]); }
+    porGrupo[it.grupo].push(it);
   }
 
-  return { items: orden, totalCarriles: carriles.length };
+  // Si un grupo se pisa consigo mismo, se deshace en actividades sueltas.
+  const unidadesSanas = [];
+  for (const u of unidades) {
+    const choque = u.some((a, i) => u.some((b, j) => i < j && sePisan(a, b)));
+    if (choque) u.forEach((it) => unidadesSanas.push([it]));
+    else unidadesSanas.push(u);
+  }
+
+  // Unidades más anchas primero; entre iguales, la que empieza antes.
+  const orden = unidadesSanas.slice().sort((a, b) => {
+    const anchoA = Math.max(...a.map((x) => x.ancho));
+    const anchoB = Math.max(...b.map((x) => x.ancho));
+    const desdeA = Math.min(...a.map((x) => x.iDesde));
+    const desdeB = Math.min(...b.map((x) => x.iDesde));
+    return (anchoB - anchoA) || (desdeA - desdeB);
+  });
+
+  const carriles = [];
+  for (const unidad of orden) {
+    let n = 0;
+    while (carriles[n] && unidad.some((it) => carriles[n].some((o) => sePisan(it, o)))) n++;
+    if (!carriles[n]) carriles[n] = [];
+    for (const it of unidad) { carriles[n].push(it); it.carril = n; }
+  }
+
+  return { items: conMedidas, totalCarriles: carriles.length };
 }
 
 /* ----------------------------------------------------------------------------

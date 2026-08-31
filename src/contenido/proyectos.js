@@ -62,6 +62,11 @@ window.CONTENIDO_PROYECTOS = {
                       Si la actividad es de un solo mes, no escribas este campo.
        • permanente : true  → le pone la flecha (→). Empieza ese mes y sigue
                       todo el año. No lleva "hasta".
+       • grupo      : para que dos actividades que son LO MISMO queden en la
+                      misma fila aunque ocurran en meses distintos (por
+                      ejemplo Wickso Liga y Wickso Playoffs). Escríbeles el
+                      mismo texto en este campo, el que quieras: solo se usa
+                      para emparejarlas, no se ve en la página.
        • detalle    : el texto que se lee al pinchar la caja. Puede ser una
                       frase entre comillas o varios párrafos entre corchetes:
                           detalle: ['Primer párrafo.', 'Segundo párrafo.'],
@@ -173,7 +178,7 @@ window.CONTENIDO_PROYECTOS = {
       {
         tipo: 'propuesta',
         nombre: 'Wickso Liga',
-        desde: 'Abr 27', hasta: 'May 27',
+        desde: 'Abr 27', hasta: 'May 27', grupo: 'wickso',
         detalle: [
           'Proponemos una Copa Wickso anual con un campeonato de liga en el ' +
           'primer semestre y playoffs en el segundo, finalizando con una Gran ' +
@@ -187,7 +192,7 @@ window.CONTENIDO_PROYECTOS = {
       {
         tipo: 'propuesta',
         nombre: 'Noche Verde 1',
-        desde: 'May 27',
+        desde: 'May 27', grupo: 'noche-verde',
         detalle:
           'La Noche Verde busca recuperar y fortalecer el espíritu de la ' +
           'barra verbita, transformándola en un espacio de unión, identidad y ' +
@@ -227,7 +232,7 @@ window.CONTENIDO_PROYECTOS = {
       {
         tipo: 'propuesta',
         nombre: 'Wickso Playoffs',
-        desde: 'Jul 27', hasta: 'Ago 27',
+        desde: 'Jul 27', hasta: 'Ago 27', grupo: 'wickso',
         detalle: [
           'Proponemos una Copa Wickso anual con un campeonato de liga en el ' +
           'primer semestre y playoffs en el segundo, finalizando con una Gran ' +
@@ -241,7 +246,7 @@ window.CONTENIDO_PROYECTOS = {
       {
         tipo: 'propuesta',
         nombre: 'Noche Verde 2',
-        desde: 'Oct 27',
+        desde: 'Oct 27', grupo: 'noche-verde',
         detalle:
           'La Noche Verde busca recuperar y fortalecer el espíritu de la ' +
           'barra verbita, transformándola en un espacio de unión, identidad y ' +
@@ -254,15 +259,15 @@ window.CONTENIDO_PROYECTOS = {
 
       /* ---------- ACTIVIDADES DEL COLEGIO (verde) ------------------------ */
       { tipo: 'tradicional', nombre: 'Asumimos',              desde: 'Oct 26',                  detalle: '' },
-      { tipo: 'tradicional', nombre: 'Huella de Invierno 26', desde: 'Nov 26',                  detalle: '' },
-      { tipo: 'tradicional', nombre: 'Cuenta Pública 1',      desde: 'Mar 27',                  detalle: '' },
-      { tipo: 'tradicional', nombre: 'Huella de Verano 27',   desde: 'Mar 27',                  detalle: '' },
+      { tipo: 'tradicional', nombre: 'Huella de Invierno 26', desde: 'Nov 26', grupo: 'huella',         detalle: '' },
+      { tipo: 'tradicional', nombre: 'Cuenta Pública 1',      desde: 'Mar 27', grupo: 'cuenta-publica', detalle: '' },
+      { tipo: 'tradicional', nombre: 'Huella de Verano 27',   desde: 'Mar 27', grupo: 'huella',         detalle: '' },
       { tipo: 'tradicional', nombre: 'La RED',                desde: 'Abr 27', hasta: 'Oct 27', detalle: '' },
       { tipo: 'tradicional', nombre: 'S.M.G',                 desde: 'Abr 27',                  detalle: '' },
       { tipo: 'tradicional', nombre: 'L. Gante',              desde: 'May 27',                  detalle: '' },
-      { tipo: 'tradicional', nombre: 'Interescolar Prep.',    desde: 'May 27',                  detalle: '' },
+      { tipo: 'tradicional', nombre: 'Interescolar Prep.',    desde: 'May 27', grupo: 'interescolar',   detalle: '' },
       { tipo: 'tradicional', nombre: 'Liga CVD VMA',          desde: 'May 27', hasta: 'Ago 27', detalle: '' },
-      { tipo: 'tradicional', nombre: 'Cuenta Pública 2',      desde: 'Jun 27',                  detalle: '' },
+      { tipo: 'tradicional', nombre: 'Cuenta Pública 2',      desde: 'Jun 27', grupo: 'cuenta-publica', detalle: '' },
       { tipo: 'tradicional', nombre: 'Perspectivas Cruzadas', desde: 'Jul 27',                  detalle: '' },
       { tipo: 'tradicional', nombre: 'Alcantarilla',          desde: 'Ago 27',                  detalle: '' },
       { tipo: 'tradicional', nombre: 'Mes de la Cultura',     desde: 'Ago 27',                  detalle: '' },
@@ -270,9 +275,9 @@ window.CONTENIDO_PROYECTOS = {
       { tipo: 'tradicional', nombre: 'Alcántara',             desde: 'Sep 27',                  detalle: '' },
       { tipo: 'tradicional', nombre: 'Semana de Campaña',     desde: 'Sep 27',                  detalle: '' },
       { tipo: 'tradicional', nombre: 'Cambio de Mando',       desde: 'Oct 27',                  detalle: '' },
-      { tipo: 'tradicional', nombre: 'Cuenta Pública 3',      desde: 'Oct 27',                  detalle: '' },
-      { tipo: 'tradicional', nombre: 'Interescolar Final',    desde: 'Oct 27',                  detalle: '' },
-      { tipo: 'tradicional', nombre: 'Huella de Invierno 27', desde: 'Oct 27',                  detalle: '' },
+      { tipo: 'tradicional', nombre: 'Cuenta Pública 3',      desde: 'Oct 27', grupo: 'cuenta-publica', detalle: '' },
+      { tipo: 'tradicional', nombre: 'Interescolar Final',    desde: 'Oct 27', grupo: 'interescolar',   detalle: '' },
+      { tipo: 'tradicional', nombre: 'Huella de Invierno 27', desde: 'Oct 27', grupo: 'huella',         detalle: '' },
     ],
 
     /* ======================================================================

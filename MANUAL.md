@@ -581,6 +581,7 @@ Copia una línea completa dentro de `actividades: [ ... ]` y cámbiale los datos
 | `desde` | El mes. Tiene que estar escrito **igual** que en la lista `meses` |
 | `hasta` | Solo si dura varios meses: dibuja una barra larga. Si es de un mes, no escribas este campo |
 | `permanente` | `true` le pone la flecha (→): empieza ese mes y sigue todo el año. No lleva `hasta` |
+| `grupo` | Para que dos actividades que son **lo mismo** queden en la misma fila |
 | `detalle` | El texto que se lee al pinchar |
 
 Ejemplos de los tres casos:
@@ -599,6 +600,24 @@ Ejemplos de los tres casos:
 **Para quitar una actividad:** borra su línea completa.
 **Para moverla de mes:** cambia el `desde`. Las cajas se reacomodan solas para
 no pisarse entre ellas; no hay que ordenar nada a mano.
+
+### Alinear dos actividades que son lo mismo
+
+Wickso Liga y Wickso Playoffs son el mismo proyecto en dos momentos del año, y
+se ven mejor en la **misma fila**. Para eso se les escribe el mismo `grupo`:
+
+```js
+      { ... nombre: 'Wickso Liga',     desde: 'Abr 27', hasta: 'May 27', grupo: 'wickso', ... },
+      { ... nombre: 'Wickso Playoffs', desde: 'Jul 27', hasta: 'Ago 27', grupo: 'wickso', ... },
+```
+
+El texto del `grupo` da lo mismo (`'wickso'`, `'abc'`, lo que sea): solo sirve
+para emparejarlas y **no se ve en la página**. Hoy están agrupadas: Wickso,
+Noche Verde, Cuenta Pública, Huella e Interescolar.
+
+Si dos del mismo grupo caen en meses que se pisan, el grupo se ignora y cada
+una busca su fila: es preferible perder la alineación antes que dibujar una
+caja encima de otra.
 
 ### Escribir el detalle
 
