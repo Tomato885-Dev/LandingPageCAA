@@ -149,7 +149,8 @@ window.CONTENIDO_PROYECTOS = {
         nombre: 'ADN',
         desde: 'Mar 27', permanente: true,
         detalle:
-          'ADN transforma la hora de Orientación en un espacio para aprender ' +
+          'ADN transforma la hora de Consejo de Curso en un espacio para ' +
+          'aprender ' +
           'habilidades útiles para la vida. Desde 3° Básico hasta 4° Medio, ' +
           'los alumnos desarrollarán herramientas prácticas que los preparen ' +
           'para enfrentar con autonomía, responsabilidad y confianza los ' +
