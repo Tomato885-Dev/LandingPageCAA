@@ -43,7 +43,10 @@ const TRAZOS = {
 };
 
 // Iconos que se dibujan rellenos en lugar de con línea
-const RELLENOS = ['play', 'facebook', 'youtube', 'tiktok', 'x', 'rayo'];
+// 'youtube' NO va aquí: son dos trazos (el marco y el triangulito de play), y
+// al rellenarlos con el mismo color el triángulo desaparecía dentro del marco.
+// Dibujado con línea se ve bien y además pega con Instagram y WhatsApp.
+const RELLENOS = ['play', 'facebook', 'tiktok', 'x', 'rayo'];
 
 function Icono({ nombre, className = 'h-5 w-5', strokeWidth = 1.7 }) {
   if (nombre === 'play') {

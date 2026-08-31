@@ -33,19 +33,32 @@ function Footer() {
             {/* --- Redes sociales --- */}
             {c.redes && c.redes.length ? (
               <div className="flex items-center gap-2">
-                {c.redes.map((red, i) => (
-                  <a
-                    key={i}
-                    href={red.url}
-                    target={red.url && red.url.startsWith('http') ? '_blank' : undefined}
-                    rel="noopener noreferrer"
-                    aria-label={red.nombre}
-                    title={red.nombre}
-                    className="liquid-glass rounded-full h-11 w-11 flex items-center justify-center hover-elevar"
-                  >
-                    <Icono nombre={red.icono} className="relative z-10 h-5 w-5 text-white" />
-                  </a>
-                ))}
+                {/* Si una red todavía no tiene dirección, el círculo se dibuja
+                    igual pero como texto, no como enlace: así no recarga la
+                    página al pincharlo. Se vuelve enlace solo apenas se
+                    escriba la url en src/contenido/footer.js */}
+                {c.redes.map((red, i) => {
+                  const clase = 'liquid-glass rounded-full h-11 w-11 flex items-center justify-center' +
+                                (red.url ? ' hover-elevar' : ' opacity-60');
+                  const icono = <Icono nombre={red.icono} className="relative z-10 h-5 w-5 text-white" />;
+                  return red.url ? (
+                    <a
+                      key={i}
+                      href={red.url}
+                      target={red.url.startsWith('http') ? '_blank' : undefined}
+                      rel="noopener noreferrer"
+                      aria-label={red.nombre}
+                      title={red.nombre}
+                      className={clase}
+                    >
+                      {icono}
+                    </a>
+                  ) : (
+                    <span key={i} aria-label={red.nombre} title={red.nombre} className={clase}>
+                      {icono}
+                    </span>
+                  );
+                })}
               </div>
             ) : null}
           </div>

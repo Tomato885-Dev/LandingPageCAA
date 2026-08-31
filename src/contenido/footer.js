@@ -25,10 +25,15 @@ window.CONTENIDO_FOOTER = {
 
   /* ---- REDES SOCIALES ----------------------------------------------------
      Iconos disponibles: instagram, tiktok, youtube, facebook, linkedin,
-     x, whatsapp. Borra los que no uses.                                       */
+     x, whatsapp. Borra los que no uses.
+
+     Si dejas la "url" vacía, el círculo igual se ve pero no lleva a ninguna
+     parte (no se rompe ni recarga la página). Apenas escribas la dirección,
+     empieza a funcionar solo.                                                 */
   redes: [
     { icono: 'instagram', nombre: 'Instagram', url: 'https://instagram.com/' },   // 👉 ENLACE
     { icono: 'whatsapp',  nombre: 'WhatsApp',  url: 'https://wa.me/56971544681' },// 👉 ENLACE
+    { icono: 'youtube',   nombre: 'YouTube',   url: '' },   // 👉 FALTA EL ENLACE del canal
   ],
 
   /* ---- COLUMNAS DE ENLACES ----------------------------------------------
