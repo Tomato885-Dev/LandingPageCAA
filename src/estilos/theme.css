@@ -51,12 +51,15 @@
 
   /* Colores de la línea de tiempo (sección Proyectos).
      • propuesta   = lo que proponemos nosotros → el rojo de la marca
+     • reforma     = cambios a algo que ya existe → un rojo más profundo
      • tradicional = lo que el colegio ya hace  → verde
      El verde está elegido para que el texto blanco encima se lea igual de
      bien que sobre el rojo (contraste 5,0 en los dos). Si lo cambias por uno
      más claro, el nombre de la actividad se empieza a perder. */
   --color-propuesta: var(--color-marca);
   --color-propuesta-rgb: var(--color-marca-rgb);
+  --color-reforma: #8c1007;
+  --color-reforma-rgb: 140, 16, 7;
   --color-tradicional: #15803d;
   --color-tradicional-rgb: 21, 128, 61;
 }
@@ -461,6 +464,7 @@ body.menu-abierto {
   opacity: 0.85;
 }
 .caja-propuesta   { background: var(--color-propuesta); }
+.caja-reforma     { background: var(--color-reforma); }
 .caja-tradicional { background: var(--color-tradicional); }
 
 .caja-actividad:hover {
@@ -470,6 +474,9 @@ body.menu-abierto {
 }
 .caja-propuesta:hover {
   box-shadow: 0 10px 26px -10px rgba(var(--color-propuesta-rgb), 0.95);
+}
+.caja-reforma:hover {
+  box-shadow: 0 10px 26px -10px rgba(var(--color-reforma-rgb), 0.95);
 }
 .caja-tradicional:hover {
   box-shadow: 0 10px 26px -10px rgba(var(--color-tradicional-rgb), 0.95);
@@ -570,6 +577,7 @@ body.menu-abierto {
   flex-shrink: 0;
 }
 .lt-punto-propuesta   { background: var(--color-propuesta); }
+.lt-punto-reforma     { background: var(--color-reforma); }
 .lt-punto-tradicional { background: var(--color-tradicional); }
 
 /* ============================================================================

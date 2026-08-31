@@ -93,7 +93,7 @@ function repartirEnCarriles(actividades, meses, anchoColumna) {
    Una caja de la línea de tiempo (sirve para las dos versiones)
    ---------------------------------------------------------------------------- */
 function CajaActividad({ actividad, alPinchar, estilo, className = '', mostrarHasta = false }) {
-  const clase = actividad.tipo === 'propuesta' ? 'caja-propuesta' : 'caja-tradicional';
+  const clase = 'caja-' + (actividad.tipo || 'propuesta');
   return (
     <button
       type="button"
@@ -135,8 +135,10 @@ function LineaHorizontal({ lt, alPinchar }) {
   }, []);
 
   const anchoColumna = ancho / lt.meses.length;
+  // Arriba del eje: lo que el colegio ya hace. Abajo: todo lo nuestro,
+  // sean proyectos nuevos o reformas a algo que ya existe.
   const arriba = repartirEnCarriles(lt.actividades.filter((a) => a.tipo === 'tradicional'), lt.meses, anchoColumna);
-  const abajo  = repartirEnCarriles(lt.actividades.filter((a) => a.tipo === 'propuesta'),   lt.meses, anchoColumna);
+  const abajo  = repartirEnCarriles(lt.actividades.filter((a) => a.tipo !== 'tradicional'), lt.meses, anchoColumna);
 
   const altoArriba = arriba.totalCarriles * ALTO_CARRIL;
   const altoAbajo  = abajo.totalCarriles * ALTO_CARRIL;
@@ -231,7 +233,12 @@ function Proyectos({ id }) {
     );
   }
 
-  const esPropuesta = abierta && abierta.tipo === 'propuesta';
+  const ETIQUETAS = {
+    propuesta:   'Proyecto de campaña',
+    reforma:     'Reforma',
+    tradicional: 'Actividad del colegio',
+  };
+  const tipoAbierta = abierta ? (abierta.tipo || 'propuesta') : null;
   const parrafos = abierta
     ? (Array.isArray(abierta.detalle) ? abierta.detalle.filter(Boolean) : (abierta.detalle ? [abierta.detalle] : []))
     : [];
@@ -255,12 +262,13 @@ function Proyectos({ id }) {
       {/* --- Leyenda --- */}
       <Reveal comoLista delay={0.1}>
         <div className="flex flex-wrap items-center gap-x-7 gap-y-3 mt-12">
-          <span className="flex items-center gap-2.5 text-xs md:text-sm text-white font-body">
-            <i className="lt-punto lt-punto-propuesta" /> {lt.leyenda.propuesta}
-          </span>
-          <span className="flex items-center gap-2.5 text-xs md:text-sm text-white font-body">
-            <i className="lt-punto lt-punto-tradicional" /> {lt.leyenda.tradicional}
-          </span>
+          {['propuesta', 'reforma', 'tradicional'].map((tipo) => (
+            lt.leyenda[tipo] ? (
+              <span key={tipo} className="flex items-center gap-2.5 text-xs md:text-sm text-white font-body">
+                <i className={'lt-punto lt-punto-' + tipo} /> {lt.leyenda[tipo]}
+              </span>
+            ) : null
+          ))}
         </div>
         {lt.ayuda ? (
           <p className="text-sm text-white/85 font-body font-light mt-4">{lt.ayuda}</p>
@@ -295,8 +303,8 @@ function Proyectos({ id }) {
         titulo={abierta ? abierta.nombre : ''}
         etiqueta={abierta ? (
           <React.Fragment>
-            <i className={'lt-punto ' + (esPropuesta ? 'lt-punto-propuesta' : 'lt-punto-tradicional')} />
-            {esPropuesta ? 'Proyecto de campaña' : 'Actividad del colegio'}
+            <i className={'lt-punto lt-punto-' + tipoAbierta} />
+            {ETIQUETAS[tipoAbierta] || ETIQUETAS.propuesta}
           </React.Fragment>
         ) : null}
         subtitulo={cuando(abierta)}

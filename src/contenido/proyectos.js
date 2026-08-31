@@ -35,6 +35,7 @@ window.CONTENIDO_PROYECTOS = {
     /* ---- LEYENDA DE COLORES --------------------------------------------- */
     leyenda: {
       propuesta:   'Nuestros proyectos',
+      reforma:     'Reformas',
       tradicional: 'Proyectos CAA',
     },
 
@@ -54,8 +55,9 @@ window.CONTENIDO_PROYECTOS = {
        Campos de cada una:
 
        • nombre     : el texto de la caja.
-       • tipo       : 'propuesta'   → ROJO  (lo que proponemos nosotros)
-                      'tradicional' → VERDE (lo que el colegio ya hace)
+       • tipo       : 'propuesta'   → ROJO         (proyectos nuevos nuestros)
+                      'reforma'     → ROJO OSCURO (cambios a algo que ya existe)
+                      'tradicional' → VERDE        (lo que el colegio ya hace)
        • desde      : mes en que ocurre o empieza. Tiene que estar escrito
                       IGUAL que en la lista "meses" de arriba.
        • hasta      : solo si dura varios meses. Dibuja una barra larga.
@@ -116,7 +118,7 @@ window.CONTENIDO_PROYECTOS = {
           'una impresora.',
       },
       {
-        tipo: 'propuesta',
+        tipo: 'reforma',
         nombre: 'Plan Lector',
         desde: 'Mar 27', permanente: true,
         detalle: [
@@ -139,7 +141,7 @@ window.CONTENIDO_PROYECTOS = {
         ],
       },
       {
-        tipo: 'propuesta',
+        tipo: 'reforma',
         nombre: 'Comitivas',
         desde: 'Mar 27', permanente: true,
         detalle:
@@ -191,7 +193,7 @@ window.CONTENIDO_PROYECTOS = {
       },
       {
         tipo: 'propuesta',
-        nombre: 'Noche Verde 1',
+        nombre: '1ra Noche Verde',
         desde: 'May 27', grupo: 'noche-verde',
         detalle:
           'La Noche Verde busca recuperar y fortalecer el espíritu de la ' +
@@ -245,7 +247,7 @@ window.CONTENIDO_PROYECTOS = {
       },
       {
         tipo: 'propuesta',
-        nombre: 'Noche Verde 2',
+        nombre: '2da Noche Verde',
         desde: 'Oct 27', grupo: 'noche-verde',
         detalle:
           'La Noche Verde busca recuperar y fortalecer el espíritu de la ' +
@@ -258,26 +260,25 @@ window.CONTENIDO_PROYECTOS = {
       },
 
       /* ---------- ACTIVIDADES DEL COLEGIO (verde) ------------------------ */
-      { tipo: 'tradicional', nombre: 'Asumimos',              desde: 'Oct 26',                  detalle: '' },
-      { tipo: 'tradicional', nombre: 'Huella de Invierno 26', desde: 'Nov 26', grupo: 'huella',         detalle: '' },
-      { tipo: 'tradicional', nombre: 'Cuenta Pública 1',      desde: 'Mar 27', grupo: 'cuenta-publica', detalle: '' },
-      { tipo: 'tradicional', nombre: 'Huella de Verano 27',   desde: 'Mar 27', grupo: 'huella',         detalle: '' },
+      { tipo: 'tradicional', nombre: 'Huella de Invierno ’26', desde: 'Nov 26', grupo: 'huella',       detalle: '' },
+      { tipo: 'tradicional', nombre: '1ra Cuenta Pública',    desde: 'Mar 27', grupo: 'cuenta-publica', detalle: '' },
+      { tipo: 'tradicional', nombre: 'Huella de Verano ’27',   desde: 'Mar 27', grupo: 'huella',        detalle: '' },
+      { tipo: 'tradicional', nombre: 'Partido CAA v/s auxiliares', desde: 'Mar 27',            detalle: '' },
       { tipo: 'tradicional', nombre: 'La RED',                desde: 'Abr 27', hasta: 'Oct 27', detalle: '' },
       { tipo: 'tradicional', nombre: 'S.M.G',                 desde: 'Abr 27',                  detalle: '' },
       { tipo: 'tradicional', nombre: 'L. Gante',              desde: 'May 27',                  detalle: '' },
       { tipo: 'tradicional', nombre: 'Interescolar Prep.',    desde: 'May 27', grupo: 'interescolar',   detalle: '' },
       { tipo: 'tradicional', nombre: 'Liga CVD VMA',          desde: 'May 27', hasta: 'Ago 27', detalle: '' },
-      { tipo: 'tradicional', nombre: 'Cuenta Pública 2',      desde: 'Jun 27', grupo: 'cuenta-publica', detalle: '' },
+      { tipo: 'tradicional', nombre: '2da Cuenta Pública',    desde: 'Jun 27', grupo: 'cuenta-publica', detalle: '' },
       { tipo: 'tradicional', nombre: 'Perspectivas Cruzadas', desde: 'Jul 27',                  detalle: '' },
       { tipo: 'tradicional', nombre: 'Alcantarilla',          desde: 'Ago 27',                  detalle: '' },
       { tipo: 'tradicional', nombre: 'Mes de la Cultura',     desde: 'Ago 27',                  detalle: '' },
       { tipo: 'tradicional', nombre: 'Semana Verbita',        desde: 'Sep 27',                  detalle: '' },
       { tipo: 'tradicional', nombre: 'Alcántara',             desde: 'Sep 27',                  detalle: '' },
       { tipo: 'tradicional', nombre: 'Semana de Campaña',     desde: 'Sep 27',                  detalle: '' },
-      { tipo: 'tradicional', nombre: 'Cambio de Mando',       desde: 'Oct 27',                  detalle: '' },
-      { tipo: 'tradicional', nombre: 'Cuenta Pública 3',      desde: 'Oct 27', grupo: 'cuenta-publica', detalle: '' },
+      { tipo: 'tradicional', nombre: '3ra Cuenta Pública',    desde: 'Oct 27', grupo: 'cuenta-publica', detalle: '' },
       { tipo: 'tradicional', nombre: 'Interescolar Final',    desde: 'Oct 27', grupo: 'interescolar',   detalle: '' },
-      { tipo: 'tradicional', nombre: 'Huella de Invierno 27', desde: 'Oct 27', grupo: 'huella',         detalle: '' },
+      { tipo: 'tradicional', nombre: 'Huella de Invierno ’27', desde: 'Oct 27', grupo: 'huella',       detalle: '' },
     ],
 
     /* ======================================================================

@@ -576,7 +576,7 @@ Copia una línea completa dentro de `actividades: [ ... ]` y cámbiale los datos
 
 | Campo | Para qué sirve |
 |---|---|
-| `tipo` | `'propuesta'` = **rojo** (lo que proponen ustedes) · `'tradicional'` = **verde** (lo que el colegio ya hace) |
+| `tipo` | `'propuesta'` = **rojo** (proyectos nuevos suyos) · `'reforma'` = **rojo oscuro** (cambios a algo que ya existe) · `'tradicional'` = **verde** (lo que el colegio ya hace) |
 | `nombre` | El texto de la caja. Mientras más corto, mejor |
 | `desde` | El mes. Tiene que estar escrito **igual** que en la lista `meses` |
 | `hasta` | Solo si dura varios meses: dibuja una barra larga. Si es de un mes, no escribas este campo |
@@ -649,12 +649,13 @@ alguna actividad estaba usando, esa actividad deja de aparecer. Cambia también 
 Están en `src/estilos/theme.css`:
 
 ```css
-  --color-propuesta: var(--color-marca);   /* rojo  */
-  --color-tradicional: #15803d;            /* verde */
+  --color-propuesta: var(--color-marca);   /* rojo         */
+  --color-reforma: #8c1007;                /* rojo oscuro  */
+  --color-tradicional: #15803d;            /* verde        */
 ```
 
-El verde está elegido para que el nombre blanco encima se lea igual de bien que
-sobre el rojo. Si lo cambias por uno más claro, el texto se empieza a perder.
+Los tres están elegidos para que el nombre blanco encima se lea bien. Si los
+cambias por tonos más claros, el texto se empieza a perder.
 
 ---
 
