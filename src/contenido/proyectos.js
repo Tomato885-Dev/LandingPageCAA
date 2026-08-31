@@ -35,7 +35,7 @@ window.CONTENIDO_PROYECTOS = {
     /* ---- LEYENDA DE COLORES --------------------------------------------- */
     leyenda: {
       propuesta:   'Nuestros proyectos',
-      tradicional: 'Otras actividades (eventos, deportivo, cultura, elecciones, cuentas públicas)',
+      tradicional: 'Proyectos CAA',
     },
 
     /* Instrucción chica que va ARRIBA, junto a la leyenda de colores. */
