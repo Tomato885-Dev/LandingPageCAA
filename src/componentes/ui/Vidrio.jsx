@@ -50,15 +50,26 @@ function Boton({ texto, url = '#', variante = 'principal', icono = 'flecha-diago
     texto:     'text-sm font-medium text-white hover:text-marca',
   };
 
-  return (
-    <a
-      href={url}
-      onClick={onClick}
-      className={'inline-flex items-center gap-2 font-body transition-colors ' + (estilos[variante] || estilos.principal) + ' ' + className}
-      {...propsEnlace}
-    >
+  const clase = 'inline-flex items-center gap-2 font-body transition-colors ' +
+                (estilos[variante] || estilos.principal) + ' ' + className;
+  const contenido = (
+    <React.Fragment>
       <span className="relative z-10">{texto}</span>
       {icono ? <Icono nombre={icono} className={'relative z-10 ' + (variante === 'texto' ? 'h-4 w-4' : 'h-5 w-5')} /> : null}
+    </React.Fragment>
+  );
+
+  /* Si todavía no tiene dirección, se dibuja igual pero como texto, no como
+     enlace: así no recarga la página al pincharlo, y queda algo atenuado para
+     que se note. Apenas escribas la url en src/contenido/ vuelve a ser un
+     botón normal, sin tocar nada más. */
+  if (!url) {
+    return <span className={clase + ' opacity-60 cursor-default'} title={texto}>{contenido}</span>;
+  }
+
+  return (
+    <a href={url} onClick={onClick} className={clase} {...propsEnlace}>
+      {contenido}
     </a>
   );
 }

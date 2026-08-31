@@ -56,8 +56,8 @@ function Hero({ id }) {
         {/* Botones */}
         <Reveal delay={1.1}>
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mt-6">
-            <Boton texto={c.botones.principal.texto} url={c.botones.principal.url} variante="principal" icono="flecha-diagonal" />
-            <Boton texto={c.botones.secundario.texto} url={c.botones.secundario.url} variante="texto" icono="play" />
+            <Boton texto={c.botones.principal.texto} url={c.botones.principal.url} variante="principal" icono={c.botones.principal.icono || 'flecha-diagonal'} />
+            <Boton texto={c.botones.secundario.texto} url={c.botones.secundario.url} variante="texto" icono={c.botones.secundario.icono || 'flecha-derecha'} />
           </div>
         </Reveal>
 

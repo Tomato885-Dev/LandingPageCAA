@@ -704,12 +704,18 @@ Tipos de dirección que puedes usar:
 Las direcciones que empiezan con `http` se abren en una pestaña nueva
 automáticamente.
 
+**Si un botón o una red todavía no tiene dirección**, déjala vacía (`url: ''`).
+El botón se ve igual pero no lleva a ninguna parte y queda un poco atenuado,
+para que se note que falta. **Apenas escribas la dirección funciona solo**, no
+hay que tocar nada más. Hoy están así los dos botones de la portada (esperando
+el video de YouTube y el Instagram) y el círculo de YouTube del pie.
+
 **Dónde está cada botón:**
 
 | Botón | Archivo | Campo |
 |---|---|---|
 | "Hablemos" (botón rojo del menú) | `src/contenido/sitio.js` | `botonMenu` |
-| Botones de la portada | `src/contenido/hero.js` | `botones.principal` y `botones.secundario` |
+| "Ver el video de campaña" y "Síguenos en Instagram" | `src/contenido/hero.js` | `botones.principal` y `botones.secundario` |
 | Botón de cada proyecto | `src/contenido/proyectos.js` | `proyectos[].enlace` |
 | Recuadro del final de Proyectos *(quitado)* | `src/contenido/proyectos.js` | `cta` está en `null` |
 | Recuadro del final de Colaboradores *(quitado)* | `src/contenido/colaboradores.js` | `cta` está en `null` |

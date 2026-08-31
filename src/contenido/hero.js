@@ -35,10 +35,21 @@ window.CONTENIDO_HERO = {
              'busca ejecutar, impulsar y representar a cada estudiante ' +
              'mediante un Centro de Alumnos serio, cercano y comprometido.',
 
-  /* ---- BOTONES ----------------------------------------------------------- */
+  /* ---- BOTONES -----------------------------------------------------------
+     Los dos llevan a sitios externos.
+
+     👉 PEGA AQUÍ LAS DIRECCIONES entre las comillas vacías:
+        • principal  → el video de campaña en YouTube
+          (la dirección larga del video, la que empieza con https://)
+        • secundario → el Instagram de la campaña
+
+     Mientras estén vacías, el botón se ve pero no lleva a ninguna parte y
+     queda un poco atenuado. Apenas escribas la dirección funciona solo.
+
+     Los iconos disponibles están en src/componentes/ui/Iconos.jsx            */
   botones: {
-    principal:  { texto: 'Conoce nuestros proyectos', url: '#proyectos' },
-    secundario: { texto: 'Quiénes somos',             url: '#nosotros' },
+    principal:  { texto: 'Ver el video de campaña', url: '', icono: 'play' },
+    secundario: { texto: 'Síguenos en Instagram',   url: '', icono: 'instagram' },
   },
 
   /* ---- CIFRAS DESTACADAS -------------------------------------------------
