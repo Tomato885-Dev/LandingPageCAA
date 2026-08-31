@@ -193,7 +193,7 @@ window.CONTENIDO_PROYECTOS = {
       },
       {
         tipo: 'propuesta',
-        nombre: '1ra Noche Verde',
+        nombre: '1° Noche Verde',
         desde: 'May 27', grupo: 'noche-verde',
         detalle:
           'La Noche Verde busca recuperar y fortalecer el espíritu de la ' +
@@ -247,7 +247,7 @@ window.CONTENIDO_PROYECTOS = {
       },
       {
         tipo: 'propuesta',
-        nombre: '2da Noche Verde',
+        nombre: '2° Noche Verde',
         desde: 'Oct 27', grupo: 'noche-verde',
         detalle:
           'La Noche Verde busca recuperar y fortalecer el espíritu de la ' +
@@ -261,7 +261,7 @@ window.CONTENIDO_PROYECTOS = {
 
       /* ---------- ACTIVIDADES DEL COLEGIO (verde) ------------------------ */
       { tipo: 'tradicional', nombre: 'Huella de Invierno ’26', desde: 'Nov 26', grupo: 'huella',       detalle: '' },
-      { tipo: 'tradicional', nombre: '1ra Cuenta Pública',    desde: 'Mar 27', grupo: 'cuenta-publica', detalle: '' },
+      { tipo: 'tradicional', nombre: '1° Cuenta Pública',     desde: 'Mar 27', grupo: 'cuenta-publica', detalle: '' },
       { tipo: 'tradicional', nombre: 'Huella de Verano ’27',   desde: 'Mar 27', grupo: 'huella',        detalle: '' },
       { tipo: 'tradicional', nombre: 'Partido CAA v/s auxiliares', desde: 'Mar 27',            detalle: '' },
       { tipo: 'tradicional', nombre: 'La RED',                desde: 'Abr 27', hasta: 'Oct 27', detalle: '' },
@@ -269,14 +269,14 @@ window.CONTENIDO_PROYECTOS = {
       { tipo: 'tradicional', nombre: 'L. Gante',              desde: 'May 27',                  detalle: '' },
       { tipo: 'tradicional', nombre: 'Interescolar Prep.',    desde: 'May 27', grupo: 'interescolar',   detalle: '' },
       { tipo: 'tradicional', nombre: 'Liga CVD VMA',          desde: 'May 27', hasta: 'Ago 27', detalle: '' },
-      { tipo: 'tradicional', nombre: '2da Cuenta Pública',    desde: 'Jun 27', grupo: 'cuenta-publica', detalle: '' },
+      { tipo: 'tradicional', nombre: '2° Cuenta Pública',     desde: 'Jun 27', grupo: 'cuenta-publica', detalle: '' },
       { tipo: 'tradicional', nombre: 'Perspectivas Cruzadas', desde: 'Jul 27',                  detalle: '' },
       { tipo: 'tradicional', nombre: 'Alcantarilla',          desde: 'Ago 27',                  detalle: '' },
       { tipo: 'tradicional', nombre: 'Mes de la Cultura',     desde: 'Ago 27',                  detalle: '' },
       { tipo: 'tradicional', nombre: 'Semana Verbita',        desde: 'Sep 27',                  detalle: '' },
       { tipo: 'tradicional', nombre: 'Alcántara',             desde: 'Sep 27',                  detalle: '' },
       { tipo: 'tradicional', nombre: 'Semana de Campaña',     desde: 'Sep 27',                  detalle: '' },
-      { tipo: 'tradicional', nombre: '3ra Cuenta Pública',    desde: 'Oct 27', grupo: 'cuenta-publica', detalle: '' },
+      { tipo: 'tradicional', nombre: '3° Cuenta Pública',     desde: 'Oct 27', grupo: 'cuenta-publica', detalle: '' },
       { tipo: 'tradicional', nombre: 'Interescolar Final',    desde: 'Oct 27', grupo: 'interescolar',   detalle: '' },
       { tipo: 'tradicional', nombre: 'Huella de Invierno ’27', desde: 'Oct 27', grupo: 'huella',       detalle: '' },
     ],
