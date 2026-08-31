@@ -16,7 +16,7 @@ window.CONTENIDO_PROYECTOS = {
   },
 
   kicker: '// Proyectos',
-  titulo: ['Línea de tiempo', 'del mandato'],
+  titulo: ['Nuestra gestión'],
   intro: 'En el marco de nuestro pilar Ejecutar, nosotros les presentamos ' +
          'nuestra propuesta de cómo será nuestra gestión si asumimos para ' +
          'liderar el próximo año el CAA, donde indicamos cuáles serán las ' +
