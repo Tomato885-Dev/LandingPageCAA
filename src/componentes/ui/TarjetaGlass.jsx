@@ -19,6 +19,7 @@ function TarjetaGlass({
   texto,
   puntos = [],
   masTexto = [],
+  justificado = false,
   textoLeerMas = 'Leer más',
   textoLeerMenos = 'Leer menos',
   enlace = null,
@@ -29,6 +30,9 @@ function TarjetaGlass({
   indice = 0,
 }) {
   const [abierto, setAbierto] = useStateTarjeta(false);
+  // El justificado solo se aplica de tablet para arriba: en una columna
+  // angosta de celular deja huecos feos entre las palabras.
+  const alineacion = justificado ? ' text-left md:text-justify hyphens-auto' : '';
   const parrafosExtra = (masTexto || []).filter(Boolean);
   const idPanel = 'tarjeta-mas-' + indice;
   return (
@@ -62,7 +66,7 @@ function TarjetaGlass({
         ) : null}
 
         {texto ? (
-          <p className={'mt-3 text-sm text-white font-body font-light leading-snug ' + anchoTexto}>
+          <p className={'mt-3 text-sm text-white font-body font-light leading-snug ' + anchoTexto + alineacion}>
             {texto}
           </p>
         ) : null}
@@ -97,7 +101,7 @@ function TarjetaGlass({
               <div className="desplegable-interior">
                 <div className="pt-5 space-y-4">
                   {parrafosExtra.map((parrafo, i) => (
-                    <p key={i} className="text-sm text-white/90 font-body font-light leading-relaxed">
+                    <p key={i} className={'text-sm text-white/90 font-body font-light leading-relaxed' + alineacion}>
                       {parrafo}
                     </p>
                   ))}

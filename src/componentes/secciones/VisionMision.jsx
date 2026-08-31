@@ -118,6 +118,7 @@ function VisionMision({ id }) {
               texto={bloque.texto}
               puntos={bloque.puntos}
               masTexto={bloque.masTexto}
+              justificado
               indice={i}
               anchoTexto="max-w-none"
               alturaMinima="min-h-0"
