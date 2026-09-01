@@ -181,21 +181,70 @@ etiqueta: null,
 
 ### Ejemplo 3: cambiar las cifras de la portada
 
+Son las tarjetas que van abajo de los botones. El número y la frase se leen
+seguidos, como una sola oración: *"34 es el promedio de proyectos..."*.
+
 ```js
 estadisticas: [
-  { icono: 'usuarios', numero: '2.100', etiqueta: 'Estudiantes representados' },
-  { icono: 'destello', numero: '63', tachado: true, etiqueta: 'Menos proyectos, más impacto.' },
-  { icono: 'objetivo', numero: '14', etiqueta: 'Proyectos pensados para generar un impacto real' },
+  {
+    icono: 'megafono',
+    numero: '34',
+    etiqueta: 'es el promedio de proyectos *PRESENTADOS* por los últimos 5 ' +
+              'presidentes electos',
+  },
+  {
+    icono: 'rayo',
+    numero: '13',
+    destacada: true,
+    etiqueta: 'son los proyectos que *EJECUTAREMOS*, para *IMPULSAR* a cada ' +
+              'miembro de la comunidad',
+  },
 ],
 ```
 
 - Para **cambiar** una cifra: edita `numero` y `etiqueta`.
-- Para **agregar** una tercera: copia una línea completa y pégala debajo.
-- Para **quitar** una: borra la línea completa.
+- Para **agregar** una: copia un bloque `{ ... }` completo y pégalo debajo.
+  Caben entre 2 y 4.
+- Para **quitar** una: borra su bloque completo.
+- Para **destacar una palabra**: ponla entre `*asteriscos*` y saldrá marcada
+  en rojo, como pasada con destacador. Puedes marcar más de una palabra en la
+  misma frase. Ver más abajo,
+  [Destacar una palabra dentro de un texto](#destacar-una-palabra-dentro-de-un-texto).
+- Para que **una tarjeta resalte** sobre las otras, agrégale `destacada: true,`.
+  Se ve con el vidrio más marcado. Déjalo en una sola tarjeta.
 - Para que un número salga **con una línea encima** (como cuando se descarta una
-  cifra), agrega `tachado: true,` dentro de esa línea. La raya sale en rojo.
+  cifra), agrega `tachado: true,` dentro de ese bloque. La raya sale en rojo.
   Si no quieres el tachado, simplemente no escribas ese campo.
 - Los nombres de iconos posibles están en el [punto 12](#12-iconos-cuáles-hay-y-cómo-agregar-otros).
+
+### Destacar una palabra dentro de un texto
+
+Para que una palabra suelta salga **marcada en rojo** dentro de una frase
+normal, ponla entre `*asteriscos*`:
+
+```js
+etiqueta: 'son los proyectos que *EJECUTAREMOS*, para *IMPULSAR* a cada ' +
+          'miembro de la comunidad',
+```
+
+Se ve como si la palabra estuviera pasada con destacador. Puedes marcar todas
+las palabras que quieras en la misma frase. Si no pones asteriscos, el texto
+sale igual que siempre.
+
+**Dónde funciona hoy:** en las `etiqueta` de las cifras de la portada
+(`src/contenido/hero.js`).
+
+**Para cambiar cómo se ve la marca** (color o grosor): en
+`src/estilos/theme.css`, busca `.palabra-destacada`.
+
+**Para que funcione en otro texto de la página:** en el componente que lo
+muestra, envuelve el texto así:
+
+```jsx
+<Destacar texto={c.miTexto} />
+```
+
+en vez de escribir `{c.miTexto}` a secas.
 
 ### Ejemplo 4: textos largos y el enlace "Leer más"
 

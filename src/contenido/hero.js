@@ -53,14 +53,44 @@ window.CONTENIDO_HERO = {
   },
 
   /* ---- CIFRAS DESTACADAS -------------------------------------------------
-     Puedes dejar 2, 3 o 4 tarjetas. Los nombres de iconos disponibles están
-     en src/componentes/ui/Iconos.jsx (lista al final del archivo).
-     Agrega  tachado: true  si quieres que el número salga con una línea
-     encima, como cuando se descarta una cifra.                                */
+     Son las tarjetas que van abajo de los botones. Puedes dejar 2, 3 o 4.
+
+     Campos de cada tarjeta:
+
+     • numero    : la cifra grande. Es lo primero que se lee.
+     • etiqueta  : la frase que va debajo. Se lee seguida del número, como
+                   una sola oración: "34 es el promedio de proyectos...".
+
+                   👉 PARA DESTACAR UNA PALABRA: ponla entre *asteriscos* y
+                      saldrá marcada en rojo, como pasada con destacador.
+                      Puedes marcar más de una palabra en la misma frase.
+
+     • icono     : el dibujito de arriba. La lista de nombres disponibles
+                   está al final de src/componentes/ui/Iconos.jsx
+     • destacada : ponle  true  a la tarjeta que quieras que resalte sobre las
+                   otras (se ve con el vidrio más marcado). Déjala en una sola.
+     • tachado   : ponle  true  si quieres que el número salga con una línea
+                   encima, como cuando se descarta una cifra.                   */
   estadisticas: [
-    { icono: 'usuarios', numero: '2.100', etiqueta: 'Estudiantes representados' },
-    { icono: 'destello', numero: '63', tachado: true, etiqueta: 'Menos proyectos, más impacto.' },
-    { icono: 'objetivo', numero: '14', etiqueta: 'Proyectos pensados para generar un impacto real' },
+    {
+      icono: 'megafono',
+      numero: '34',
+      etiqueta: 'es el promedio de proyectos *PRESENTADOS* por los últimos 5 ' +
+                'presidentes electos',
+    },
+    {
+      icono: 'check',
+      numero: '7',
+      etiqueta: 'es el promedio de proyectos *REALIZADOS* por los últimos 5 ' +
+                'presidentes electos',
+    },
+    {
+      icono: 'rayo',
+      numero: '13',
+      destacada: true,
+      etiqueta: 'son los proyectos que *EJECUTAREMOS*, para *IMPULSAR* a cada ' +
+                'miembro de la comunidad',
+    },
   ],
 
   /* ---- FRANJA DE LA PARTE BAJA DE LA PORTADA ----------------------------

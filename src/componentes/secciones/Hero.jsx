@@ -61,25 +61,38 @@ function Hero({ id }) {
           </div>
         </Reveal>
 
-        {/* Cifras destacadas */}
+        {/* Cifras destacadas
+            En pantalla ancha van en fila, una al lado de la otra. En el
+            celular cada una ocupa el ancho completo y se pone horizontal
+            (número a la izquierda, frase a la derecha) para no alargar
+            tanto la portada. */}
         {c.estadisticas && c.estadisticas.length ? (
-          <Reveal delay={1.3}>
-            <div className="flex flex-wrap items-stretch justify-center gap-4 mt-8">
+          <Reveal delay={1.3} className="w-full">
+            <div className="w-full max-w-[820px] mx-auto flex flex-col sm:flex-row sm:flex-wrap items-stretch justify-center gap-3 sm:gap-4 mt-8">
               {c.estadisticas.map((dato, i) => (
-                <Panel key={i} className="rounded-tarjeta p-5 w-[210px] text-left">
-                  <Icono nombre={dato.icono} className="relative z-10 h-7 w-7 text-white" />
-                  <p
-                    className="relative z-10 mt-5 font-heading italic text-white text-4xl tracking-[-1px] leading-none"
-                    style={dato.tachado ? {
-                      textDecoration: 'line-through',
-                      textDecorationColor: 'var(--color-marca)',
-                      textDecorationThickness: '3px',
-                      opacity: 0.75,
-                    } : null}
-                  >
-                    {dato.numero}
+                <Panel
+                  key={i}
+                  fuerte={!!dato.destacada}
+                  className="rounded-tarjeta p-4 sm:p-5 w-full sm:w-[250px] text-left flex flex-row sm:flex-col items-center sm:items-stretch gap-4 sm:gap-0"
+                >
+                  {/* Icono + número: en el celular quedan juntos a la izquierda */}
+                  <div className="relative z-10 shrink-0 w-[68px] sm:w-auto flex flex-col items-start sm:block">
+                    <Icono nombre={dato.icono} className="h-6 w-6 sm:h-7 sm:w-7 text-white opacity-90" />
+                    <p
+                      className="mt-2 sm:mt-4 font-heading italic text-white text-5xl sm:text-6xl tracking-[-2px] leading-none"
+                      style={dato.tachado ? {
+                        textDecoration: 'line-through',
+                        textDecorationColor: 'var(--color-marca)',
+                        textDecorationThickness: '3px',
+                        opacity: 0.75,
+                      } : null}
+                    >
+                      {dato.numero}
+                    </p>
+                  </div>
+                  <p className="relative z-10 text-[13px] leading-snug text-white font-body font-light sm:mt-3">
+                    <Destacar texto={dato.etiqueta} />
                   </p>
-                  <p className="relative z-10 text-xs text-white font-body font-light mt-2">{dato.etiqueta}</p>
                 </Panel>
               ))}
             </div>
