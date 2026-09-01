@@ -35,7 +35,7 @@ window.CONTENIDO_PROYECTOS = {
     /* ---- LEYENDA DE COLORES --------------------------------------------- */
     leyenda: {
       propuesta:   'Nuestros proyectos',
-      reforma:     'Reformas',
+      reforma:     'Nuestras Reformas',
       tradicional: 'Proyectos CAA',
     },
 
@@ -119,7 +119,7 @@ window.CONTENIDO_PROYECTOS = {
       },
       {
         tipo: 'reforma',
-        nombre: '¡Elige TÚ Plan Lector!',
+        nombre: '¡Elige TU Plan Lector!',
         desde: 'Mar 27', permanente: true,
         detalle: [
           'Queremos transformar el Plan Lector para que leer deje de ser ' +
