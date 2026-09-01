@@ -183,7 +183,7 @@ window.CONTENIDO_NOSOTROS = {
         info: '',   // 👉 un párrafo suelto, si quieres (opcional)
         logros: [
           'Miembro de la directiva durante 5 años.',
-          'Líder de Trabajos Veritas 2025.',
+          'Líder de Trabajos Verbitas 2025.',
           'Fundador y Ex presidente del Hub de Ciencia 2025.',
           'Líder de Plantemos Juntos 2026.',
           'Líder de Limpieza de Playa 2026.',
