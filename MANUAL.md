@@ -442,7 +442,7 @@ imagen: 'assets/img/semana-estudiante.jpg',
 | Logo del menú | `src/contenido/sitio.js` | `marca.logoImagen` |
 | Fondo de la portada | `src/contenido/hero.js` | `fondo.imagen` |
 | Fondo de "Quiénes somos" | `src/contenido/nosotros.js` | `fondo.imagen` |
-| Fotos del equipo | `src/contenido/nosotros.js` | `equipo.integrantes[].foto` |
+| Fotos y currículums del equipo | `src/contenido/nosotros.js` | `equipo.integrantes[]` |
 | Fotos de proyectos | `src/contenido/proyectos.js` | `proyectos[].imagen` |
 | Logos de colaboradores | `src/contenido/colaboradores.js` | `colaboradores[].logo` |
 | Icono de la pestaña (favicon) | `index.html` | `<link rel="icon" ...>` |
@@ -455,28 +455,46 @@ imagen: 'assets/img/semana-estudiante.jpg',
 
 ### Las fotos del equipo
 
-En `src/contenido/nosotros.js`, cada integrante lleva **su nombre, su foto y
-su información** (no hay cargos).
+En `src/contenido/nosotros.js`, cada integrante lleva su **nombre**, su
+**foto**, su **curso** y su **currículum**.
 
-Al pinchar una foto en la página se abre un cuadro con **la foto más grande y,
-debajo, el texto del campo `info`** — ahí va el "curriculum" de cada uno.
-Mientras `info` esté vacío, el cuadro muestra un aviso gris que desaparece solo
-apenas escribas algo. `info` admite una frase entre comillas o varios párrafos
-entre corchetes, igual que los demás textos largos de la página.
+Al pinchar un recuadro se abre un cuadro con la foto más grande y el currículum
+al lado (en el celular, la foto arriba y el currículum debajo).
 
 ```js
 equipo: {
   titulo: 'Nuestro núcleo',
   integrantes: [
     {
-      nombre: 'Carlos Gómez',
-      foto: 'assets/img/equipo/carlos-gomez.jpg',
-      info: 'Lo que quieras contar de él. Se lee al pinchar su foto.',
+      nombre: 'Juan Casanova',
+      foto: 'assets/img/equipo/juan-casanova.jpg',
+      cargo: '3°A',
+      info: '',
+      logros: [
+        'Presidente de curso durante 5 años.',
+        'Organizador del Festival Alcántara 2026.',
+        'Jefe de Barra durante 2 años seguidos.',
+      ],
     },
     ...
   ],
 },
 ```
+
+| Campo | Para qué sirve |
+|---|---|
+| `nombre` | Cómo aparece en el recuadro y arriba del cuadro |
+| `foto` | Ruta del archivo (ver más abajo) |
+| `cargo` | Su curso, por ejemplo `'3°A'`. Sale chiquitito bajo el nombre, en el recuadro y en el cuadro. Déjalo en `''` y no se muestra |
+| `logros` | **El currículum.** Cada línea sale como un punto con una bolita roja |
+| `info` | Opcional: un párrafo suelto que va **antes** de la lista, por si quieres una presentación en prosa |
+
+**Para agregar un punto al currículum:** escribe una línea nueva entre comillas
+dentro de `logros: [ ... ]` y termínala con una coma. **Para quitarlo:** borra
+su línea completa.
+
+Mientras `logros` e `info` estén los dos vacíos, el cuadro muestra un aviso gris
+que **desaparece solo** apenas escribas algo.
 
 **Para poner las fotos:** sube los archivos a `assets/img/equipo/` con los
 nombres de archivo que ya están escritos en cada línea (`carlos-gomez.jpg`,
@@ -493,9 +511,9 @@ El recuadro recorta al centro, así que deja la cara centrada y con aire arriba.
 completa. El diseño se reacomoda solo y **centra la última fila** si queda
 incompleta (con 7 integrantes quedan 4 arriba y 3 abajo, centrados).
 
-> Si algún día quieres mostrar el cargo de alguien, agrega
-> `cargo: 'Presidencia',` dentro de su línea. Si no está escrito, no se
-> muestra nada.
+> El campo `cargo` se está usando para el curso (`'3°A'`), pero acepta
+> cualquier texto: si prefieres poner `'Presidencia'` o `'Tesorería'`, funciona
+> igual. Si lo dejas en `''`, no se muestra nada.
 
 ### Cambiar el logo del menú
 

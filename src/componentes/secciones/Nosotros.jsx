@@ -10,10 +10,13 @@ function Nosotros({ id }) {
   const c = window.CONTENIDO_NOSOTROS;
   const [abierto, setAbierto] = useStateNosotros(null);
 
-  // El "curriculum" acepta una frase suelta o varios párrafos.
+  // El currículum tiene dos partes, las dos opcionales:
+  //   • info   → uno o varios párrafos de presentación
+  //   • logros → la lista de puntos con bolita roja
   const parrafos = abierto
     ? (Array.isArray(abierto.info) ? abierto.info.filter(Boolean) : (abierto.info ? [abierto.info] : []))
     : [];
+  const logros = abierto && Array.isArray(abierto.logros) ? abierto.logros.filter(Boolean) : [];
 
   return (
     <SeccionBase id={id} fondo={c.fondo}>
@@ -109,10 +112,14 @@ function Nosotros({ id }) {
         titulo={abierto ? abierto.nombre : ''}
         etiqueta={c.equipo ? c.equipo.titulo : ''}
         subtitulo={abierto ? abierto.cargo : ''}
+        ancho="amplio"
       >
         {abierto ? (
-          <React.Fragment>
-            <div className="max-w-[380px] mx-auto">
+          /* En pantalla ancha la foto va a la izquierda y el currículum a la
+             derecha, para poder ver las dos cosas de una. En el celular la
+             foto queda arriba y el texto debajo. */
+          <div className="md:flex md:items-start md:gap-8">
+            <div className="w-full max-w-[380px] mx-auto md:mx-0 md:w-[340px] md:max-w-none md:shrink-0">
               <Media
                 src={abierto.foto}
                 alt={abierto.nombre}
@@ -122,7 +129,7 @@ function Nosotros({ id }) {
               />
             </div>
 
-            <div className="mt-6">
+            <div className="mt-6 md:mt-0 md:flex-1 md:min-w-0">
               {parrafos.length ? (
                 <div className="space-y-4">
                   {parrafos.map((parrafo, i) => (
@@ -131,15 +138,27 @@ function Nosotros({ id }) {
                     </p>
                   ))}
                 </div>
-              ) : (
-                /* Aviso mientras no se escribe la información. Desaparece solo
-                   apenas se rellene el campo "info" en src/contenido/nosotros.js */
+              ) : null}
+
+              {logros.length ? (
+                <ul className={'lista-logros space-y-2.5' + (parrafos.length ? ' mt-5' : '')}>
+                  {logros.map((logro, i) => (
+                    <li key={i} className="text-sm md:text-base text-white font-body font-light leading-snug">
+                      {logro}
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+
+              {/* Aviso mientras no hay nada escrito. Desaparece solo apenas se
+                  rellene "logros" o "info" en src/contenido/nosotros.js */}
+              {!parrafos.length && !logros.length ? (
                 <p className="text-sm text-white/45 font-body font-light italic">
                   Escribe aquí la información de este integrante.
                 </p>
-              )}
+              ) : null}
             </div>
-          </React.Fragment>
+          </div>
         ) : null}
       </Modal>
     </SeccionBase>

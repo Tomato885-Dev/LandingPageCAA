@@ -180,6 +180,22 @@ body.menu-abierto {
   transform: translate(2px, -2px);
   color: #ffffff;
 }
+/* Lista del currículum de cada integrante: cada punto lleva una bolita roja */
+.lista-logros li {
+  position: relative;
+  padding-left: 1.15rem;
+}
+.lista-logros li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--color-marca);
+}
+
 .tarjeta-integrante:focus-visible {
   outline: 2px solid rgba(var(--color-marca-rgb), 0.9);
   outline-offset: 3px;
@@ -638,6 +654,9 @@ body.menu-abierto {
   overflow-y: auto;
   animation: modal-sube 0.28s cubic-bezier(0.22, 1, 0.36, 1);
 }
+/* Cuadro más ancho: se usa en los integrantes, donde la foto va a la
+   izquierda y el currículum a la derecha. */
+.modal-caja-amplio { max-width: 900px; }
 .modal-cerrar:hover { border-color: #ffffff !important; }
 .modal-cerrar:focus-visible {
   outline: 2px solid rgba(var(--color-marca-rgb), 0.9);

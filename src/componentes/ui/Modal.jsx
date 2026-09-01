@@ -14,7 +14,9 @@
 
 const { useEffect: useEffectModal, useRef: useRefModal } = React;
 
-function Modal({ abierto, alCerrar, titulo, etiqueta, subtitulo, children }) {
+function Modal({ abierto, alCerrar, titulo, etiqueta, subtitulo, ancho, children }) {
+  // ancho="amplio" hace el cuadro más ancho, para cuando lleva la foto y el
+  // texto uno al lado del otro. Sin ese dato queda el ancho normal.
   const cajaRef = useRefModal(null);
   const botonRef = useRefModal(null);
   const focoPrevioRef = useRefModal(null);
@@ -69,7 +71,7 @@ function Modal({ abierto, alCerrar, titulo, etiqueta, subtitulo, children }) {
     >
       <div
         ref={cajaRef}
-        className="modal-caja liquid-glass-strong rounded-tarjeta"
+        className={'modal-caja liquid-glass-strong rounded-tarjeta' + (ancho === 'amplio' ? ' modal-caja-amplio' : '')}
         onClick={(e) => e.stopPropagation()}
       >
         <div className="relative z-10 p-6 md:p-8">
