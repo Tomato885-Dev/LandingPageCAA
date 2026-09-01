@@ -15,7 +15,9 @@ window.CONTENIDO_COLABORADORES = {
 
   kicker: '// Colaboradores',
   titulo: ['Colaboradores'],
-  intro: 'Organizaciones, unidades y personas que colaboran con la campaña.',
+  intro: 'Organizaciones, institutos y personas que contribuyen a la campaña, ' +
+         'no solo mediante beneficios para el alumnado, sino también a través ' +
+         'de colaboraciones concretas para llevar a cabo los proyectos.',
 
   /* ------------------------------------------------------------------------
      LOS AUSPICIOS
