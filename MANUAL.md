@@ -646,7 +646,7 @@ Ejemplos de los tres casos:
 
 ```js
       // de un solo mes
-      { tipo: 'propuesta', nombre: 'Noche Verde 1', desde: 'May 27', detalle: '' },
+      { tipo: 'propuesta', nombre: '1° Noche Verde', desde: 'May 27', detalle: '' },
 
       // barra larga
       { tipo: 'propuesta', nombre: 'Paseos Culturales', desde: 'Mar 27', hasta: 'Oct 27', detalle: '' },
@@ -691,6 +691,19 @@ caja encima de otra.
 
 Mientras esté vacío, el cuadro muestra un aviso gris que dice *"Escribe aquí el
 detalle de esta actividad."*. **Ese aviso desaparece solo** apenas escribas algo.
+
+### Proyectos escritos que todavía no tienen mes
+
+Al final de `lineaTiempo` hay una lista aparte, `pendientesDeUbicar`. Ahí
+esperan los proyectos que **ya tienen su texto redactado pero todavía no
+aparecen en la línea de tiempo**, porque falta decidir en qué mes van. Hoy
+están ahí **Reciclaje CVD** y **Verbo por el Mundo**.
+
+Lo que está en esa lista **no se muestra en la página**. Para publicar uno:
+
+1. Corta su bloque `{ ... }` completo.
+2. Pégalo dentro de la lista `actividades` de más arriba.
+3. Escríbele el mes en `desde` (y `hasta` o `permanente: true` si corresponde).
 
 ### Los meses del eje
 
