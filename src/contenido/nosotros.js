@@ -125,16 +125,37 @@ window.CONTENIDO_NOSOTROS = {
       {
         nombre: 'Carlos Gómez',
         foto: 'assets/img/equipo/carlos-gomez.jpg',
-        cargo: '',   // 👉 su curso, por ejemplo '3°A'
+        cargo: '3°D',
         info: '',   // 👉 un párrafo suelto, si quieres (opcional)
-        logros: [],   // 👉 ESCRIBE AQUÍ su currículum, un punto por línea
+        logros: [
+          'Alumno desde Pre Kínder.',
+          'Presidente de curso durante 4 años.',
+          'Organizador del Alcántara 2024.',
+          'Jefe de la Huella 2025.',
+          'Ex miembro del Tribunal de Honor durante dos años.',
+          'Líder de Plantemos Juntos 2026.',
+          'Líder de Limpieza de Playa 2026.',
+          'Miembro de 3 campañas anteriores.',
+          'Ex miembro del equipo de Convivencia.',
+          'Ex miembro de la Selección de Fútbol.',
+        ],
       },
       {
         nombre: 'Tomás León',
         foto: 'assets/img/equipo/tomas-leon.jpg',
-        cargo: '',   // 👉 su curso, por ejemplo '3°A'
+        cargo: '3°C',
         info: '',   // 👉 un párrafo suelto, si quieres (opcional)
-        logros: [],   // 👉 ESCRIBE AQUÍ su currículum, un punto por línea
+        logros: [
+          'Alumno desde Pre Kínder.',
+          'Participante de 2 campañas anteriores.',
+          'Presidente de curso durante 2 años y miembro de la directiva ' +
+          'otros 3 años.',
+          'Organizador del Festival Alcántara 2026.',
+          'Jefe de Barra durante 3 años consecutivos.',
+          'Capitán de la Selección de Fútbol.',
+          'Jefe de la Liga CVD VMA 2025.',
+          'Miembro del equipo de convivencia.',
+        ],
       },
       {
         nombre: 'Juan Casanova',
