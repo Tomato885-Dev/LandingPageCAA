@@ -11,7 +11,7 @@ window.CONTENIDO_NOSOTROS = {
   },
 
   /* ---- ENCABEZADO -------------------------------------------------------- */
-  kicker: '// ¿Por qué nosotros?',  // texto chico sobre el título
+  kicker: '// ¿Quiénes somos?',  // texto chico sobre el título
   titulo: ['Experiencia', 'que nos une'], // cada elemento es una línea
   /* ---- TEXTO DE INTRODUCCIÓN ---------------------------------------------
      Como el texto es largo, se muestra en tres partes:

@@ -396,7 +396,7 @@ intro: 'Cada proyecto nace de una necesidad concreta planteada por la comunidad.
 
 Para quitarlo: `intro: '',`
 
-**Si el texto es largo** (como en "¿Por qué nosotros?"), se puede partir en
+**Si el texto es largo** (como en "¿Quiénes somos?"), se puede partir en
 tres, y así no cae todo de golpe sobre el lector:
 
 ```js
