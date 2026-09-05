@@ -651,8 +651,22 @@ body.menu-abierto {
   width: 100%;
   max-width: 640px;
   max-height: 85vh;
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
   animation: modal-sube 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+/* OJO: el scroll va aquí adentro, NO en .modal-caja.
+   El borde de vidrio se dibuja con un ::before pegado a los cuatro lados de
+   la caja. Si la caja fuera además la que se desplaza, ese borde quedaría
+   dentro de la zona que se mueve y al bajar el texto se iría con él, dejando
+   la línea del marco cruzada por encima del contenido (se veía en el celular).
+   Separando las dos cosas, el marco se queda quieto y solo se mueve el texto. */
+.modal-cuerpo {
+  min-height: 0;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 /* Cuadro más ancho: se usa en los integrantes, donde la foto va a la
    izquierda y el currículum a la derecha. */

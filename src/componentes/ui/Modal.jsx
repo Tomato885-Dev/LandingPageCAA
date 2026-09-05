@@ -74,8 +74,9 @@ function Modal({ abierto, alCerrar, titulo, etiqueta, subtitulo, ancho, children
         className={'modal-caja liquid-glass-strong rounded-tarjeta' + (ancho === 'amplio' ? ' modal-caja-amplio' : '')}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="relative z-10 p-6 md:p-8">
-
+        {/* ENCABEZADO: se queda fijo arriba. Así el nombre y el botón de
+            cerrar siguen a la vista aunque el texto de abajo sea largo. */}
+        <div className="modal-encabezado relative z-10 shrink-0 px-6 pt-6 md:px-8 md:pt-8">
           <div className="flex items-start justify-between gap-4">
             <div className="min-w-0">
               {etiqueta ? (
@@ -103,7 +104,12 @@ function Modal({ abierto, alCerrar, titulo, etiqueta, subtitulo, ancho, children
           </div>
 
           <div className="linea-marca my-5" />
+        </div>
 
+        {/* CUERPO: esto es lo único que se desplaza. Ver .modal-cuerpo en
+            src/estilos/theme.css: si el scroll estuviera en la caja de
+            afuera, el borde de vidrio se iría con el texto. */}
+        <div className="modal-cuerpo relative z-10 px-6 pb-6 md:px-8 md:pb-8">
           {children}
         </div>
       </div>
