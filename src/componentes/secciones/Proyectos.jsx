@@ -16,6 +16,20 @@ const ALTO_EJE = 56;         // espacio del eje con los nombres de los meses
 const SEPARACION = 10;       // aire mínimo entre dos cajas de la misma fila
 
 /* ----------------------------------------------------------------------------
+   Escribe el año con apóstrofo (’) para que no se confunda con un día del
+   mes: "Oct 26" se muestra como "Oct ’26", y "Mar 27" como "Mar ’27".
+
+   OJO: en src/contenido/proyectos.js los meses se siguen escribiendo SIN
+   apóstrofo ('Oct 26', 'Mar 27'...). El apóstrofo se agrega solo al momento
+   de mostrarlos, así el listado de meses y la fecha de cada actividad calzan
+   entre sí y no hay que acordarse de escribir el símbolo a mano.
+   ---------------------------------------------------------------------------- */
+function conApostrofe(texto) {
+  if (!texto) return texto;
+  return String(texto).replace(/\b(\d{2})\b/g, '’$1');
+}
+
+/* ----------------------------------------------------------------------------
    Reparte las actividades en filas para que ninguna se pise con otra.
    Las más anchas van primero, así quedan pegadas al eje y las cajas chicas
    se apilan hacia afuera.
@@ -106,7 +120,7 @@ function CajaActividad({ actividad, alPinchar, estilo, className = '', mostrarHa
       {/* En la versión vertical no hay eje que muestre hasta cuándo dura,
           así que la propia caja lo dice. */}
       {mostrarHasta && actividad.hasta ? (
-        <span className="caja-hasta">hasta {actividad.hasta}</span>
+        <span className="caja-hasta">hasta {conApostrofe(actividad.hasta)}</span>
       ) : null}
       {actividad.permanente ? <span className="caja-flecha" aria-hidden="true">→</span> : null}
     </button>
@@ -169,7 +183,7 @@ function LineaHorizontal({ lt, alPinchar }) {
       {/* El eje */}
       <div className="lt-eje" style={{ top: altoArriba + 8 }}>
         {lt.meses.map((mes, i) => (
-          <span key={i} className="lt-mes" style={{ left: (i + 0.5) * anchoColumna }}>{mes}</span>
+          <span key={i} className="lt-mes" style={{ left: (i + 0.5) * anchoColumna }}>{conApostrofe(mes)}</span>
         ))}
       </div>
 
@@ -205,7 +219,7 @@ function LineaVertical({ lt, alPinchar }) {
       {porMes.map((grupo, i) => (
         <div key={i} className="lt-vertical-mes">
           <div className="lt-vertical-marca" aria-hidden="true" />
-          <p className="font-heading italic text-white text-2xl leading-none">{grupo.mes}</p>
+          <p className="font-heading italic text-white text-2xl leading-none">{conApostrofe(grupo.mes)}</p>
           <div className="flex flex-col items-start gap-2 mt-3">
             {grupo.items.map((a, j) => (
               <CajaActividad key={j} actividad={a} alPinchar={alPinchar} mostrarHasta className="caja-actividad-vertical" />
@@ -245,9 +259,9 @@ function Proyectos({ id }) {
 
   const cuando = (a) => {
     if (!a) return '';
-    if (a.permanente) return 'Desde ' + a.desde + ' · se mantiene todo el año';
-    if (a.hasta) return a.desde + ' – ' + a.hasta;
-    return a.desde;
+    if (a.permanente) return 'Desde ' + conApostrofe(a.desde) + ' · se mantiene todo el año';
+    if (a.hasta) return conApostrofe(a.desde) + ' – ' + conApostrofe(a.hasta);
+    return conApostrofe(a.desde);
   };
 
   return (
