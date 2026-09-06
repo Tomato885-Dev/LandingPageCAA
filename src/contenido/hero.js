@@ -49,7 +49,7 @@ window.CONTENIDO_HERO = {
      Los iconos disponibles están en src/componentes/ui/Iconos.jsx            */
   botones: {
     principal:  { texto: 'Ver el video de campaña', url: '', icono: 'play' },
-    secundario: { texto: 'Síguenos en Instagram',   url: '', icono: 'instagram' },
+    secundario: { texto: 'Síguenos en Instagram',   url: 'https://www.instagram.com/votacarlos2/', icono: 'instagram' },
   },
 
   /* ---- CIFRAS DESTACADAS -------------------------------------------------

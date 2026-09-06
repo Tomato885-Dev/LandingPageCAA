@@ -31,9 +31,12 @@ window.CONTENIDO_FOOTER = {
      parte (no se rompe ni recarga la página). Apenas escribas la dirección,
      empieza a funcionar solo.                                                 */
   redes: [
-    { icono: 'instagram', nombre: 'Instagram', url: 'https://instagram.com/' },   // 👉 ENLACE
-    { icono: 'whatsapp',  nombre: 'WhatsApp',  url: 'https://wa.me/56971544681' },// 👉 ENLACE
-    { icono: 'youtube',   nombre: 'YouTube',   url: '' },   // 👉 FALTA EL ENLACE del canal
+    { icono: 'instagram', nombre: 'Instagram', url: 'https://www.instagram.com/votacarlos2/' },
+    { icono: 'whatsapp',  nombre: 'WhatsApp',  url: 'https://wa.me/56971544681' },
+    // El icono de YouTube lleva al VIDEO DE CAMPAÑA, igual que el botón rojo
+    // de la portada. Cuando pongas la dirección, ponla en los dos lugares:
+    // aquí y en botones.principal de src/contenido/hero.js
+    { icono: 'youtube',   nombre: 'Video de campaña', url: '' },   // 👉 FALTA EL ENLACE
   ],
 
   /* ---- COLUMNAS DE ENLACES ----------------------------------------------
