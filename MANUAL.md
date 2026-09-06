@@ -1170,16 +1170,82 @@ una ❌, algo falló y ahí mismo dice qué.
 
 ### Ponerle un nombre propio (dominio)
 
-1. Compra el dominio. Para `.cl` es en **NIC.cl** (~$10.000 al año); para
-   `.com`, en Cloudflare o Namecheap (~12 USD al año).
-2. En el repositorio: `Settings` → `Pages` → **Custom domain**, escribe el
-   dominio y guarda.
-3. En donde compraste el dominio, apunta el DNS a GitHub (la misma página de
-   Settings te dice qué valores poner).
-4. Marca **"Enforce HTTPS"** para que la dirección salga con candado.
+Hoy la página vive en una dirección larga que termina en `github.io`. Con un
+dominio propio queda en algo como `carlos2.cl`, que se puede dictar en voz
+alta y poner en un afiche.
 
-La construcción respeta el archivo `CNAME` que GitHub crea en el paso 2, así
-que el dominio no se pierde al publicar de nuevo.
+**El alojamiento sigue siendo gratis.** Lo único que se paga es el nombre:
+un `.cl` cuesta del orden de $10.000 al año en [NIC Chile](https://nic.cl).
+El candado (HTTPS) también es gratis y lo pone GitHub solo.
+
+#### Paso 1 — Elegir y comprar el nombre
+
+En [nic.cl](https://nic.cl) se busca si el nombre está libre y se registra
+ahí mismo. Piden identificarse con RUT (ClaveÚnica), así que **si el titular
+es menor de edad probablemente tenga que hacerlo un adulto**.
+
+> Elige algo corto y fácil de dictar. Cada guion, número o letra rara es una
+> persona menos que llega a la página.
+
+#### Paso 2 — Apuntar el dominio a GitHub
+
+En el panel de DNS del dominio hay que crear estos registros. Son los de
+GitHub Pages y no cambian:
+
+| Tipo | Nombre | Valor |
+|---|---|---|
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| AAAA | `@` | `2606:50c0:8000::153` |
+| AAAA | `@` | `2606:50c0:8001::153` |
+| AAAA | `@` | `2606:50c0:8002::153` |
+| AAAA | `@` | `2606:50c0:8003::153` |
+| CNAME | `www` | `TU-USUARIO.github.io` |
+
+Los cuatro registros `A` son los importantes; los `AAAA` son lo mismo para
+redes modernas y conviene ponerlos igual. El `CNAME` de `www` hace que
+`www.tudominio.cl` también funcione.
+
+> **Compara esta tabla con lo que muestre GitHub** en `Settings` → `Pages`
+> después del paso 3: esa página es la fuente oficial. Si algún día GitHub
+> cambia las direcciones, manda lo que diga ahí.
+
+Si el panel de NIC Chile se te hace incómodo, puedes pasar el dominio al DNS
+gratuito de **Cloudflare** y administrar los registros desde ahí.
+
+#### Paso 3 — Avisarle a GitHub
+
+En el repositorio: `Settings` → `Pages` → **Custom domain**, escribe el
+dominio y guarda. Cuando aparezca el visto bueno, marca **"Enforce HTTPS"**.
+
+#### Paso 4 — Dejarlo fijo en el repositorio
+
+Crea un archivo llamado `CNAME` (sin extensión) en la carpeta principal del
+proyecto, con **una sola línea**: el dominio, sin `https://` ni barra final.
+
+```
+carlos2.cl
+```
+
+La construcción copia ese archivo a la versión publicada, así que el dominio
+**no se pierde** en la siguiente publicación. Sin este archivo, el dominio se
+borra solo cada vez que se publica.
+
+#### Cuánto se demora
+
+Registrar el dominio es rápido, pero el resto no es instantáneo:
+
+- que el DNS llegue a todas partes: entre minutos y unas pocas horas;
+- que GitHub emita el candado HTTPS: hasta cerca de una hora **después** de
+  que el DNS ya funcione.
+
+Por eso conviene hacerlo **con varios días de margen** antes de repartir el
+enlace, no la misma mañana.
+
+> Mientras tanto la dirección vieja de `github.io` sigue funcionando y
+> redirige sola al dominio nuevo, así que nadie queda sin poder entrar.
 
 ### Qué archivos son de la publicación (no hay que tocarlos)
 
