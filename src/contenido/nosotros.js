@@ -163,6 +163,7 @@ window.CONTENIDO_NOSOTROS = {
         cargo: '3°A',
         info: '',   // 👉 un párrafo suelto, si quieres (opcional)
         logros: [
+          'Alumno desde Pre Kínder.',
           'Participante de las campañas ganadoras durante 3 años ' +
           'seguidos.',
           'Presidente de curso durante 5 años y miembro de la directiva ' +
@@ -178,9 +179,16 @@ window.CONTENIDO_NOSOTROS = {
       {
         nombre: 'Emilio Bascuñán',
         foto: 'assets/img/equipo/emilio-bascunan.jpg',
-        cargo: '',   // 👉 su curso, por ejemplo '3°A'
+        cargo: '3°B',
         info: '',   // 👉 un párrafo suelto, si quieres (opcional)
-        logros: [],   // 👉 ESCRIBE AQUÍ su currículum, un punto por línea
+        logros: [
+          'Alumno desde Pre Kínder.',
+          'Líder de Arte por la Vida 2026.',
+          'Miembro de la directiva de curso durante 3 años.',
+          'Organizador de la “L-Gante” 2026.',
+          'Ex atleta.',
+          'Organizador de la Semana Verbita 2026.',
+        ],
       },
       {
         nombre: 'Vicente Donoso',
@@ -188,6 +196,7 @@ window.CONTENIDO_NOSOTROS = {
         cargo: '3°B',
         info: '',   // 👉 un párrafo suelto, si quieres (opcional)
         logros: [
+          'Alumno desde Pre Kínder.',
           'Presidente de curso en dos ocasiones, incluyendo el actual ' +
           '3°B.',
           'Miembro del equipo de Atletismo.',
@@ -203,6 +212,7 @@ window.CONTENIDO_NOSOTROS = {
         cargo: '3°E',
         info: '',   // 👉 un párrafo suelto, si quieres (opcional)
         logros: [
+          'Alumno desde Pre Kínder.',
           'Miembro de la directiva durante 5 años.',
           'Líder de Trabajos Verbitas 2025.',
           'Fundador y Ex presidente del Hub de Ciencia 2025.',
@@ -219,6 +229,7 @@ window.CONTENIDO_NOSOTROS = {
         cargo: '3°E',
         info: '',   // 👉 un párrafo suelto, si quieres (opcional)
         logros: [
+          'Alumno desde Pre Kínder.',
           'Delegado de Pastoral durante 8 años.',
           'Líder de Arte por la Vida 2025.',
           'Líder de la Pelota No Se Mancha 2025.',
