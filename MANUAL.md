@@ -231,8 +231,23 @@ Se ve como si la palabra estuviera pasada con destacador. Puedes marcar todas
 las palabras que quieras en la misma frase. Si no pones asteriscos, el texto
 sale igual que siempre.
 
-**Dónde funciona hoy:** en las `etiqueta` de las cifras de la portada
-(`src/contenido/hero.js`).
+**Dónde funciona hoy:**
+
+| Texto | Archivo |
+|---|---|
+| Las `etiqueta` de las cifras de la portada | `src/contenido/hero.js` |
+| El `detalle` de cada proyecto de la línea de tiempo | `src/contenido/proyectos.js` |
+
+En los proyectos conviene marcar **una o dos frases por cuadro**, no más: el
+destacado sirve para que salte a la vista lo concreto (una cifra, un plazo, lo
+que gana el alumno). Si se marca medio párrafo deja de destacar nada.
+
+```js
+detalle:
+  'el CAA habilitará un *sistema de impresión gratuito* disponible ' +
+  'desde 5° Básico hasta 4° Medio. Cada estudiante tendrá ' +
+  '*20 páginas para usar por semestre*.',
+```
 
 **Para cambiar cómo se ve la marca** (color o grosor): en
 `src/estilos/theme.css`, busca `.palabra-destacada`.

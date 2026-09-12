@@ -327,7 +327,9 @@ function Proyectos({ id }) {
           <div className="space-y-4">
             {parrafos.map((parrafo, i) => (
               <p key={i} className="text-sm md:text-base text-white font-body font-light leading-relaxed">
-                {parrafo}
+                {/* Lo que va entre *asteriscos* en src/contenido/proyectos.js
+                    se muestra destacado, igual que en las cifras de la portada. */}
+                <Destacar texto={parrafo} />
               </p>
             ))}
           </div>

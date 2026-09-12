@@ -87,166 +87,169 @@ window.CONTENIDO_PROYECTOS = {
         nombre: 'App CAA',
         desde: 'Nov 26', permanente: true,
         detalle:
-          '¿Te ha pasado que te enteras tarde de una actividad, torneo o ' +
-          'iniciativa que te habría gustado conocer? Esta app busca cambiar ' +
-          'eso. Tendremos en un solo lugar noticias, eventos, inscripciones, ' +
-          'actividades y espacios para participar y conectar con estudiantes ' +
-          'de toda la enseñanza media. Además, podrás conocer iniciativas, ' +
-          'proyectos y emprendimientos de otros alumnos. Una plataforma hecha ' +
-          'para nuestra comunidad, segura, organizada y pensada para seguir ' +
-          'creciendo junto a nosotros.',
+          '*Toda la información del CAA en un solo lugar.* Esta propuesta nace ' +
+          'para que no vuelvas a enterarte tarde de una actividad, torneo o ' +
+          'cualquier otra iniciativa de tu interés. Desde la aplicación podrás ' +
+          'revisar comunicados oficiales, calendario, proyectos, puntajes ' +
+          'deportivos, como los de la Copa Wickso o la Liga CVD VMA, ' +
+          'colaboradores (con acceso directo al QR para sus beneficios), ' +
+          'contactos y tu propio perfil. Está disponible para estudiantes desde ' +
+          '8° Básico hasta 4° Medio y *¡ya puedes descargarla en App Store o Play ' +
+          'Store!*',
       },
       {
         tipo: 'propuesta',
         nombre: 'Imprime al Toque',
         desde: 'Nov 26', permanente: true,
         detalle:
-          'Este proyecto implementará un servicio de impresión gestionado ' +
-          'por el Centro de Alumnos, permitiendo que todos los estudiantes ' +
-          'de 5 EB a 4 EM puedan imprimir material académico de forma ' +
-          'simple, ordenada y accesible. Con ello, buscamos reducir las ' +
-          'brechas de acceso y asegurar que ningún alumno quede en ' +
-          'desventaja por no contar con una impresora.',
+          '¿Necesitas imprimir algo para el colegio y no tienes cómo hacerlo? Con ' +
+          'este proyecto, esto deja de ser un problema. Gracias a la colaboración ' +
+          'de Dimacofi, el CAA habilitará un *sistema de impresión gratuito* ' +
+          'disponible *desde 5° Básico hasta 4° Medio*. Cada estudiante tendrá ' +
+          '*20 páginas para usar por semestre*, que podrá retirar de manera ' +
+          'simple usando un sistema basado en su RUT. Además, podrá comprar packs ' +
+          'adicionales de páginas si lo necesita.',
       },
       {
         tipo: 'reforma',
         nombre: '¡Elige TU Plan Lector!',
         desde: 'Mar 27', permanente: true,
         detalle: [
-          'Queremos transformar el Plan Lector para que leer deje de ser ' +
-          'una obligación y se convierta en una experiencia significativa. ' +
-          'Sin eliminar las lecturas obligatorias, proponemos que una de ' +
-          'las lecturas del año sea de libre elección, permitiendo que los ' +
-          'estudiantes seleccionen un libro de acuerdo con sus intereses, ' +
-          'siempre con la aprobación del profesor.',
+            '¿Cuántas veces buscaste un resumen para saber de qué se trata el libro ' +
+            'del Plan Lector? Probablemente, muchas. Simplemente, los libros no ' +
+            'llamaban la atención y leer se volvía una lata.',
 
-          'La evaluación se realizará de forma oral, promoviendo el ' +
-          'análisis, la reflexión y el desarrollo de habilidades de ' +
-          'comunicación, además de reducir el uso de la inteligencia ' +
-          'artificial como sustituto de la lectura.',
+            'Por eso proponemos una reforma para cambiar esto radicalmente. Ahora, ' +
+            '*cada uno de ustedes podrá elegir qué libro leer* en relación al ' +
+            'contenido visto en clases y a tus propios intereses. Además, *se ' +
+            'acabará la monótona prueba escrita en papel*, por presentaciones, ' +
+            'debates o entre otras muchas opciones.',
 
-          'Con esta reforma buscamos formar lectores más autónomos, ' +
-          'críticos y motivados, acercando la lectura a los intereses ' +
-          'reales de los alumnos y fortaleciendo una cultura lectora que ' +
-          'perdure más allá del colegio.',
+            'La implementación de esta reforma partirá el próximo año para los ' +
+            'alumnos de *1°EM y 2°EM*, y año a año se irá ampliando para abarcar a ' +
+            'todo el colegio.',
         ],
       },
       {
         tipo: 'reforma',
-        nombre: 'Comitivas',
+        nombre: 'Comitivas Comités',
         desde: 'Mar 27', permanente: true,
         detalle:
-          'Buscamos fortalecer las comitivas del Centro de Alumnos ' +
-          'entregándoles una organización clara, funciones definidas y ' +
-          'proyectos propios. Así, más estudiantes podrán participar ' +
-          'activamente, desarrollar habilidades de liderazgo y trabajo en ' +
-          'equipo, y contribuir de manera concreta a la vida escolar.',
+          'Las comitivas del CAA tienen un gran potencial que hoy no se está ' +
+          'aprovechando. Por eso, las reformaremos con una *nueva metodología, ' +
+          'objetivos claros y plazos concretos*, para que sean un aporte real al ' +
+          'colegio y sus ideas *se conviertan en acciones reales*.',
       },
       {
         tipo: 'reforma',
         nombre: 'ADN',
         desde: 'Mar 27', permanente: true,
-        detalle:
-          'ADN transforma la hora de Orientación en un espacio para ' +
-          'aprender habilidades útiles para la vida. Desde 3° Básico hasta ' +
-          '4° Medio, los alumnos desarrollarán herramientas prácticas que ' +
-          'los preparen para enfrentar con autonomía, responsabilidad y ' +
-          'confianza los desafíos del futuro.',
+        detalle: [
+            '*Transforma tu hora de Consejo de Curso.*',
+
+            '¿Sientes que la hora de Consejo de Curso podría aprovecharse mucho ' +
+            'mejor? Con ADN, queremos transformar ese espacio en un momento ' +
+            'dinámico, práctico y realmente útil. Desde 3° Básico hasta 4° Medio, ' +
+            'este bloque será *liderado directamente por las directivas de curso* y ' +
+            'por cualquier alumno que desee aportar. El objetivo es claro: aprender ' +
+            'nuevos conocimientos, desarrollar habilidades prácticas y nutrir el ' +
+            'crecimiento personal de cada uno. Dejaremos atrás las actividades ' +
+            'monótonas: los contenidos y talleres serán exclusivamente *según los ' +
+            'intereses de cada curso*. Además, el Centro de Alumnos (CAA) brindará ' +
+            'todo el respaldo necesario en logística, material y gestión de ' +
+            'espacios para hacer realidad sus ideas.',
+        ],
       },
       {
         tipo: 'reforma',
         nombre: 'Paseos Culturales',
         desde: 'Mar 27', hasta: 'Oct 27',
         detalle:
-          'Los Paseos Culturales no deberían ser una actividad que ocurre una ' +
-          'vez y desaparece. Queremos recuperarlos y convertirlos en una ' +
-          'experiencia mensual, donde nosotros mismos podamos elegir a dónde ' +
-          'ir y qué conocer. Desde lugares históricos y artísticos hasta ' +
-          'expresiones de la cultura popular, cada salida será una ' +
-          'oportunidad para salir de la rutina, compartir con otros cursos y ' +
-          'descubrir algo nuevo. Y para cerrar el año, quienes más participen ' +
-          'podrán vivir una experiencia especial en el Teatro Municipal.',
+          '¿Qué tal si los Paseos Culturales no fueran solo una vez al año? Los ' +
+          'traemos de vuelta con un formato, para que se conviertan en una ' +
+          '*experiencia mensual*. Ustedes mismos podrán *votar el destino de cada ' +
+          'salida* a través de encuestas en Instagram o en la App CAA, abriendo ' +
+          'el abanico a lugares históricos, artísticos y también espacios de ' +
+          'cultura popular.',
       },
       {
         tipo: 'reforma',
         nombre: 'Wickso Liga',
         desde: 'Abr 27', hasta: 'May 27', grupo: 'wickso',
-        detalle: [
-          'Proponemos una Copa Wickso anual con un campeonato de liga en el ' +
-          'primer semestre y playoffs en el segundo, finalizando con una ' +
-          'Gran Final que defina al campeón absoluto.',
-
-          'Además, cada equipo podrá diseñar su propia camiseta, ' +
-          'fortaleciendo la identidad, la participación y el sentido de ' +
-          'pertenencia.',
-        ],
+        detalle:
+          'La Copa Wickso *se renueva para durar todo el año*. El primer semestre ' +
+          'se jugará bajo formato de liga, donde todos los equipos se enfrentarán ' +
+          'entre sí para definir al mejor del semestre. Además, cada equipo podrá ' +
+          '*diseñar su propia polera* a través del CAA, dándole más identidad y ' +
+          'sentido de pertenencia a la competencia. El campeón de esta etapa ' +
+          'clasificará directo a la Gran Final de fin de año.',
       },
       {
         tipo: 'propuesta',
         nombre: '1° Noche Verde',
         desde: 'May 27', grupo: 'noche-verde',
         detalle:
-          'La Noche Verde busca recuperar y fortalecer el espíritu de la ' +
-          'barra verbita, transformándola en un espacio de unión, identidad ' +
-          'y apoyo hacia nuestros atletas. A través de una jornada previa ' +
-          'al interescolar con actividades, música, invitados y un ' +
-          'banderazo final, queremos revivir una tradición basada en el ' +
-          'orgullo, el respeto y la sana competencia, representando lo que ' +
-          'significa ser Verbita.',
+          'Falta poco para el Interescolar, y buscamos impulsar la banda de ' +
+          'Alberto con un nuevo espacio de motivación. Se organizará un ambiente ' +
+          'de apoyo a nuestros atletas, donde habrá lugares de comida, un ' +
+          'escenario con *música en vivo* y un *banderazo final* para potenciar ' +
+          'con todo la barra de los días siguientes.',
       },
       {
         tipo: 'propuesta',
-        nombre: 'Semana Social',
+        nombre: 'Más Allá de la Burbuja',
         desde: 'May 27',
         detalle:
-          'Esta iniciativa busca que los estudiantes salgan de su realidad ' +
-          'cotidiana y conozcan distintas realidades de nuestro país, ' +
-          'superando la llamada “burbuja social” en la que muchas veces ' +
-          'vivimos. A través de experiencias de servicio y contacto directo ' +
-          'con otras comunidades, en trabajos de fábrica, alumnos de 2° y ' +
-          '3° medio podrán poner sus talentos al servicio de los demás, ' +
-          'fortaleciendo la empatía, la conciencia social y el compromiso ' +
-          'de ser agentes de cambio desde los valores del Verbo Divino.',
+          'A veces es fácil quedarse dentro de nuestra propia realidad sin ' +
+          'conocer lo que viven otras personas. Con esta iniciativa, buscamos ' +
+          'justamente abrir esta mirada. *Durante tres días*, estudiantes de 2° y ' +
+          '3° Medio participarán en distintas experiencias de servicio, ' +
+          'incluyendo trabajos de fábrica y actividades en contacto directo con ' +
+          'otras comunidades. Más que una salida, queremos que sea una ' +
+          'experiencia que ayude a *entender otras realidades, desarrollar ' +
+          'empatía y poner talentos al servicio de los demás*, siguiendo los ' +
+          'valores del Verbo Divino y el compromiso de ser verdaderos agentes de ' +
+          'cambio.',
       },
       {
         tipo: 'propuesta',
         nombre: 'Más que un Saludo',
         desde: 'Jun 27',
         detalle:
-          'Más que un Saludo busca fortalecer los vínculos dentro de la ' +
-          'comunidad escolar, generando un espacio donde alumnos y ' +
-          'funcionarios puedan conocerse más allá de sus roles habituales. ' +
-          'A través del deporte, juegos y actividades compartidas, el ' +
-          'proyecto promueve el respeto, la cercanía y el sentido de ' +
-          'pertenencia, reconociendo el aporte de cada persona que forma ' +
-          'parte del Verbo Divino.',
+          'Convivimos todos los días con profesores, auxiliares y funcionarios, ' +
+          'pero ¿cuánto sabemos realmente de ellos? “Más que un Saludo” busca ' +
+          'generar un espacio para *conocernos fuera de la rutina* y compartir ' +
+          'como comunidad. Habrá actividades deportivas como fútbol, básquetbol y ' +
+          'vóleibol, junto con juegos y espacios culturales como cacho, ajedrez y ' +
+          'Catán. La jornada terminará con una instancia de convivencia para ' +
+          'seguir conversando y compartiendo, fortaleciendo el respeto, la ' +
+          'cercanía y ese *sentido de pertenencia* que hace que todos seamos ' +
+          'parte de la comunidad.',
       },
       {
         tipo: 'reforma',
         nombre: 'Wickso Playoffs',
         desde: 'Jul 27', hasta: 'Ago 27', grupo: 'wickso',
-        detalle: [
-          'Proponemos una Copa Wickso anual con un campeonato de liga en el ' +
-          'primer semestre y playoffs en el segundo, finalizando con una ' +
-          'Gran Final que defina al campeón absoluto.',
-
-          'Además, cada equipo podrá diseñar su propia camiseta, ' +
-          'fortaleciendo la identidad, la participación y el sentido de ' +
-          'pertenencia.',
-        ],
+        detalle:
+          'Terminó el formato liga, ¿y ahora qué? Llega la etapa más intensa: en ' +
+          'el segundo semestre comienzan los playoffs, donde los equipos ' +
+          'competirán en fase eliminatoria directa hasta definir al campeón del ' +
+          'semestre. Este ganador se enfrentará al campeón del primer semestre en ' +
+          'la *Gran Final*, coronando al campeón anual de la Wickso. Además, se ' +
+          'incorporarán reconocimientos especiales como el *MVP del torneo*, ' +
+          'sumando más motivación a esta nueva etapa.',
       },
       {
         tipo: 'propuesta',
         nombre: '2° Noche Verde',
         desde: 'Oct 27', grupo: 'noche-verde',
         detalle:
-          'La Noche Verde busca recuperar y fortalecer el espíritu de la ' +
-          'barra verbita, transformándola en un espacio de unión, identidad ' +
-          'y apoyo hacia nuestros atletas. A través de una jornada previa ' +
-          'al interescolar con actividades, música, invitados y un ' +
-          'banderazo final, queremos revivir una tradición basada en el ' +
-          'orgullo, el respeto y la sana competencia, representando lo que ' +
-          'significa ser Verbita.',
+          'Luego de una primera experiencia, buscamos que la Noche Verde se ' +
+          'mantenga como *una tradición previa a cada Interescolar*. ' +
+          'Continuaremos impulsando la banda de Alberto y generando un espacio ' +
+          'para que los estudiantes puedan compartir, con comida, música en vivo ' +
+          'y un banderazo final que nos prepare para apoyar con todo a nuestros ' +
+          'atletas en el Interescolar final.',
       },
 
       /* ---------- ACTIVIDADES DEL COLEGIO (verde) ------------------------ */
@@ -255,14 +258,13 @@ window.CONTENIDO_PROYECTOS = {
         nombre: 'Huella de Primavera ’26',
         desde: 'Nov 26', grupo: 'huella',
         detalle: [
-          'Segunda edición del 2026 de una de las fiestas más icónicas del ' +
-          'Colegio, en que alrededor de 2.000 estudiantes de 7°EB, 8°EB y ' +
-          '1°EM de todo Santiago se reúnen en el patio central para bailar ' +
-          'y disfrutar de la música. Lo recaudado ayuda a financiar otros ' +
-          'proyectos del CAA.',
+            '*Segunda edición del 2026* de una de las fiestas más icónicas del ' +
+            'Colegio, en que *alrededor de 2.000 estudiantes* de 7°EB, 8°EB y 1°EM ' +
+            'de todo Santiago se reúnen en el patio central para bailar y disfrutar ' +
+            'de la música. Lo recaudado ayuda a financiar otros proyectos del CAA.',
 
-          'Esta edición fue organizada por el CAA anterior, pero por temas ' +
-          'de tiempos será el nuevo CAA quien la lleve a cabo.',
+            'Esta edición fue organizada por el CAA anterior, pero por temas de ' +
+            'tiempos *será el nuevo CAA quien la lleve a cabo*.',
         ],
       },
       {
@@ -270,83 +272,82 @@ window.CONTENIDO_PROYECTOS = {
         nombre: '1° Cuenta Pública',
         desde: 'Mar 27', grupo: 'cuenta-publica',
         detalle:
-          'Instancia en la que el CAA informa a la comunidad sobre los ' +
-          'ingresos y gastos realizados entre octubre y marzo. Además, se ' +
-          'responden las preguntas de los estudiantes, promoviendo la ' +
-          'transparencia y el buen uso de los recursos.',
+          'Instancia en la que el CAA informa a la comunidad sobre los *ingresos ' +
+          'y gastos realizados entre octubre y marzo*. Además, se responden las ' +
+          'preguntas de los estudiantes, promoviendo la *transparencia y el buen ' +
+          'uso de los recursos*.',
       },
       {
         tipo: 'tradicional',
         nombre: 'Huella de Verano ’27',
         desde: 'Mar 27', grupo: 'huella',
         detalle:
-          'Primera edición del 2027 de una de las fiestas más icónicas del ' +
-          'Colegio, en que alrededor de 2.000 estudiantes de 7°EB, 8°EB y ' +
-          '1°EM de todo Santiago se reúnen en el patio central para bailar ' +
-          'y disfrutar de la música. Lo recaudado ayuda a financiar otros ' +
-          'proyectos del CAA.',
+          '*Primera edición del 2027* de una de las fiestas más icónicas del ' +
+          'Colegio, en que *alrededor de 2.000 estudiantes* de 7°EB, 8°EB y 1°EM ' +
+          'de todo Santiago se reúnen en el patio central para bailar y disfrutar ' +
+          'de la música. Lo recaudado ayuda a financiar otros proyectos del CAA.',
       },
       {
         tipo: 'tradicional',
         nombre: 'Partido Auxiliares v/s CAA',
         desde: 'Mar 27',
         detalle:
-          'Tradicional encuentro de fútbol entre los 12 integrantes del CAA ' +
-          'y 11 auxiliares del Colegio, disputado en la cancha de pasto. ' +
-          'Más que una competencia, busca generar un espacio de convivencia ' +
-          'y reconocer el importante trabajo que realizan los auxiliares ' +
-          'dentro de la comunidad escolar.',
+          'Tradicional encuentro de fútbol entre los *12 integrantes del CAA y 11 ' +
+          'auxiliares del Colegio*, disputado en la cancha de pasto. Más que una ' +
+          'competencia, busca generar un espacio de convivencia y *reconocer el ' +
+          'importante trabajo que realizan los auxiliares* dentro de la comunidad ' +
+          'escolar.',
       },
       {
         tipo: 'tradicional',
         nombre: 'La RED',
         desde: 'Abr 27', hasta: 'Oct 27',
         detalle:
-          'Espacio de encuentro entre distintos Centros de Alumnos de ' +
-          'colegios de Santiago. En estas reuniones se comparten ideas, ' +
-          'experiencias y proyectos, además de conversar sobre temas ' +
-          'comunes a la labor de cada equipo.',
+          'Espacio de encuentro entre *distintos Centros de Alumnos de colegios ' +
+          'de Santiago*. En estas reuniones se comparten ideas, experiencias y ' +
+          'proyectos, además de conversar sobre temas comunes a la labor de cada ' +
+          'equipo.',
       },
       {
         tipo: 'tradicional',
         nombre: 'S. M. G',
         desde: 'Abr 27',
         detalle:
-          'Los Social Meeting Games son alianzas organizadas junto al VMA ' +
+          'Los *Social Meeting Games* son alianzas organizadas junto al VMA ' +
           'durante el primer semestre. En ellas, estudiantes de 3°EM y 4°EM ' +
-          'compiten en distintas pruebas y van sumando puntos para sus ' +
-          'alianzas, que buscan quedarse con el premio final.',
+          'compiten en distintas pruebas y van sumando puntos para sus alianzas, ' +
+          'que buscan quedarse con el *premio final*.',
       },
       {
         tipo: 'tradicional',
         nombre: 'L Gante',
         desde: 'May 27',
         detalle:
-          'Sexta edición de la gala dirigida a estudiantes de 3°EM y 4°EM. ' +
-          'El CAA se encarga de organizar la instalación de carritos de ' +
-          'comida y una pista de baile, creando un espacio de celebración ' +
-          'para los estudiantes y sus parejas.',
+          '*Sexta edición* de la gala dirigida a estudiantes de 3°EM y 4°EM. El ' +
+          'CAA se encarga de organizar la instalación de *carritos de comida y ' +
+          'una pista de baile*, creando un espacio de celebración para los ' +
+          'estudiantes y sus parejas.',
       },
       {
         tipo: 'tradicional',
         nombre: 'Interescolar Preparatorio',
         desde: 'May 27', grupo: 'interescolar',
         detalle:
-          'Primera fase de la competencia de atletismo más importante de ' +
-          'Chile, desarrollada durante el primer semestre. En ella, los ' +
-          'atletas ponen a prueba el trabajo realizado durante su ' +
-          'pretemporada y buscan posicionar al colegio de cara a la etapa ' +
-          'final. Además, es una instancia en la que la barra acompaña al ' +
-          'equipo con banderazos y el retomado baile de presentación.',
+          'Primera fase de *la competencia de atletismo más importante de Chile*, ' +
+          'desarrollada durante el primer semestre. En ella, los atletas ponen a ' +
+          'prueba el trabajo realizado durante su pretemporada y buscan ' +
+          'posicionar al colegio de cara a la etapa final. Además, es una ' +
+          'instancia en la que la barra acompaña al equipo con *banderazos y el ' +
+          'retomado baile de presentación*.',
       },
       {
         tipo: 'tradicional',
         nombre: 'Liga CVD VMA',
         desde: 'May 27', hasta: 'Ago 27',
         detalle:
-          'Liga de fútbol organizada en conjunto con las alumnas del Villa ' +
-          'María Academy, que cuenta con tres años de trayectoria. Durante ' +
-          'tres meses, equipos de ambos colegios forman alianzas y compiten ' +
+          'Liga de fútbol organizada en conjunto con las alumnas del Villa María ' +
+          'Academy, que cuenta con *tres años de trayectoria*. Durante tres ' +
+          'meses, equipos de ambos colegios forman alianzas y compiten ' +
           'semanalmente en las canchas sintéticas del CVD. Al finalizar la ' +
           'temporada, se define un equipo ganador de cada colegio.',
       },
@@ -355,108 +356,102 @@ window.CONTENIDO_PROYECTOS = {
         nombre: '2° Cuenta Pública',
         desde: 'Jun 27', grupo: 'cuenta-publica',
         detalle:
-          'Segunda instancia anual de rendición de cuentas, en la que el ' +
-          'CAA presenta a la comunidad los movimientos de dinero realizados ' +
-          'entre marzo y junio y responde las dudas de los estudiantes.',
+          'Segunda instancia anual de *rendición de cuentas*, en la que el CAA ' +
+          'presenta a la comunidad los *movimientos de dinero realizados entre ' +
+          'marzo y junio* y responde las dudas de los estudiantes.',
       },
       {
         tipo: 'tradicional',
         nombre: 'Perspectivas Cruzadas',
         desde: 'Jul 27',
         detalle:
-          'Espacio organizado en conjunto por los Centros de Alumnos del ' +
-          'CVD y del VMA. En él, alumnas de 1°EM y alumnos de 2°EM ' +
-          'conversan y comparten sus puntos de vista sobre temas relevantes ' +
-          'para su edad, como el consumo de alcohol y las relaciones entre ' +
-          'hombres y mujeres.',
+          'Espacio organizado en conjunto por los Centros de Alumnos del CVD y ' +
+          'del VMA. En él, alumnas de 1°EM y alumnos de 2°EM *conversan y ' +
+          'comparten sus puntos de vista sobre temas relevantes para su edad*, ' +
+          'como el consumo de alcohol y las relaciones entre hombres y mujeres.',
       },
       {
         tipo: 'tradicional',
         nombre: 'Alcantarilla',
         desde: 'Ago 27',
         detalle:
-          'Competencia musical en la que participan estudiantes y ' +
-          'agrupaciones del Colegio. Los ganadores obtienen un cupo para ' +
-          'presentarse en el Alcántara, uno de los principales eventos ' +
-          'musicales del Colegio.',
+          'Competencia musical en la que participan estudiantes y agrupaciones ' +
+          'del Colegio. Los ganadores obtienen *un cupo para presentarse en el ' +
+          'Alcántara*, uno de los principales eventos musicales del Colegio.',
       },
       {
         tipo: 'tradicional',
         nombre: 'Mes de la Cultura',
         desde: 'Ago 27',
         detalle:
-          'Antes conocido como Semana de la Cultura, es un mes completo ' +
-          'dedicado a actividades y charlas culturales organizadas por el ' +
-          'CAA. Su objetivo es acercar a los estudiantes a distintas ' +
-          'disciplinas, no solo a través de charlas, sino también mediante ' +
-          'experiencias prácticas, como la creación de murales y encuentros ' +
-          'con figuras destacadas de la política, la arquitectura y el ' +
-          'arte, entre otros.',
+          'Antes conocido como Semana de la Cultura, es *un mes completo* ' +
+          'dedicado a actividades y charlas culturales organizadas por el CAA. Su ' +
+          'objetivo es acercar a los estudiantes a distintas disciplinas, no solo ' +
+          'a través de charlas, sino también mediante *experiencias prácticas*, ' +
+          'como la creación de murales y encuentros con figuras destacadas de la ' +
+          'política, la arquitectura y el arte, entre otros.',
       },
       {
         tipo: 'tradicional',
         nombre: 'Semana Verbita',
         desde: 'Sep 27',
         detalle:
-          'Semana previa a Fiestas Patrias en la que se suspenden las ' +
-          'clases regulares y los estudiantes se organizan por generaciones ' +
-          'y letras en torno a una temática común. Durante la semana, las ' +
-          'alianzas compiten en distintas actividades deportivas y ' +
-          'culturales hasta definir a una ganadora.',
+          'Semana previa a Fiestas Patrias en la que *se suspenden las clases ' +
+          'regulares* y los estudiantes se organizan por generaciones y letras en ' +
+          'torno a una temática común. Durante la semana, las alianzas compiten ' +
+          'en distintas actividades deportivas y culturales hasta definir a una ' +
+          'ganadora.',
       },
       {
         tipo: 'tradicional',
         nombre: 'Alcántara',
         desde: 'Sep 27',
         detalle:
-          'Evento musical emblemático del Colegio, con más de 40 años de ' +
-          'historia. Reúne a las agrupaciones musicales del CVD, incluyendo ' +
-          'a los ganadores de Alcantarilla, junto a artistas invitados ' +
-          'externos. El resultado es un concierto abierto a toda la ' +
-          'comunidad estudiantil, con una asistencia aproximada de 3.000 ' +
-          'personas.',
+          'Evento musical emblemático del Colegio, con *más de 40 años de ' +
+          'historia*. Reúne a las agrupaciones musicales del CVD, incluyendo a ' +
+          'los ganadores de Alcantarilla, junto a artistas invitados externos. El ' +
+          'resultado es un concierto abierto a toda la comunidad estudiantil, con ' +
+          'una asistencia aproximada de *3.000 personas*.',
       },
       {
         tipo: 'tradicional',
         nombre: 'Semana de Campaña',
         desde: 'Sep 27',
         detalle:
-          'Período en que se lleva a cabo la elección del nuevo Centro de ' +
-          'Alumnos. Durante tres días, las distintas candidaturas presentan ' +
-          'sus propuestas y su visión para el Colegio. Al finalizar la ' +
-          'semana, los estudiantes de 8°EB a 4°EM votan para elegir a sus ' +
-          'nuevos representantes.',
+          'Período en que se lleva a cabo *la elección del nuevo Centro de ' +
+          'Alumnos*. Durante tres días, las distintas candidaturas presentan sus ' +
+          'propuestas y su visión para el Colegio. Al finalizar la semana, los ' +
+          'estudiantes de 8°EB a 4°EM *votan para elegir a sus nuevos ' +
+          'representantes*.',
       },
       {
         tipo: 'tradicional',
         nombre: '3° Cuenta Pública',
         desde: 'Oct 27', grupo: 'cuenta-publica',
         detalle:
-          'Tercera y última instancia anual de rendición de cuentas. En ' +
-          'ella, el CAA informa sobre los movimientos de dinero realizados ' +
-          'entre junio y octubre y responde las preguntas de los ' +
-          'estudiantes.',
+          'Tercera y última instancia anual de *rendición de cuentas*. En ella, ' +
+          'el CAA informa sobre los *movimientos de dinero realizados entre junio ' +
+          'y octubre* y responde las preguntas de los estudiantes.',
       },
       {
         tipo: 'tradicional',
         nombre: 'Interescolar Final',
         desde: 'Oct 27', grupo: 'interescolar',
         detalle:
-          'Segunda y última fase del Interescolar de Atletismo, en la que ' +
-          'se define al campeón del año. Durante la competencia, la barra ' +
-          'acompaña a los atletas con cánticos, banderas y otras ' +
-          'actividades hasta el cierre de la temporada.',
+          'Segunda y última fase del Interescolar de Atletismo, en la que *se ' +
+          'define al campeón del año*. Durante la competencia, la barra acompaña ' +
+          'a los atletas con cánticos, banderas y otras actividades hasta el ' +
+          'cierre de la temporada.',
       },
       {
         tipo: 'tradicional',
         nombre: 'Huella de Invierno ’27',
         desde: 'Oct 27', grupo: 'huella',
         detalle:
-          'Segunda edición del 2027 de una de las fiestas más icónicas del ' +
-          'Colegio, en que alrededor de 2.000 estudiantes de 7°EB, 8°EB y ' +
-          '1°EM de todo Santiago se reúnen en el patio central para bailar ' +
-          'y disfrutar de la música. Lo recaudado ayuda a financiar otros ' +
-          'proyectos del CAA.',
+          '*Segunda edición del 2027* de una de las fiestas más icónicas del ' +
+          'Colegio, en que *alrededor de 2.000 estudiantes* de 7°EB, 8°EB y 1°EM ' +
+          'de todo Santiago se reúnen en el patio central para bailar y disfrutar ' +
+          'de la música. Lo recaudado ayuda a financiar otros proyectos del CAA.',
       },
     ],
 
