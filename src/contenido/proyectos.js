@@ -28,7 +28,7 @@ window.CONTENIDO_PROYECTOS = {
        El orden de esta lista es el orden del eje. Si agregas o quitas un
        mes, el resto se reacomoda solo.                                      */
     meses: [
-      'Oct 26', 'Nov 26', 'Dic 26', 'Ene 27', 'Feb 27', 'Mar 27', 'Abr 27',
+      'Nov 26', 'Dic 26', 'Ene 27', 'Feb 27', 'Mar 27', 'Abr 27',
       'May 27', 'Jun 27', 'Jul 27', 'Ago 27', 'Sep 27', 'Oct 27',
     ],
 
@@ -84,17 +84,8 @@ window.CONTENIDO_PROYECTOS = {
       /* ---------- PROYECTOS DE CAMPAÑA Y REFORMAS (rojo) ------------------ */
       {
         tipo: 'propuesta',
-        nombre: 'CAA 911',
-        desde: 'Oct 26', permanente: true,
-        detalle:
-          '¿Tienes un problema o idea urgente? Tu Centro de Alumnos al ' +
-          'rescate: un canal rápido y directo para responder a tus ' +
-          'necesidades en el colegio.',
-      },
-      {
-        tipo: 'propuesta',
         nombre: 'App CAA',
-        desde: 'Oct 26', permanente: true,
+        desde: 'Nov 26', permanente: true,
         detalle:
           '¿Te ha pasado que te enteras tarde de una actividad, torneo o ' +
           'iniciativa que te habría gustado conocer? Esta app busca cambiar ' +

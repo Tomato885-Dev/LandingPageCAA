@@ -752,20 +752,55 @@ cambias por tonos más claros, el texto se empieza a perder.
 
 Abre `src/contenido/colaboradores.js`.
 
-**Para agregar**, copia esta línea dentro de la lista `colaboradores: [ … ]`:
+**Para agregar**, copia este bloque dentro de la lista `colaboradores: [ … ]`:
 
 ```js
-    { nombre: 'Nombre de la organización', logo: 'assets/logos/nombre.png', url: 'https://sitio.cl', tipo: 'Institución' },
+    {
+      nombre: 'Nombre de la organización',
+      logo: 'assets/logos/nombre.png',
+      url: 'https://sitio.cl',
+      detalle: 'En qué consiste el beneficio para el alumnado.',
+    },
 ```
 
 | Campo | Para qué sirve |
 |---|---|
 | `nombre` | Nombre del colaborador. **Si no hay logo, se muestra el nombre escrito**, y se ve bien. |
 | `logo` | Ruta del logo (guárdalo en `assets/logos/`). Déjalo en `''` si no tienes. |
-| `url` | Sitio web. Déjalo en `''` si no tiene: la tarjeta deja de ser un enlace. |
-| `tipo` | Texto pequeño bajo el nombre. Déjalo en `''` si no quieres. |
+| `detalle` | **En qué consiste el beneficio.** Es lo que lee la gente al pinchar la casilla. Ver abajo. |
+| `url` | Sitio web. Déjalo en `''` si no tiene. |
+| `tipo` | Texto pequeño bajo el nombre (por ejemplo `'Alimentación'`). Puedes no ponerlo. |
 
-**Para eliminar** un colaborador: borra su línea completa (incluida la coma final).
+**Para eliminar** un colaborador: borra su bloque `{ … }` completo, incluida la
+coma final.
+
+### Explicar el beneficio (el cuadro que se abre al pinchar)
+
+Al pinchar una casilla se abre un cuadro con el logo grande y la explicación del
+beneficio, igual que las fotos del equipo en `// ¿Quiénes somos?`. Ese texto es
+el campo `detalle`:
+
+```js
+      detalle: '20% de descuento presentando la credencial del colegio.',
+```
+
+Si el texto es largo y quieres separarlo en párrafos, en vez de un texto suelto
+escribe una lista:
+
+```js
+      detalle: [
+        'Primer párrafo.',
+        'Segundo párrafo.',
+      ],
+```
+
+> **Importante:** la casilla **solo se puede pinchar cuando `detalle` tiene algo
+> escrito**. Mientras esté en `''` se ve igual que siempre, pero no abre nada —
+> así nadie pincha y se queda mirando un cuadro en blanco. Apenas escribas el
+> texto aparece una flechita al lado del nombre y empieza a funcionar solo.
+
+Si además el colaborador tiene `url`, dentro del cuadro sale un botón
+**"Ir al sitio"** que se abre en otra pestaña.
 
 > Consejo: los logos deben ser **blancos o claros con fondo transparente**,
 > porque el sitio tiene fondo negro.

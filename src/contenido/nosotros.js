@@ -187,7 +187,7 @@ window.CONTENIDO_NOSOTROS = {
           'Miembro de la directiva de curso durante 3 años.',
           'Organizador de la “L-Gante” 2026.',
           'Ex atleta.',
-          'Organizador de la Semana Verbita 2026.',
+          'Organizador de la Semana Verbita 2025.',
         ],
       },
       {

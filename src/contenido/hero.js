@@ -86,7 +86,7 @@ window.CONTENIDO_HERO = {
     },
     {
       icono: 'rayo',
-      numero: '13',
+      numero: '10',
       destacada: true,
       etiqueta: 'son los proyectos que *EJECUTAREMOS*, para *IMPULSAR* a cada ' +
                 'miembro de la comunidad',
