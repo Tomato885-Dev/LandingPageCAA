@@ -52,33 +52,41 @@ window.CONTENIDO_COLABORADORES = {
      • url     : sitio web de la marca. Si lo escribes, dentro del cuadro
                  aparece un botón "Ir al sitio" que se abre en otra pestaña.
                  Déjalo en '' si no tiene.
-     • tipo    : línea corta opcional bajo el nombre (por ejemplo
-                 'Alimentación' o 'Preuniversitario'). Déjalo fuera si no lo
-                 quieres usar.
+     • tipo    : 👉 EL BENEFICIO EN CORTO. Es la línea chica que va bajo el
+                 nombre, y se lee SIN tener que pinchar nada: '20% de
+                 descuento', 'Colaboración'. Es lo primero que mira la gente,
+                 así que conviene tenerlo siempre puesto.
+
+                 Si todavía no está confirmado, déjalo fuera: mejor que no
+                 diga nada a que prometa un descuento equivocado.
      ------------------------------------------------------------------------ */
   colaboradores: [
     {
       nombre: 'Dimacofi',
       logo: 'assets/logos/dimacofi.png',
       url: '',
+      tipo: 'Colaboración',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
     },
     {
       nombre: 'Starbucks',
       logo: 'assets/logos/starbucks.png',
       url: '',
+      tipo: 'Colaboración',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
     },
     {
       nombre: 'Just Burger',
       logo: 'assets/logos/just-burger.png',
       url: '',
+      tipo: '30% de descuento',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
     },
     {
       nombre: 'FEN',
       logo: 'assets/logos/fen.png',
       url: '',
+      tipo: 'Colaboración',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
     },
     {
@@ -97,24 +105,28 @@ window.CONTENIDO_COLABORADORES = {
       nombre: 'Gnomo',
       logo: 'assets/logos/gnomo.png',
       url: '',
+      tipo: '10% de descuento adicional',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
     },
     {
       nombre: 'AndPag',
       logo: 'assets/logos/andpag.png',
       url: '',
+      tipo: '20% de descuento',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
     },
     {
       nombre: 'Elite',
       logo: 'assets/logos/elite.png',
       url: '',
+      tipo: '20% de descuento',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
     },
     {
       nombre: 'Andesgear',
       logo: 'assets/logos/andesgear.png',
       url: '',
+      tipo: 'Colaboración',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
     },
     {
@@ -127,6 +139,7 @@ window.CONTENIDO_COLABORADORES = {
       nombre: 'Preu Filadd',
       logo: 'assets/logos/preu-filadd.png',
       url: '',
+      tipo: '20% de descuento',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
     },
     {
@@ -139,6 +152,7 @@ window.CONTENIDO_COLABORADORES = {
       nombre: 'CCU',
       logo: 'assets/logos/ccu.png',
       url: '',
+      tipo: 'Colaboración',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
     },
     {
