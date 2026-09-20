@@ -4,7 +4,7 @@ Aquí van las 15 imágenes, con estos nombres de archivo exactos:
 
 | # | Marca | Archivo |
 |---|---|---|
-| 1 | Burger King | `burger-king.png` |
+| 1 | Dimacofi | `dimacofi.png` |
 | 2 | Starbucks | `starbucks.png` |
 | 3 | Just Burger | `just-burger.png` |
 | 4 | FEN | `fen.png` |
@@ -25,17 +25,24 @@ mueve la línea correspondiente en `src/contenido/colaboradores.js`.
 
 ## Cómo deben ser los archivos
 
-- Formato `.png` con **fondo transparente**.
-- Como el sitio tiene fondo oscuro, usa la **versión blanca o clara** del logo
-  cuando la marca la tenga. Un logo oscuro sobre fondo negro no se ve.
-- Ancho sugerido: 600 px. La forma no importa: el recuadro muestra el logo
-  entero sin recortarlo, sea ancho, cuadrado o alto.
-- Menos de 150 KB cada uno.
+Cada logo se muestra sobre una **placa blanca**, así que da lo mismo si el
+logo es oscuro o claro: los dos se ven bien. No hace falta la versión blanca
+de la marca.
 
-> **Evita los archivos con fondo blanco sólido** (los típicos que salen al
-> descargar un logo de Google). Sobre el fondo oscuro se ven como un
-> rectángulo blanco. Si solo tienes ese, avísame y cambio el diseño para que
-> todos los logos vayan sobre una placa blanca.
+- Formato `.png`, de preferencia con **fondo transparente**.
+- **600 px en el lado largo.** La forma no importa: el recuadro muestra el
+  logo entero sin recortarlo, sea ancho, cuadrado o alto.
+- Menos de 150 KB cada uno. Son 15 archivos y la página la van a abrir
+  cientos de personas: cada logo pesado se nota al cargar.
+
+> ⚠️ **Lo más importante: recorta el margen blanco antes de subirlo.**
+>
+> Los logos que se descargan de internet suelen venir con mucho espacio
+> blanco alrededor. Ese margen cuenta como parte de la imagen, así que el
+> recuadro achica todo para que quepa y el logo queda **mucho más chico que
+> los vecinos**, aunque el archivo sea enorme.
+>
+> Si no sabes cómo recortarlo, mándamelo tal cual y lo dejo listo.
 
 Mientras un logo no esté subido, su recuadro muestra el marcador
 "Agrega aquí el logo". La página no se rompe.

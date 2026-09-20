@@ -58,8 +58,8 @@ window.CONTENIDO_COLABORADORES = {
      ------------------------------------------------------------------------ */
   colaboradores: [
     {
-      nombre: 'Burger King',
-      logo: 'assets/logos/burger-king.png',
+      nombre: 'Dimacofi',
+      logo: 'assets/logos/dimacofi.png',
       url: '',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
     },
