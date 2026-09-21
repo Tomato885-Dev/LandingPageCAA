@@ -784,7 +784,7 @@ Abre `src/contenido/colaboradores.js`.
 | `logo` | Ruta del logo (guárdalo en `assets/logos/`). Déjalo en `''` si no tienes. |
 | `detalle` | **En qué consiste el beneficio.** Es lo que lee la gente al pinchar la casilla. Ver abajo. |
 | `url` | Sitio web. Déjalo en `''` si no tiene. |
-| `tipo` | **El beneficio en corto**: `'20% de descuento'`, `'Colaboración'`. Se lee en la casilla, sin pinchar. |
+| `tipo` | Línea chica bajo el nombre. Los quince dicen `'Colaborador'`. |
 
 **Para eliminar** un colaborador: borra su bloque `{ … }` completo, incluida la
 coma final.

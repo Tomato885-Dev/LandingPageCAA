@@ -52,113 +52,119 @@ window.CONTENIDO_COLABORADORES = {
      • url     : sitio web de la marca. Si lo escribes, dentro del cuadro
                  aparece un botón "Ir al sitio" que se abre en otra pestaña.
                  Déjalo en '' si no tiene.
-     • tipo    : 👉 EL BENEFICIO EN CORTO. Es la línea chica que va bajo el
-                 nombre, y se lee SIN tener que pinchar nada: '20% de
-                 descuento', 'Colaboración'. Es lo primero que mira la gente,
-                 así que conviene tenerlo siempre puesto.
+     • tipo    : la línea chica que va bajo el nombre. Hoy los quince dicen
+                 lo mismo, 'Colaborador', y así debe quedar: ninguno ofrece
+                 un descuento distinto del resto.
 
-                 Si todavía no está confirmado, déjalo fuera: mejor que no
-                 diga nada a que prometa un descuento equivocado.
+                 Si algún día uno sí tuviera algo propio, aquí iría en corto
+                 ('20% de descuento'). Ojo: solo ponlo cuando esté
+                 confirmado. Un descuento mal publicado lo leen 600 personas
+                 y después hay que dar explicaciones en el local.
      ------------------------------------------------------------------------ */
   colaboradores: [
     {
       nombre: 'Dimacofi',
       logo: 'assets/logos/dimacofi.png',
       url: '',
-      tipo: 'Colaboración',
+      tipo: 'Colaborador',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
     },
     {
       nombre: 'Starbucks',
       logo: 'assets/logos/starbucks.png',
       url: '',
-      tipo: 'Colaboración',
+      tipo: 'Colaborador',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
     },
     {
       nombre: 'Just Burger',
       logo: 'assets/logos/just-burger.png',
       url: '',
-      tipo: '30% de descuento',
+      tipo: 'Colaborador',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
     },
     {
       nombre: 'FEN',
       logo: 'assets/logos/fen.png',
       url: '',
-      tipo: 'Colaboración',
+      tipo: 'Colaborador',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
     },
     {
       nombre: 'Preuniversitario Gauss',
       logo: 'assets/logos/preuniversitario-gauss.png',
       url: '',
+      tipo: 'Colaborador',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
     },
     {
       nombre: 'Açai',
       logo: 'assets/logos/acai.png',
       url: '',
+      tipo: 'Colaborador',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
     },
     {
       nombre: 'Gnomo',
       logo: 'assets/logos/gnomo.png',
       url: '',
-      tipo: '10% de descuento adicional',
+      tipo: 'Colaborador',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
     },
     {
       nombre: 'AndPag',
       logo: 'assets/logos/andpag.png',
       url: '',
-      tipo: '20% de descuento',
+      tipo: 'Colaborador',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
     },
     {
       nombre: 'Elite',
       logo: 'assets/logos/elite.png',
       url: '',
-      tipo: '20% de descuento',
+      tipo: 'Colaborador',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
     },
     {
       nombre: 'Andesgear',
       logo: 'assets/logos/andesgear.png',
       url: '',
-      tipo: 'Colaboración',
+      tipo: 'Colaborador',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
     },
     {
       nombre: 'Aprende +',
       logo: 'assets/logos/aprende-mas.png',
       url: '',
+      tipo: 'Colaborador',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
     },
     {
       nombre: 'Preu Filadd',
       logo: 'assets/logos/preu-filadd.png',
       url: '',
-      tipo: '20% de descuento',
+      tipo: 'Colaborador',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
     },
     {
       nombre: 'Forus: Brands & Retail',
       logo: 'assets/logos/forus.png',
       url: '',
+      tipo: 'Colaborador',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
     },
     {
       nombre: 'CCU',
       logo: 'assets/logos/ccu.png',
       url: '',
-      tipo: 'Colaboración',
+      tipo: 'Colaborador',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
     },
     {
       nombre: 'School of Rock',
       logo: 'assets/logos/school-of-rock.png',
       url: '',
+      tipo: 'Colaborador',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
     },
   ],
