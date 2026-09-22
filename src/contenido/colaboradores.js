@@ -112,8 +112,8 @@ window.CONTENIDO_COLABORADORES = {
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
     },
     {
-      nombre: 'AndPag',
-      logo: 'assets/logos/andpag.png',
+      nombre: 'AndPac',
+      logo: 'assets/logos/andpac.png',
       url: '',
       tipo: 'Colaborador',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO

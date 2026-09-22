@@ -11,7 +11,7 @@ Aquí van las 15 imágenes, con estos nombres de archivo exactos:
 | 5 | Preuniversitario Gauss | `preuniversitario-gauss.png` |
 | 6 | Açai | `acai.png` |
 | 7 | Gnomo | `gnomo.png` |
-| 8 | AndPag | `andpag.png` |
+| 8 | AndPac | `andpac.png` |
 | 9 | Elite | `elite.png` |
 | 10 | Andesgear | `andesgear.png` |
 | 11 | Aprende + | `aprende-mas.png` |
