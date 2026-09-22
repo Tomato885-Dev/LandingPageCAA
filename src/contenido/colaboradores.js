@@ -49,10 +49,6 @@ window.CONTENIDO_COLABORADORES = {
                        'Segundo párrafo.',
                      ],
 
-     • fondoOscuro : ponlo en true SOLO si el logo es blanco o muy claro (como
-                 Daviu o AndPac). Su casilla pasa a fondo negro en vez de
-                 blanco, porque un logo blanco sobre placa blanca no se ve.
-                 Si el logo es oscuro o de color, no pongas este campo.
      • url     : sitio web de la marca. Si lo escribes, dentro del cuadro
                  aparece un botón "Ir al sitio" que se abre en otra pestaña.
                  Déjalo en '' si no tiene.
@@ -118,7 +114,6 @@ window.CONTENIDO_COLABORADORES = {
     {
       nombre: 'AndPac',
       logo: 'assets/logos/andpac.png',
-      fondoOscuro: true,
       url: '',
       tipo: 'Colaborador',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
@@ -153,7 +148,7 @@ window.CONTENIDO_COLABORADORES = {
     },
     {
       nombre: 'Under Armour',
-      logo: 'assets/logos/forus.png',
+      logo: 'assets/logos/under-armour.png',
       url: '',
       tipo: 'Colaborador',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
@@ -175,7 +170,6 @@ window.CONTENIDO_COLABORADORES = {
     {
       nombre: 'Daviu',
       logo: 'assets/logos/daviu.png',
-      fondoOscuro: true,   // el logo es blanco: va sobre placa negra
       url: '',
       tipo: 'Colaborador',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO

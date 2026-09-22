@@ -16,7 +16,7 @@ Aquí van las 16 imágenes, con estos nombres de archivo exactos:
 | 10 | Andesgear | `andesgear.png` |
 | 11 | Aprende + | `aprende-mas.png` |
 | 12 | Preu Filadd | `preu-filadd.png` |
-| 13 | Under Armour | `forus.png` ⚠️ |
+| 13 | Under Armour | `under-armour.png` |
 | 14 | CCU | `ccu.png` |
 | 15 | School of Rock | `school-of-rock.png` |
 | 16 | Daviu | `daviu.png` |
@@ -36,16 +36,12 @@ de la marca.
 - Menos de 150 KB cada uno. Son 16 archivos y la página la van a abrir
   cientos de personas: cada logo pesado se nota al cargar.
 
-> ⚠️ **El archivo `forus.png` todavía muestra el logo de FORUS**, pero la
-> casilla ya dice "Under Armour". Hay que reemplazar ese archivo por el logo
-> de Under Armour.
+### Si el logo es blanco
 
-### Logos blancos
-
-Si el logo es **blanco o muy claro** (como Daviu o AndPac), sobre la placa
-blanca no se vería. Para esos, en `src/contenido/colaboradores.js` agrega
-`fondoOscuro: true` a su bloque: esa casilla pasa a fondo negro y el logo se
-ve perfecto. Los demás no llevan ese campo.
+Todas las casillas van sobre **placa blanca**, así que un logo blanco con
+fondo transparente no se vería. Para esos, deja el **fondo oscuro pegado
+dentro del archivo** (así están Daviu y AndPac): en la casilla se ve como un
+recuadro oscuro sobre el marco blanco, y el logo se lee bien.
 
 > ⚠️ **Lo más importante: recorta el margen blanco antes de subirlo.**
 >
