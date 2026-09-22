@@ -374,6 +374,16 @@ body.menu-abierto {
   background: #ffffff !important;
 }
 
+/* Para los logos que vienen BLANCOS SOBRE NEGRO (Daviu, AndPac). Sobre la
+   placa blanca no se verian: el dibujo es blanco y el fondo tambien. Esta
+   placa va en negro puro, que es el mismo negro que traen esos archivos, asi
+   el logo se funde con la placa en vez de verse como un recuadro pegado.
+
+   Se activa con  fondoOscuro: true  en src/contenido/colaboradores.js       */
+.placa-logo-oscura {
+  background: #000000 !important;
+}
+
 /* ============================================================================
    RECUADRO DEL LOGO — para logos con fondo propio (como el de la campaña)
    ----------------------------------------------------------------------------

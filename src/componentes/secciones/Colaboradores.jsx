@@ -12,6 +12,15 @@
 
 const { useState: useStateColab } = React;
 
+/* Qué placa lleva el logo detrás.
+   Casi todos van sobre blanco. Los que vienen blancos sobre negro llevan
+   fondoOscuro: true en colaboradores.js y van sobre negro, porque sobre la
+   placa blanca no se verían. */
+function placaDelLogo(colaborador) {
+  if (!colaborador.logo) return '';
+  return colaborador.fondoOscuro ? 'placa-logo-oscura' : 'placa-logo';
+}
+
 /* El "detalle" se puede escribir como un texto suelto o como una lista de
    párrafos. Las dos formas valen; esto las deja siempre como lista. */
 function parrafosDelBeneficio(detalle) {
@@ -33,7 +42,7 @@ function TarjetaColaborador({ colaborador, alPinchar }) {
         ajuste="object-contain p-5"
         etiqueta="Agrega aquí el logo"
         icono="imagen"
-        className={colaborador.logo ? 'placa-logo' : ''}
+        className={placaDelLogo(colaborador)}
       />
 
       <div className="mt-3 flex items-start justify-center gap-1.5">
@@ -128,7 +137,7 @@ function Colaboradores({ id }) {
                 ajuste="object-contain p-6"
                 etiqueta="Agrega aquí el logo"
                 icono="imagen"
-                className={abierto.logo ? 'placa-logo' : ''}
+                className={placaDelLogo(abierto)}
               />
             </div>
 
