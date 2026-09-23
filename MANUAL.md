@@ -773,10 +773,29 @@ Abre `src/contenido/colaboradores.js`.
     {
       nombre: 'Nombre de la organización',
       logo: 'assets/logos/nombre.png',
+      nivel: 3,
       url: 'https://sitio.cl',
+      tipo: 'Colaborador',
       detalle: 'En qué consiste el beneficio para el alumnado.',
     },
 ```
+
+### Los tres niveles
+
+Los colaboradores van agrupados por importancia, y el `nivel` decide de qué
+tamaño se ve cada casilla:
+
+| `nivel` | Quiénes | Cómo se ve |
+|---|---|---|
+| `1` | Los principales | Los más grandes, arriba. 4 por fila en el computador, 2 en el celular. |
+| `2` | Los siguientes | Medianos. 5 por fila. |
+| `3` | El resto | Chicos. 7 por fila. |
+
+**Para subir o bajar a alguien de nivel, cámbiale el número y listo**: la
+página se reacomoda sola, no hay que tocar ningún otro archivo. Si a un
+colaborador se le olvida el `nivel`, cae al 3.
+
+Dentro de cada nivel, el orden es el orden en que están escritos en la lista.
 
 | Campo | Para qué sirve |
 |---|---|

@@ -62,16 +62,12 @@ window.CONTENIDO_COLABORADORES = {
                  y después hay que dar explicaciones en el local.
      ------------------------------------------------------------------------ */
   colaboradores: [
-    {
-      nombre: 'Dimacofi',
-      logo: 'assets/logos/dimacofi.png',
-      url: '',
-      tipo: 'Colaborador',
-      detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
-    },
+
+    /* ---------- NIVEL 1 ---------- */
     {
       nombre: 'Starbucks',
       logo: 'assets/logos/starbucks.png',
+      nivel: 1,
       url: '',
       tipo: 'Colaborador',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
@@ -79,76 +75,7 @@ window.CONTENIDO_COLABORADORES = {
     {
       nombre: 'Just Burger',
       logo: 'assets/logos/just-burger.png',
-      url: '',
-      tipo: 'Colaborador',
-      detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
-    },
-    {
-      nombre: 'FEN',
-      logo: 'assets/logos/fen.png',
-      url: '',
-      tipo: 'Colaborador',
-      detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
-    },
-    {
-      nombre: 'Preuniversitario Gauss',
-      logo: 'assets/logos/preuniversitario-gauss.png',
-      url: '',
-      tipo: 'Colaborador',
-      detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
-    },
-    {
-      nombre: 'Açai',
-      logo: 'assets/logos/acai.png',
-      url: '',
-      tipo: 'Colaborador',
-      detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
-    },
-    {
-      nombre: 'Gnomo',
-      logo: 'assets/logos/gnomo.png',
-      url: '',
-      tipo: 'Colaborador',
-      detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
-    },
-    {
-      nombre: 'AndPac',
-      logo: 'assets/logos/andpac.png',
-      url: '',
-      tipo: 'Colaborador',
-      detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
-    },
-    {
-      nombre: 'Elite',
-      logo: 'assets/logos/elite.png',
-      url: '',
-      tipo: 'Colaborador',
-      detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
-    },
-    {
-      nombre: 'Andesgear',
-      logo: 'assets/logos/andesgear.png',
-      url: '',
-      tipo: 'Colaborador',
-      detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
-    },
-    {
-      nombre: 'Aprende +',
-      logo: 'assets/logos/aprende-mas.png',
-      url: '',
-      tipo: 'Colaborador',
-      detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
-    },
-    {
-      nombre: 'Preu Filadd',
-      logo: 'assets/logos/preu-filadd.png',
-      url: '',
-      tipo: 'Colaborador',
-      detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
-    },
-    {
-      nombre: 'Under Armour',
-      logo: 'assets/logos/under-armour.png',
+      nivel: 1,
       url: '',
       tipo: 'Colaborador',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
@@ -156,6 +83,73 @@ window.CONTENIDO_COLABORADORES = {
     {
       nombre: 'CCU',
       logo: 'assets/logos/ccu.png',
+      nivel: 1,
+      url: '',
+      tipo: 'Colaborador',
+      detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
+    },
+    {
+      nombre: 'Under Armour',
+      logo: 'assets/logos/under-armour.png',
+      nivel: 1,
+      url: '',
+      tipo: 'Colaborador',
+      detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
+    },
+    {
+      nombre: 'Pepsi',
+      logo: 'assets/logos/pepsi.png',
+      nivel: 1,
+      url: '',
+      tipo: 'Colaborador',
+      detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
+    },
+    {
+      nombre: 'Crush',
+      logo: 'assets/logos/crush.png',
+      nivel: 1,
+      url: '',
+      tipo: 'Colaborador',
+      detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
+    },
+    {
+      nombre: 'Gatorade',
+      logo: 'assets/logos/gatorade.png',
+      nivel: 1,
+      url: '',
+      tipo: 'Colaborador',
+      detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
+    },
+    {
+      nombre: 'Limón Soda',
+      logo: 'assets/logos/limon-soda.png',
+      nivel: 1,
+      url: '',
+      tipo: 'Colaborador',
+      detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
+    },
+
+    /* ---------- NIVEL 2 ---------- */
+    {
+      nombre: 'Açai',
+      logo: 'assets/logos/acai.png',
+      nivel: 2,
+      url: '',
+      tipo: 'Colaborador',
+      detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
+    },
+    {
+      nombre: 'Gnomo',
+      logo: 'assets/logos/gnomo.png',
+      nivel: 2,
+      url: '',
+      tipo: 'Colaborador',
+      detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
+    },
+    {
+      nombre: 'AndPac',
+      logo: 'assets/logos/andpac.png',
+      nivel: 2,
       url: '',
       tipo: 'Colaborador',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
@@ -163,6 +157,7 @@ window.CONTENIDO_COLABORADORES = {
     {
       nombre: 'School of Rock',
       logo: 'assets/logos/school-of-rock.png',
+      nivel: 2,
       url: '',
       tipo: 'Colaborador',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
@@ -170,6 +165,65 @@ window.CONTENIDO_COLABORADORES = {
     {
       nombre: 'Daviu',
       logo: 'assets/logos/daviu.png',
+      nivel: 2,
+      url: '',
+      tipo: 'Colaborador',
+      detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
+    },
+
+    /* ---------- NIVEL 3 ---------- */
+    {
+      nombre: 'Dimacofi',
+      logo: 'assets/logos/dimacofi.png',
+      nivel: 3,
+      url: '',
+      tipo: 'Colaborador',
+      detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
+    },
+    {
+      nombre: 'FEN',
+      logo: 'assets/logos/fen.png',
+      nivel: 3,
+      url: '',
+      tipo: 'Colaborador',
+      detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
+    },
+    {
+      nombre: 'Preuniversitario Gauss',
+      logo: 'assets/logos/preuniversitario-gauss.png',
+      nivel: 3,
+      url: '',
+      tipo: 'Colaborador',
+      detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
+    },
+    {
+      nombre: 'Elite',
+      logo: 'assets/logos/elite.png',
+      nivel: 3,
+      url: '',
+      tipo: 'Colaborador',
+      detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
+    },
+    {
+      nombre: 'Andesgear',
+      logo: 'assets/logos/andesgear.png',
+      nivel: 3,
+      url: '',
+      tipo: 'Colaborador',
+      detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
+    },
+    {
+      nombre: 'Aprende +',
+      logo: 'assets/logos/aprende-mas.png',
+      nivel: 3,
+      url: '',
+      tipo: 'Colaborador',
+      detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
+    },
+    {
+      nombre: 'Preu Filadd',
+      logo: 'assets/logos/preu-filadd.png',
+      nivel: 3,
       url: '',
       tipo: 'Colaborador',
       detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO

@@ -1,28 +1,47 @@
 # Logos de los auspicios
 
-Aquí van las 16 imágenes, con estos nombres de archivo exactos:
+Aquí van las 20 imágenes, con estos nombres de archivo exactos.
+Están agrupadas por **nivel**: el nivel decide de qué tamaño se ve la
+casilla en la página, y se escribe en `src/contenido/colaboradores.js`.
+
+**Nivel 1 — los principales (los más grandes)** · 8
 
 | # | Marca | Archivo |
 |---|---|---|
-| 1 | Dimacofi | `dimacofi.png` |
-| 2 | Starbucks | `starbucks.png` |
-| 3 | Just Burger | `just-burger.png` |
-| 4 | FEN | `fen.png` |
-| 5 | Preuniversitario Gauss | `preuniversitario-gauss.png` |
-| 6 | Açai | `acai.png` |
-| 7 | Gnomo | `gnomo.png` |
-| 8 | AndPac | `andpac.png` |
-| 9 | Elite | `elite.png` |
-| 10 | Andesgear | `andesgear.png` |
-| 11 | Aprende + | `aprende-mas.png` |
-| 12 | Preu Filadd | `preu-filadd.png` |
-| 13 | Under Armour | `under-armour.png` |
-| 14 | CCU | `ccu.png` |
-| 15 | School of Rock | `school-of-rock.png` |
-| 16 | Daviu | `daviu.png` |
+| 1 | Starbucks | `starbucks.png` |
+| 2 | Just Burger | `just-burger.png` |
+| 3 | CCU | `ccu.png` |
+| 4 | Under Armour | `under-armour.png` |
+| 5 | Pepsi | `pepsi.png` |
+| 6 | Crush | `crush.png` |
+| 7 | Gatorade | `gatorade.png` |
+| 8 | Limón Soda | `limon-soda.png` |
 
-El orden de la tabla es el orden en que aparecen en la página. Para cambiarlo,
-mueve la línea correspondiente en `src/contenido/colaboradores.js`.
+**Nivel 2 — los siguientes** · 5
+
+| # | Marca | Archivo |
+|---|---|---|
+| 9 | Açai | `acai.png` |
+| 10 | Gnomo | `gnomo.png` |
+| 11 | AndPac | `andpac.png` |
+| 12 | School of Rock | `school-of-rock.png` |
+| 13 | Daviu | `daviu.png` |
+
+**Nivel 3 — el resto** · 7
+
+| # | Marca | Archivo |
+|---|---|---|
+| 14 | Dimacofi | `dimacofi.png` |
+| 15 | FEN | `fen.png` |
+| 16 | Preuniversitario Gauss | `preuniversitario-gauss.png` |
+| 17 | Elite | `elite.png` |
+| 18 | Andesgear | `andesgear.png` |
+| 19 | Aprende + | `aprende-mas.png` |
+| 20 | Preu Filadd | `preu-filadd.png` |
+
+El orden de la tabla es el orden en que aparecen en la página. Para mover un
+colaborador de lugar, mueve su bloque en `src/contenido/colaboradores.js`; para
+subirlo o bajarlo de tamaño, cámbiale el número de `nivel`.
 
 ## Cómo deben ser los archivos
 
@@ -33,8 +52,10 @@ de la marca.
 - Formato `.png`, de preferencia con **fondo transparente**.
 - **600 px en el lado largo.** La forma no importa: el recuadro muestra el
   logo entero sin recortarlo, sea ancho, cuadrado o alto.
-- Menos de 150 KB cada uno. Son 16 archivos y la página la van a abrir
+- Menos de 150 KB cada uno. Son 20 archivos y la página la van a abrir
   cientos de personas: cada logo pesado se nota al cargar.
+- **600 px es importante sobre todo en el nivel 1**, que se ve en grande. Un
+  logo chico estirado se ve borroso justo en las casillas más visibles.
 
 ### Si el logo es blanco
 

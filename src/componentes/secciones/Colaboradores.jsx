@@ -12,6 +12,52 @@
 
 const { useState: useStateColab } = React;
 
+/* ----------------------------------------------------------------------------
+   LOS TRES NIVELES
+
+   Cada colaborador lleva  nivel: 1, 2 o 3  en src/contenido/colaboradores.js.
+   Mientras más chico el número, más grande se ve la casilla:
+
+     nivel 1 → los principales. 4 por fila en pantalla ancha, 2 en celular.
+     nivel 2 → los siguientes.  5 por fila.
+     nivel 3 → el resto.        7 por fila.
+
+   Para mover un colaborador de nivel no hay que tocar este archivo: basta con
+   cambiarle el número en colaboradores.js. Si a alguno se le olvida el nivel,
+   cae al 3.
+
+   Los anchos van con calc() porque la fila usa flex con separación: el ancho
+   de cada casilla es "el trozo que le toca, menos su parte de la separación".
+   ---------------------------------------------------------------------------- */
+const NIVELES = {
+  1: {
+    ancho:   'w-[calc(50%-0.5rem)] md:w-[calc(50%-0.625rem)] lg:w-[calc(25%-0.9375rem)]',
+    relleno: 'p-3 md:p-4',
+    imagen:  'object-contain p-5 md:p-6',
+    nombre:  'text-[0.95rem] md:text-base',
+    etiqueta:'text-[11px]',
+    aire:    'mt-16',
+  },
+  2: {
+    ancho:   'w-[calc(33.333%-0.667rem)] md:w-[calc(33.333%-0.834rem)] lg:w-[calc(20%-1rem)]',
+    relleno: 'p-2.5 md:p-3',
+    imagen:  'object-contain p-3.5 md:p-4',
+    nombre:  'text-[0.8rem] md:text-sm',
+    etiqueta:'text-[10px]',
+    aire:    'mt-5 md:mt-6',
+  },
+  3: {
+    ancho:   'w-[calc(33.333%-0.667rem)] md:w-[calc(25%-0.9375rem)] lg:w-[calc(14.285%-1.072rem)]',
+    relleno: 'p-2 md:p-2.5',
+    imagen:  'object-contain p-2.5 md:p-3',
+    nombre:  'text-[0.72rem] md:text-xs',
+    etiqueta:'text-[10px]',
+    aire:    'mt-5 md:mt-6',
+  },
+};
+
+const nivelDe = (colaborador) => NIVELES[colaborador.nivel] || NIVELES[3];
+
 /* El "detalle" se puede escribir como un texto suelto o como una lista de
    párrafos. Las dos formas valen; esto las deja siempre como lista. */
 function parrafosDelBeneficio(detalle) {
@@ -21,6 +67,7 @@ function parrafosDelBeneficio(detalle) {
 
 function TarjetaColaborador({ colaborador, alPinchar }) {
   const tieneDetalle = parrafosDelBeneficio(colaborador.detalle).length > 0;
+  const n = nivelDe(colaborador);
 
   const contenido = (
     <div className="relative z-10 w-full">
@@ -30,14 +77,14 @@ function TarjetaColaborador({ colaborador, alPinchar }) {
         src={colaborador.logo}
         alt={colaborador.nombre}
         proporcion="aspect-[3/2]"
-        ajuste="object-contain p-5"
+        ajuste={n.imagen}
         etiqueta="Agrega aquí el logo"
         icono="imagen"
         className={colaborador.logo ? 'placa-logo' : ''}
       />
 
-      <div className="mt-3 flex items-start justify-center gap-1.5">
-        <p className="text-sm md:text-[0.95rem] text-white font-body font-medium text-center leading-tight">
+      <div className="mt-2.5 flex items-start justify-center gap-1.5">
+        <p className={n.nombre + ' text-white font-body font-medium text-center leading-tight'}>
           {colaborador.nombre}
         </p>
         {/* La flecha solo aparece en las casillas que sí abren algo: es la
@@ -51,12 +98,12 @@ function TarjetaColaborador({ colaborador, alPinchar }) {
 
       {/* Etiqueta opcional: solo aparece si está escrita en colaboradores.js */}
       {colaborador.tipo ? (
-        <p className="text-[11px] text-white/70 font-body font-light text-center mt-1">{colaborador.tipo}</p>
+        <p className={n.etiqueta + ' text-white/70 font-body font-light text-center mt-1'}>{colaborador.tipo}</p>
       ) : null}
     </div>
   );
 
-  const clases = 'liquid-glass hover-elevar rounded-tarjeta p-3 h-full flex items-start';
+  const clases = 'liquid-glass hover-elevar rounded-tarjeta ' + n.relleno + ' h-full flex items-start';
 
   /* Tres formas posibles, en este orden:
        1. tiene beneficio escrito → botón que abre el cuadro
@@ -91,21 +138,24 @@ function Colaboradores({ id }) {
     <SeccionBase id={id} fondo={c.fondo} alturaMinima="min-h-0">
       <TituloSeccion kicker={c.kicker} titulo={c.titulo} intro={c.intro} />
 
-      {/* --- Cuadrícula de colaboradores ---
-              Se usa flex para que, si el número no calza justo con las
-              columnas, la última fila quede centrada y no colgando. --- */}
-      <div className="flex flex-wrap justify-center gap-4 md:gap-5 mt-16">
-        {c.colaboradores.map((colaborador, i) => (
-          <Reveal
-            comoLista
-            key={i}
-            delay={(i % 4) * 0.06}
-            className="w-[calc(50%-0.5rem)] md:w-[calc(33.333%-0.834rem)] lg:w-[calc(25%-0.9375rem)]"
-          >
-            <TarjetaColaborador colaborador={colaborador} alPinchar={setAbierto} />
-          </Reveal>
-        ))}
-      </div>
+      {/* --- Cuadrícula de colaboradores, por niveles ---
+              Los principales van arriba y en grande; después los siguientes,
+              más chicos. Se usa flex para que, si el número no calza justo con
+              las columnas, la última fila quede centrada y no colgando. --- */}
+      {[1, 2, 3].map((nivel) => {
+        const grupo = c.colaboradores.filter((x) => (x.nivel || 3) === nivel);
+        if (!grupo.length) return null;
+        const n = NIVELES[nivel];
+        return (
+          <div key={nivel} className={'flex flex-wrap justify-center gap-4 md:gap-5 ' + n.aire}>
+            {grupo.map((colaborador, i) => (
+              <Reveal comoLista key={colaborador.nombre} delay={(i % 4) * 0.06} className={n.ancho}>
+                <TarjetaColaborador colaborador={colaborador} alPinchar={setAbierto} />
+              </Reveal>
+            ))}
+          </div>
+        );
+      })}
 
       {/* --- Cuadro con el logo grande y la explicación del beneficio --- */}
       <Modal
