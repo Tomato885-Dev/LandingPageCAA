@@ -16,6 +16,7 @@ parte de la página.
 6. [Cambiar o agregar imágenes (y videos de fondo)](#6-cambiar-o-agregar-imágenes-y-videos-de-fondo)
 7. [La línea de tiempo (sección Proyectos)](#7-la-línea-de-tiempo-sección-proyectos)
 8. [Agregar o eliminar un colaborador](#8-agregar-o-eliminar-un-colaborador)
+   · [Ocultar la página por un tiempo](#ocultar-la-página-por-un-tiempo)
 9. [Modificar enlaces y botones](#9-modificar-enlaces-y-botones)
 10. [Cambiar colores y otros elementos del diseño](#10-cambiar-colores-y-otros-elementos-del-diseño)
 11. [Ocultar, reordenar y agregar secciones nuevas](#11-ocultar-reordenar-y-agregar-secciones-nuevas)
@@ -1392,3 +1393,46 @@ cambio** (`Ctrl + Z`) y guarda. Casi siempre es una coma o una comilla.
 ¿Dudas? Cada archivo del proyecto tiene comentarios explicativos en su interior
 (las líneas que empiezan con `//` o `/*`). Esos comentarios no se muestran en la
 página: están ahí solo para ayudarte.
+
+---
+
+## Ocultar la página por un tiempo
+
+A veces conviene que la página no esté a la vista: quien entre a
+`votacarlos2.cl` ve una pantalla de **"Volvemos pronto"** en vez del sitio.
+
+**Se prende y se apaga cambiando UNA palabra.** Abre `build/construir.mjs` y
+busca arriba del todo:
+
+```js
+const MODO_ESPERA = true;
+```
+
+| Quiero… | Escribe |
+|---|---|
+| **Ocultar** la página | `true` |
+| **Mostrarla** de nuevo | `false` |
+
+Guarda, sube el cambio, y en menos de un minuto queda hecho.
+
+### Qué pasa mientras está oculta
+
+- La página real **no se borra ni se modifica**. Sigue entera en el
+  repositorio, y vuelve exactamente como estaba.
+- **Tampoco se publican** los textos de los proyectos, los currículums ni los
+  logos: solo se sube la pantalla de espera y las dos imágenes que usa. No
+  queda nada de la campaña dando vueltas en internet.
+- El dominio y el candado de seguridad (HTTPS) **no se tocan**. No hay que
+  volver a configurar nada al prenderla.
+- Se le pide a Google que no guarde esta pantalla en sus resultados.
+
+### Para cambiar el texto de la pantalla
+
+Está en `espera.html`, en la raíz del proyecto. Es una página suelta y simple:
+ahí se edita el título y el párrafo. **Para ocultar o mostrar la página no se
+toca ese archivo**, solo el interruptor de arriba.
+
+> ⚠️ **Ojo:** esto oculta la *página*, no el repositorio. Como
+> `github.com/Tomato885-Dev/LandingPageCAA` es público, alguien que lo
+> encuentre igual puede leer los textos ahí. Para esconder también eso habría
+> que hacer el repositorio privado, que es harina de otro costal.

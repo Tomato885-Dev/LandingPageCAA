@@ -28,6 +28,24 @@ import { promisify } from 'node:util';
 import * as babel from '@babel/core';
 import * as esbuild from 'esbuild';
 
+/* ============================================================================
+   👉 MODO ESPERA — para ocultar la página por un tiempo
+   ----------------------------------------------------------------------------
+   Ponlo en  true   y lo que se publica pasa a ser la pantalla de "Volvemos
+                    pronto" (el archivo espera.html de la raíz).
+   Ponlo en  false  y vuelve la página normal, entera y tal cual estaba.
+
+   La página real NO se borra ni se toca: sigue completa en el repositorio.
+   Cambiar esta palabra y subirlo es todo lo que hay que hacer, en los dos
+   sentidos.
+
+   Mientras está en true tampoco se publican los textos de los proyectos, los
+   currículums ni los logos: solo se sube la pantalla de espera y las dos
+   imágenes que ella usa. Así no queda nada de la campaña dando vueltas en
+   internet.
+   ============================================================================ */
+const MODO_ESPERA = true;
+
 const ejecutar = promisify(execFile);
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(RAIZ, 'dist');
@@ -42,7 +60,36 @@ const LIBRERIAS = [
 
 const kb = (n) => (n / 1024).toFixed(1) + ' KB';
 
+/* Publica solo la pantalla de espera. No compila nada de la página real:
+   ni los textos, ni el buscador de proyectos, ni las fotos. */
+async function publicarEspera() {
+  const html = await fs.readFile(path.join(RAIZ, 'espera.html'), 'utf8');
+
+  await fs.rm(DIST, { recursive: true, force: true });
+  await fs.mkdir(path.join(DIST, 'assets', 'img'), { recursive: true });
+  await fs.writeFile(path.join(DIST, 'index.html'), html);
+
+  // Solo las dos imágenes que usa la pantalla de espera.
+  for (const img of ['logo-carlos.png', 'favicon.png']) {
+    await fs.copyFile(path.join(RAIZ, 'assets', 'img', img),
+                      path.join(DIST, 'assets', 'img', img));
+  }
+
+  await fs.writeFile(path.join(DIST, '.nojekyll'), '');
+  try {
+    await fs.copyFile(path.join(RAIZ, 'CNAME'), path.join(DIST, 'CNAME'));
+    console.log('  CNAME copiado (dominio propio)');
+  } catch { /* no hay dominio propio configurado */ }
+
+  console.log('\n⏸  MODO ESPERA: se publicó la pantalla de "Volvemos pronto".');
+  console.log('   La página real no se tocó: sigue completa en el repositorio.');
+  console.log('   Para traerla de vuelta, pon MODO_ESPERA en false arriba de');
+  console.log('   este archivo (build/construir.mjs) y sube el cambio.');
+}
+
 async function main() {
+  if (MODO_ESPERA) return publicarEspera();
+
   const html = await fs.readFile(path.join(RAIZ, 'index.html'), 'utf8');
 
   /* ---- 1. Sacar de index.html la lista ordenada de archivos ---- */

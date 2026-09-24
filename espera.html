@@ -1,0 +1,127 @@
+<!doctype html>
+<!-- ============================================================================
+     espera.html — PANTALLA DE "VOLVEMOS PRONTO"
+     ----------------------------------------------------------------------------
+     Esta es la pantalla que se publica MIENTRAS la página está oculta.
+
+     Para ocultar o mostrar la página NO se toca este archivo: se cambia una
+     sola palabra en  build/construir.mjs  (busca MODO_ESPERA).
+
+     Aquí solo se edita el texto que aparece. Es una página suelta: no usa
+     React ni Tailwind ni nada, así que carga al instante.
+     ============================================================================ -->
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Volvemos pronto · Carlos +2</title>
+
+  <!-- Que Google no guarde esta pantalla mientras la página esté oculta -->
+  <meta name="robots" content="noindex, nofollow" />
+
+  <meta name="description" content="La página vuelve a estar disponible en unos días." />
+  <meta property="og:title" content="Volvemos pronto" />
+  <meta property="og:description" content="La página vuelve a estar disponible en unos días." />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="assets/img/favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --marca: #de0f01;
+      --marca-rgb: 222, 15, 1;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: #000000;
+      color: #ffffff;
+      font-family: 'Barlow', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      /* el mismo resplandor rojo que tiene la página de verdad */
+      background-image:
+        radial-gradient(120% 80% at 50% 0%, rgba(var(--marca-rgb), 0.20) 0%, rgba(0,0,0,0) 62%),
+        radial-gradient(90% 60% at 50% 100%, rgba(var(--marca-rgb), 0.10) 0%, rgba(0,0,0,0) 60%);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    .caja {
+      width: 100%;
+      max-width: 34rem;
+      text-align: center;
+      animation: entrar 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+    @keyframes entrar {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: none; }
+    }
+    .logo {
+      width: 108px;
+      height: 108px;
+      margin: 0 auto 2.25rem;
+      display: block;
+      border-radius: 1.25rem;
+      box-shadow: 0 0 60px rgba(var(--marca-rgb), 0.35);
+    }
+    h1 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(2.6rem, 11vw, 4.2rem);
+      line-height: 1;
+      letter-spacing: -1.5px;
+      margin: 0;
+    }
+    .linea {
+      width: 64px;
+      height: 2px;
+      margin: 1.75rem auto;
+      background: var(--marca);
+      border-radius: 2px;
+    }
+    p {
+      margin: 0 auto;
+      max-width: 26rem;
+      font-weight: 300;
+      font-size: 1rem;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.85);
+    }
+    .firma {
+      margin-top: 2.75rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.45);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .caja { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="caja">
+    <img class="logo" src="assets/img/logo-carlos.png" alt="Carlos +2" />
+
+    <h1>Volvemos pronto</h1>
+
+    <div class="linea"></div>
+
+    <p>
+      Estamos preparando algunas cosas.
+      En unos días la página vuelve a estar disponible.
+    </p>
+
+    <p class="firma">Carlos +2 &middot; CAA 2027</p>
+  </main>
+</body>
+</html>
