@@ -21,7 +21,7 @@ casilla en la página, y se escribe en `src/contenido/colaboradores.js`.
 
 | # | Marca | Archivo |
 |---|---|---|
-| 9 | Açai | `acai.png` |
+| 9 | Açai | `acai.jpg` |
 | 10 | Gnomo | `gnomo.png` |
 | 11 | AndPac | `andpac.png` |
 | 12 | School of Rock | `school-of-rock.png` |
@@ -49,7 +49,9 @@ Cada logo se muestra sobre una **placa blanca**, así que da lo mismo si el
 logo es oscuro o claro: los dos se ven bien. No hace falta la versión blanca
 de la marca.
 
-- Formato `.png`, de preferencia con **fondo transparente**.
+- Formato `.png`, de preferencia con **fondo transparente**. Si el logo es
+  en realidad una imagen con fondo (una foto o una textura, como el de
+  Açai), va en `.jpg`: en `.png` pesaría el triple sin verse mejor.
 - **600 px en el lado largo.** La forma no importa: el recuadro muestra el
   logo entero sin recortarlo, sea ancho, cuadrado o alto.
 - Menos de 150 KB cada uno. Son 20 archivos y la página la van a abrir

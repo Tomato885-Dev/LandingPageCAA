@@ -132,7 +132,7 @@ window.CONTENIDO_COLABORADORES = {
     /* ---------- NIVEL 2 ---------- */
     {
       nombre: 'Açai',
-      logo: 'assets/logos/acai.png',
+      logo: 'assets/logos/acai.jpg',
       nivel: 2,
       url: '',
       tipo: 'Colaborador',
