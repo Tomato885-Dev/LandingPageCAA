@@ -44,7 +44,7 @@ import * as esbuild from 'esbuild';
    imágenes que ella usa. Así no queda nada de la campaña dando vueltas en
    internet.
    ============================================================================ */
-const MODO_ESPERA = true;
+const MODO_ESPERA = false;
 
 const ejecutar = promisify(execFile);
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
