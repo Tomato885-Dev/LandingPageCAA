@@ -198,7 +198,7 @@ window.CONTENIDO_PROYECTOS = {
       {
         tipo: 'propuesta',
         nombre: 'Más Allá de la Burbuja',
-        desde: 'May 27',
+        desde: 'Ago 27',
         detalle:
           'A veces es fácil quedarse dentro de nuestra propia realidad sin ' +
           'conocer lo que viven otras personas. Con esta iniciativa, buscamos ' +
