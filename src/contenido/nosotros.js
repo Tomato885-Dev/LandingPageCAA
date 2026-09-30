@@ -150,7 +150,6 @@ window.CONTENIDO_NOSOTROS = {
           'Participante de 2 campañas anteriores.',
           'Presidente de curso durante 2 años y miembro de la directiva ' +
           'otros 3 años.',
-          'Organizador del Festival Alcántara 2026.',
           'Jefe de Barra durante 3 años consecutivos.',
           'Capitán de la Selección de Fútbol.',
           'Jefe de la Liga CVD VMA 2025.',
@@ -168,7 +167,6 @@ window.CONTENIDO_NOSOTROS = {
           'seguidos.',
           'Presidente de curso durante 5 años y miembro de la directiva ' +
           'otros 2 años.',
-          'Organizador del Festival Alcántara 2026.',
           'Jefe de Barra durante 2 años seguidos.',
           'Miembro de la Selección de fútbol durante 8 años.',
           'Organizador CVD VMA 2024.',
