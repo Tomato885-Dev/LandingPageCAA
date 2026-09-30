@@ -201,7 +201,7 @@ window.CONTENIDO_NOSOTROS = {
           '3°B.',
           'Miembro del equipo de Atletismo.',
           'Ex miembro de equipo de basquetbol (durante 5 años).',
-          'Miembro del equipo de debate en inglés.',
+          'Miembro de la Academia de Ciencias.',
           'Organizador Semana Verbita 2026.',
           'Presidente del Tribunal de Honor 2026.',
         ],
