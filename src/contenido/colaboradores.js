@@ -31,6 +31,10 @@ window.CONTENIDO_COLABORADORES = {
                  imagen a  assets/logos/  con ese mismo nombre de archivo.
                  Mientras no esté subida, el recuadro muestra el marcador
                  "Agrega aquí el logo" y la página no se rompe.
+     • nivel   : de qué tamaño se ve la casilla. 0 es la cúspide (va sola
+                 arriba y en grande), 1 los principales, 2 los siguientes
+                 y 3 el resto. Para mover a alguien de nivel basta con
+                 cambiarle este número.
      • detalle : 👉 EN QUÉ CONSISTE EL BENEFICIO. Es el texto que lee la gente
                  al pinchar la casilla.
 
@@ -62,6 +66,16 @@ window.CONTENIDO_COLABORADORES = {
                  y después hay que dar explicaciones en el local.
      ------------------------------------------------------------------------ */
   colaboradores: [
+
+    /* ---------- NIVEL 0: la cúspide, va solo y en grande ---------- */
+    {
+      nombre: 'McDonald’s',
+      logo: 'assets/logos/mcdonalds.png',
+      nivel: 0,
+      url: '',
+      tipo: 'Colaborador',
+      detalle: '',   // 👉 EN QUÉ CONSISTE EL BENEFICIO
+    },
 
     /* ---------- NIVEL 1 ---------- */
     {

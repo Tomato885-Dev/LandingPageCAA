@@ -1,43 +1,49 @@
 # Logos de los auspicios
 
-Aquí van las 20 imágenes, con estos nombres de archivo exactos.
+Aquí van las 21 imágenes, con estos nombres de archivo exactos.
 Están agrupadas por **nivel**: el nivel decide de qué tamaño se ve la
 casilla en la página, y se escribe en `src/contenido/colaboradores.js`.
 
-**Nivel 1 — los principales (los más grandes)** · 8
+**Nivel 0 — la cúspide (va solo y en grande)** · 1
 
 | # | Marca | Archivo |
 |---|---|---|
-| 1 | Starbucks | `starbucks.png` |
-| 2 | Just Burger | `just-burger.png` |
-| 3 | CCU | `ccu.png` |
-| 4 | Under Armour | `under-armour.png` |
-| 5 | Pepsi | `pepsi.png` |
-| 6 | Crush | `crush.png` |
-| 7 | Gatorade | `gatorade.png` |
-| 8 | Limón Soda | `limon-soda.png` |
+| 1 | McDonald’s | `mcdonalds.png` |
+
+**Nivel 1 — los principales** · 8
+
+| # | Marca | Archivo |
+|---|---|---|
+| 2 | Starbucks | `starbucks.png` |
+| 3 | Just Burger | `just-burger.png` |
+| 4 | CCU | `ccu.png` |
+| 5 | Under Armour | `under-armour.png` |
+| 6 | Pepsi | `pepsi.png` |
+| 7 | Crush | `crush.png` |
+| 8 | Gatorade | `gatorade.png` |
+| 9 | Limón Soda | `limon-soda.png` |
 
 **Nivel 2 — los siguientes** · 5
 
 | # | Marca | Archivo |
 |---|---|---|
-| 9 | Açai | `acai.jpg` |
-| 10 | Gnomo | `gnomo.png` |
-| 11 | AndPac | `andpac.png` |
-| 12 | School of Rock | `school-of-rock.png` |
-| 13 | Daviu | `daviu.png` |
+| 10 | Açai | `acai.jpg` |
+| 11 | Gnomo | `gnomo.png` |
+| 12 | AndPac | `andpac.png` |
+| 13 | School of Rock | `school-of-rock.png` |
+| 14 | Daviu | `daviu.png` |
 
 **Nivel 3 — el resto** · 7
 
 | # | Marca | Archivo |
 |---|---|---|
-| 14 | Dimacofi | `dimacofi.png` |
-| 15 | FEN | `fen.png` |
-| 16 | Preuniversitario Gauss | `preuniversitario-gauss.png` |
-| 17 | Elite | `elite.png` |
-| 18 | Andesgear | `andesgear.png` |
-| 19 | Aprende + | `aprende-mas.png` |
-| 20 | Preu Filadd | `preu-filadd.png` |
+| 15 | Dimacofi | `dimacofi.png` |
+| 16 | FEN | `fen.png` |
+| 17 | Preuniversitario Gauss | `preuniversitario-gauss.png` |
+| 18 | Elite | `elite.png` |
+| 19 | Andesgear | `andesgear.png` |
+| 20 | Aprende + | `aprende-mas.png` |
+| 21 | Preu Filadd | `preu-filadd.png` |
 
 El orden de la tabla es el orden en que aparecen en la página. Para mover un
 colaborador de lugar, mueve su bloque en `src/contenido/colaboradores.js`; para
@@ -54,9 +60,9 @@ de la marca.
   Açai), va en `.jpg`: en `.png` pesaría el triple sin verse mejor.
 - **600 px en el lado largo.** La forma no importa: el recuadro muestra el
   logo entero sin recortarlo, sea ancho, cuadrado o alto.
-- Menos de 150 KB cada uno. Son 20 archivos y la página la van a abrir
+- Menos de 150 KB cada uno. Son 21 archivos y la página la van a abrir
   cientos de personas: cada logo pesado se nota al cargar.
-- **600 px es importante sobre todo en el nivel 1**, que se ve en grande. Un
+- **600 px es importante sobre todo en los niveles 0 y 1**, que se ven en grande. Un
   logo chico estirado se ve borroso justo en las casillas más visibles.
 
 ### Si el logo es blanco

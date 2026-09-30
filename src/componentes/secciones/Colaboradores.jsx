@@ -15,9 +15,10 @@ const { useState: useStateColab } = React;
 /* ----------------------------------------------------------------------------
    LOS TRES NIVELES
 
-   Cada colaborador lleva  nivel: 1, 2 o 3  en src/contenido/colaboradores.js.
+   Cada colaborador lleva  nivel: 0, 1, 2 o 3  en src/contenido/colaboradores.js.
    Mientras más chico el número, más grande se ve la casilla:
 
+     nivel 0 → LA CÚSPIDE. Va solo, arriba de todo y en grande.
      nivel 1 → los principales. 4 por fila en pantalla ancha, 2 en celular.
      nivel 2 → los siguientes.  5 por fila.
      nivel 3 → el resto.        7 por fila.
@@ -30,13 +31,21 @@ const { useState: useStateColab } = React;
    de cada casilla es "el trozo que le toca, menos su parte de la separación".
    ---------------------------------------------------------------------------- */
 const NIVELES = {
+  0: {
+    ancho:   'w-[78%] md:w-[46%] lg:w-[36%]',
+    relleno: 'p-4 md:p-5',
+    imagen:  'object-contain p-6 md:p-9',
+    nombre:  'text-base md:text-lg',
+    etiqueta:'text-xs',
+    aire:    'mt-16',
+  },
   1: {
     ancho:   'w-[calc(50%-0.5rem)] md:w-[calc(50%-0.625rem)] lg:w-[calc(25%-0.9375rem)]',
     relleno: 'p-3 md:p-4',
     imagen:  'object-contain p-5 md:p-6',
     nombre:  'text-[0.95rem] md:text-base',
     etiqueta:'text-[11px]',
-    aire:    'mt-16',
+    aire:    'mt-7 md:mt-8',
   },
   2: {
     ancho:   'w-[calc(33.333%-0.667rem)] md:w-[calc(33.333%-0.834rem)] lg:w-[calc(20%-1rem)]',
@@ -56,7 +65,12 @@ const NIVELES = {
   },
 };
 
-const nivelDe = (colaborador) => NIVELES[colaborador.nivel] || NIVELES[3];
+/* OJO: no se puede escribir  colaborador.nivel || 3  porque en JavaScript el
+   cero cuenta como vacío, y el nivel 0 (la cúspide) terminaría en el 3. */
+const nivelDeNumero = (colaborador) =>
+  typeof colaborador.nivel === 'number' ? colaborador.nivel : 3;
+
+const nivelDe = (colaborador) => NIVELES[nivelDeNumero(colaborador)] || NIVELES[3];
 
 /* El "detalle" se puede escribir como un texto suelto o como una lista de
    párrafos. Las dos formas valen; esto las deja siempre como lista. */
@@ -142,8 +156,8 @@ function Colaboradores({ id }) {
               Los principales van arriba y en grande; después los siguientes,
               más chicos. Se usa flex para que, si el número no calza justo con
               las columnas, la última fila quede centrada y no colgando. --- */}
-      {[1, 2, 3].map((nivel) => {
-        const grupo = c.colaboradores.filter((x) => (x.nivel || 3) === nivel);
+      {[0, 1, 2, 3].map((nivel) => {
+        const grupo = c.colaboradores.filter((x) => nivelDeNumero(x) === nivel);
         if (!grupo.length) return null;
         const n = NIVELES[nivel];
         return (

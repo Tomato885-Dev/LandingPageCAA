@@ -788,7 +788,8 @@ tamaño se ve cada casilla:
 
 | `nivel` | Quiénes | Cómo se ve |
 |---|---|---|
-| `1` | Los principales | Los más grandes, arriba. 4 por fila en el computador, 2 en el celular. |
+| `0` | **La cúspide** | El más grande de todos, solo y arriba de todo. Hoy es McDonald's. |
+| `1` | Los principales | Grandes. 4 por fila en el computador, 2 en el celular. |
 | `2` | Los siguientes | Medianos. 5 por fila. |
 | `3` | El resto | Chicos. 7 por fila. |
 
