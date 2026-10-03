@@ -124,10 +124,6 @@ window.CONTENIDO_PROYECTOS = {
             'contenido visto en clases y a tus propios intereses. Además, *se ' +
             'acabará la monótona prueba escrita en papel*, por presentaciones, ' +
             'debates o entre otras muchas opciones.',
-
-            'La implementación de esta reforma partirá el próximo año para los ' +
-            'alumnos de *1°EM y 2°EM*, y año a año se irá ampliando para abarcar a ' +
-            'todo el colegio.',
         ],
       },
       {
